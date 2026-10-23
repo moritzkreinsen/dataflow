@@ -5,6 +5,7 @@
 # Local credentials and generated files.
 /.dataflow-deploy-key
 /.dataflow-deploy-key.pub
+/app/local.php
 *.log
 .DS_Store
 Thumbs.db
