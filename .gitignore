@@ -1,0 +1,10 @@
+# Local project storage; retain only its web-access protection.
+/storage/*
+!/storage/.htaccess
+
+# Local credentials and generated files.
+/.dataflow-deploy-key
+/.dataflow-deploy-key.pub
+*.log
+.DS_Store
+Thumbs.db

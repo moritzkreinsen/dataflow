@@ -1,0 +1,11 @@
+Options -Indexes
+
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow, noarchive, nosnippet"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^p/([A-Za-z0-9_-]{20,80})/?$ index.php?p=$1 [QSA,L]
+  RewriteRule ^embed/([A-Za-z0-9_-]{20,80})/?$ index.php?embed=$1 [QSA,L]
+</IfModule>
