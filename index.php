@@ -21,6 +21,7 @@ if ($token && !dataflow_valid_token((string) $token)) {
   <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
   <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet">
   <title>Dataflow</title>
+  <link rel="icon" type="image/svg+xml" href="<?= htmlspecialchars($base, ENT_QUOTES, 'UTF-8') ?>assets/favicon.svg">
   <link rel="stylesheet" href="<?= htmlspecialchars($base, ENT_QUOTES, 'UTF-8') ?>assets/css/app.css">
   <script>
     window.DATAFLOW_BOOT = {
