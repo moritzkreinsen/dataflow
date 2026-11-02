@@ -151,7 +151,10 @@
       yAxisLabel: "",
       curve: false,
       donut: true,
-      tableLimit: 100
+      tableLimit: 100,
+      tableColumns: null,
+      tableSort: "",
+      tableSortDirection: "asc"
     },
     style: {
       palette: "Dataflow",
@@ -622,7 +625,12 @@
     const label = `<label>Beschriftung<select data-bind="chart.label"><option value="">Automatisch</option>${columnOptions(state.chart.label, false)}</select></label>`;
 
     if (type === "table") {
-      return `<div class="panel"><h2 class="panel-title">Tabelle</h2><label>Maximale Zeilen<input type="number" min="1" max="1000" data-bind="chart.tableLimit" value="${esc(state.chart.tableLimit)}"></label></div>`;
+      const visibleColumns = state.chart.tableColumns;
+      return `<div class="panel"><h2 class="panel-title">Tabelle</h2>
+        <div class="field-row"><label>Maximale Zeilen<input type="number" min="1" max="1000" data-bind="chart.tableLimit" value="${esc(state.chart.tableLimit)}"></label><label>Sortieren nach<select data-bind="chart.tableSort"><option value="">Originalreihenfolge</option>${columnOptions(state.chart.tableSort, false)}</select></label></div>
+        ${state.chart.tableSort ? `<label>Richtung<select data-bind="chart.tableSortDirection">${option("asc", "Aufsteigend", state.chart.tableSortDirection)}${option("desc", "Absteigend", state.chart.tableSortDirection)}</select></label>` : ""}
+        <div class="table-columns"><span class="hint">Sichtbare Spalten</span>${columns().map((column) => `<label class="check-option"><input type="checkbox" data-table-column="${esc(column)}"${!Array.isArray(visibleColumns) || visibleColumns.includes(column) ? " checked" : ""}><span>${esc(column)}</span></label>`).join("")}</div>
+      </div>`;
     }
     if (type === "map") {
       return `<div class="panel"><h2 class="panel-title">Kartendaten</h2>
@@ -775,9 +783,11 @@
     return `Aktiv: ${activeFontName()}`;
   }
 
-  function renderDataTable(rows) {
+  function renderDataTable(rows, visibleColumns) {
     if (!rows.length) return `<div class="empty-state">Noch keine Daten geladen.</div>`;
-    return `<table class="data-table"><thead><tr>${columns().map((c) => `<th>${esc(c)}</th>`).join("")}</tr></thead><tbody>${rows.map((row) => `<tr>${columns().map((c) => `<td>${esc(row[c])}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
+    const displayColumns = Array.isArray(visibleColumns) ? visibleColumns : columns();
+    if (!displayColumns.length) return `<div class="empty-state">Mindestens eine Tabellenspalte auswählen.</div>`;
+    return `<table class="data-table"><thead><tr>${displayColumns.map((c) => `<th scope="col">${esc(c)}</th>`).join("")}</tr></thead><tbody>${rows.map((row) => `<tr>${displayColumns.map((c) => `<td>${esc(row[c])}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
   }
 
   function typeButton(type, label, icon) {
@@ -840,6 +850,14 @@
         state.style.customColors = state.style.customColors || clone(defaults.style.customColors);
         state.style.customColors[index] = input.value;
         state.style.palette = "Eigenes";
+        updateAndSave(true);
+      });
+    });
+
+    document.querySelectorAll("[data-table-column]").forEach((input) => {
+      input.addEventListener("change", () => {
+        state.chart.tableColumns = Array.from(document.querySelectorAll("[data-table-column]:checked"))
+          .map((entry) => entry.dataset.tableColumn);
         updateAndSave(true);
       });
     });
@@ -1412,9 +1430,19 @@
       const d = points.map((p, i) => `${i ? "L" : "M"}${p[0]},${p[1]}`).join(" ");
       const area = type === "area" ? `<path d="${d} L${points[points.length - 1][0]},${plot.y + plot.h} L${points[0][0]},${plot.y + plot.h} Z" fill="${colors[gi % colors.length]}" opacity="0.16"/>` : "";
       const dots = points.map((p) => `<circle cx="${p[0]}" cy="${p[1]}" r="4" fill="${colors[gi % colors.length]}"><title>${esc(group)}: ${format(p[2])}</title></circle>`).join("");
-      const labels = state.chart.showLabels ? points.map((p) => `<text x="${p[0]}" y="${Math.max(plot.y + 11, p[1] - 8)}" text-anchor="middle" font-size="11" font-weight="650" fill="${fg}">${format(p[2])}</text>`).join("") : "";
+      const labels = state.chart.showLabels ? points.map((p, index) => lineValueLabel(p, index, points.length, gi, groups.length, plot, fg)).join("") : "";
       return `${area}<path d="${d}" fill="none" stroke="${colors[gi % colors.length]}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>${dots}${labels}`;
     }).join("");
+  }
+
+  function lineValueLabel(point, index, pointCount, groupIndex, groupCount, plot, fg) {
+    const verticalOffset = -9 + (groupIndex - (groupCount - 1) / 2) * 14;
+    const y = Math.max(plot.y + 12, Math.min(plot.y + plot.h - 8, point[1] + verticalOffset));
+    const atStart = index === 0;
+    const atEnd = index === pointCount - 1;
+    const x = atStart ? point[0] + 6 : atEnd ? point[0] - 6 : point[0];
+    const anchor = atStart ? "start" : atEnd ? "end" : "middle";
+    return `<text x="${x}" y="${y}" text-anchor="${anchor}" font-size="11" font-weight="650" fill="${fg}">${format(point[2])}</text>`;
   }
 
   function legend(groups, colors, width, height, fg) {
@@ -1477,8 +1505,10 @@
     const points = rows.map((row, index) => {
       const x = pad + scale(num(row[state.chart.x]), minX, maxX, width - pad * 2);
       const y = height - pad - scale(num(row[state.chart.y]), minY, maxY, height - pad * 2);
+      const labelOffsets = [[8, -8, "start"], [-8, -8, "end"], [8, 16, "start"], [-8, 16, "end"]];
+      const labelOffset = labelOffsets[index % labelOffsets.length];
       const valueLabel = state.chart.showLabels
-        ? `<text x="${x + 8}" y="${Math.max(pad + 11, y - 8)}" font-size="11" font-weight="650" fill="${fg}">${format(row[state.chart.y])}</text>`
+        ? `<text x="${x + labelOffset[0]}" y="${Math.max(pad + 11, Math.min(height - pad - 4, y + labelOffset[1]))}" text-anchor="${labelOffset[2]}" font-size="11" font-weight="650" fill="${fg}">${format(row[state.chart.y])}</text>`
         : "";
       return `<circle cx="${x}" cy="${y}" r="6" fill="${colors[index % colors.length]}" opacity="0.78"><title>${esc(row[state.chart.label] || row[state.chart.x])}: ${format(row[state.chart.y])}</title></circle>${valueLabel}`;
     }).join("");
@@ -1631,7 +1661,19 @@
 
   function renderTableViz() {
     const limit = Number(state.chart.tableLimit) || 100;
-    return renderDataTable(state.data.rows.slice(0, limit));
+    return renderDataTable(tableRows().slice(0, limit), state.chart.tableColumns);
+  }
+
+  function tableRows() {
+    const rows = state.data.rows.slice();
+    const column = state.chart.tableSort;
+    if (!column || !columns().includes(column)) return rows;
+    const direction = state.chart.tableSortDirection === "desc" ? -1 : 1;
+    const numeric = isNumericColumn(column);
+    return rows.sort((left, right) => {
+      if (numeric) return direction * (parseNumber(left[column]) - parseNumber(right[column]));
+      return direction * String(left[column] ?? "").localeCompare(String(right[column] ?? ""), "de");
+    });
   }
 
   function renderCards() {
