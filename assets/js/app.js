@@ -1602,16 +1602,15 @@
       const label = row[state.chart.label] || row[state.chart.x] || "Punkt";
       return `<circle cx="${x}" cy="${y}" r="${Math.min(26, r)}" fill="${colors[index % colors.length]}" opacity="0.72" stroke="white" stroke-width="1.5"><title>${esc(label)}${Number.isFinite(value) ? `: ${format(value)}` : ""}</title></circle>`;
     }).join("");
-    const heading = state.chart.mapMode === "locator" ? "Locator-Karte aus Latitude/Longitude" : "Symbolkarte aus Latitude/Longitude";
-    return `<svg viewBox="0 0 ${width} ${height}" role="img">
+    const mapDescription = state.chart.mapMode === "locator" ? "Locator-Karte aus Latitude- und Longitude-Daten" : "Symbolkarte aus Latitude- und Longitude-Daten";
+    return `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${esc(mapDescription)}">
+      ${mapSvgMetadata(mapDescription)}
       <rect x="0" y="0" width="${width}" height="${height}" fill="${state.style.dark ? "#202629" : "#eef3f5"}"/>
       ${[-120, -60, 0, 60, 120].map((lon) => `<line x1="${(lon + 180) / 360 * width}" y1="0" x2="${(lon + 180) / 360 * width}" y2="${height}" stroke="${fg}" opacity="0.08"/>`).join("")}
       ${[-60, -30, 0, 30, 60].map((lat) => `<line x1="0" y1="${(90 - lat) / 180 * height}" x2="${width}" y2="${(90 - lat) / 180 * height}" stroke="${fg}" opacity="0.08"/>`).join("")}
       ${worldMapShapes(width, height, land, coast)}
-      <text x="18" y="28" font-size="13" fill="${fg}" opacity="0.58">${heading}</text>
       ${ranges}
       ${points}
-      <text x="${width - 14}" y="${height - 12}" text-anchor="end" font-size="10" fill="${fg}" opacity="0.5">Kartengrundlage: Natural Earth</text>
     </svg>`;
   }
 
@@ -1630,11 +1629,16 @@
       const title = entry ? `${feature.name}: ${format(entry.value)}` : feature.name;
       return `<path d="${feature.path}" fill="${fill}" opacity="${opacity}" stroke="${coast}" stroke-width="0.6"><title>${esc(title)}</title></path>`;
     }).join("");
-    return `<svg viewBox="0 0 ${width} ${height}" role="img">
+    const mapDescription = "Flächenkarte nach Ländern";
+    return `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${esc(mapDescription)}">
+      ${mapSvgMetadata(mapDescription)}
       <rect x="0" y="0" width="${width}" height="${height}" fill="${state.style.dark ? "#202629" : "#eef3f5"}"/>
-      ${shapes}<text x="18" y="28" font-size="13" fill="${fg}" opacity="0.58">Flächenkarte nach Ländern</text>
-      <text x="${width - 14}" y="${height - 12}" text-anchor="end" font-size="10" fill="${fg}" opacity="0.5">Kartengrundlage: Natural Earth</text>
+      ${shapes}
     </svg>`;
+  }
+
+  function mapSvgMetadata(description) {
+    return `<title>${esc(state.meta.title)}</title><desc>${esc(description)}</desc>`;
   }
 
   function choroplethValues() {
