@@ -59,7 +59,8 @@
     { Jahr: "2024", Produkt: "Pulse", Umsatz: 88, Region: "Asien", Ort: "Tokio", Anteil: 31, Lat: 35.676, Lon: 139.65 }
   ];
 
-  const demos = [
+  const demos = {
+    de: [
     {
       meta: {
         title: "Globale Umsätze nach Produkt",
@@ -142,7 +143,103 @@
       },
       chart: { type: "heatmap", x: "Produkt", y: "Tickets", group: "Priorität", label: "Produkt" }
     }
-  ];
+    ],
+    en: [
+      {
+        meta: {
+          title: "Global revenue by product",
+          description: "Fictional demo data with locations around the world.",
+          source: "Source: Dataflow demo",
+          byline: "Created with Dataflow"
+        },
+        data: {
+          columns: ["Year", "Product", "Revenue", "Region", "Location", "Share", "Lat", "Lon"],
+          rows: [
+            { Year: "2020", Product: "Atlas", Revenue: 42, Region: "Europe", Location: "Berlin", Share: 18, Lat: 52.52, Lon: 13.405 },
+            { Year: "2021", Product: "Atlas", Revenue: 58, Region: "North America", Location: "New York", Share: 24, Lat: 40.713, Lon: -74.006 },
+            { Year: "2022", Product: "Atlas", Revenue: 64, Region: "South America", Location: "Sao Paulo", Share: 29, Lat: -23.55, Lon: -46.633 },
+            { Year: "2023", Product: "Atlas", Revenue: 78, Region: "Africa", Location: "Nairobi", Share: 35, Lat: -1.286, Lon: 36.817 },
+            { Year: "2024", Product: "Atlas", Revenue: 91, Region: "Asia", Location: "Tokyo", Share: 41, Lat: 35.676, Lon: 139.65 },
+            { Year: "2020", Product: "Pulse", Revenue: 33, Region: "Europe", Location: "Berlin", Share: 15, Lat: 52.52, Lon: 13.405 },
+            { Year: "2021", Product: "Pulse", Revenue: 47, Region: "North America", Location: "New York", Share: 19, Lat: 40.713, Lon: -74.006 },
+            { Year: "2022", Product: "Pulse", Revenue: 52, Region: "South America", Location: "Sao Paulo", Share: 21, Lat: -23.55, Lon: -46.633 },
+            { Year: "2023", Product: "Pulse", Revenue: 73, Region: "Africa", Location: "Nairobi", Share: 26, Lat: -1.286, Lon: 36.817 },
+            { Year: "2024", Product: "Pulse", Revenue: 88, Region: "Asia", Location: "Tokyo", Share: 31, Lat: 35.676, Lon: 139.65 }
+          ]
+        },
+        chart: { type: "map", x: "Location", y: "Revenue", group: "Product", lat: "Lat", lon: "Lon", label: "Location" }
+      },
+      {
+        meta: {
+          title: "Hospital admissions by department",
+          description: "Fictional monthly figures for several hospital departments.",
+          source: "Source: Fictional hospital",
+          byline: "Created with Dataflow"
+        },
+        data: {
+          columns: ["Month", "Department", "Admissions", "Occupancy"],
+          rows: [
+            { Month: "Jan", Department: "Medicine", Admissions: 124, Occupancy: 82 },
+            { Month: "Feb", Department: "Medicine", Admissions: 132, Occupancy: 84 },
+            { Month: "Mar", Department: "Medicine", Admissions: 148, Occupancy: 88 },
+            { Month: "Jan", Department: "Surgery", Admissions: 96, Occupancy: 76 },
+            { Month: "Feb", Department: "Surgery", Admissions: 105, Occupancy: 79 },
+            { Month: "Mar", Department: "Surgery", Admissions: 118, Occupancy: 81 },
+            { Month: "Jan", Department: "Pediatrics", Admissions: 68, Occupancy: 65 },
+            { Month: "Feb", Department: "Pediatrics", Admissions: 74, Occupancy: 69 },
+            { Month: "Mar", Department: "Pediatrics", Admissions: 81, Occupancy: 72 }
+          ]
+        },
+        chart: { type: "bar", x: "Month", y: "Admissions", group: "Department", label: "Department" }
+      },
+      {
+        meta: {
+          title: "Energy generation by source",
+          description: "Fictional annual figures for renewable and conventional energy sources.",
+          source: "Source: Fictional energy monitor",
+          byline: "Created with Dataflow"
+        },
+        data: {
+          columns: ["Year", "Source", "GWh", "Category"],
+          rows: [
+            { Year: "2020", Source: "Solar", GWh: 320, Category: "Renewable" },
+            { Year: "2021", Source: "Solar", GWh: 410, Category: "Renewable" },
+            { Year: "2022", Source: "Solar", GWh: 520, Category: "Renewable" },
+            { Year: "2020", Source: "Wind", GWh: 680, Category: "Renewable" },
+            { Year: "2021", Source: "Wind", GWh: 740, Category: "Renewable" },
+            { Year: "2022", Source: "Wind", GWh: 810, Category: "Renewable" },
+            { Year: "2020", Source: "Gas", GWh: 590, Category: "Conventional" },
+            { Year: "2021", Source: "Gas", GWh: 550, Category: "Conventional" },
+            { Year: "2022", Source: "Gas", GWh: 470, Category: "Conventional" }
+          ]
+        },
+        chart: { type: "area", x: "Year", y: "GWh", group: "Source", label: "Source" }
+      },
+      {
+        meta: {
+          title: "Support tickets by product",
+          description: "Fictional operational data for a SaaS support team.",
+          source: "Source: Fictional help desk system",
+          byline: "Created with Dataflow"
+        },
+        data: {
+          columns: ["Product", "Priority", "Tickets", "SLA"],
+          rows: [
+            { Product: "Flow CRM", Priority: "Low", Tickets: 42, SLA: 98 },
+            { Product: "Flow CRM", Priority: "Medium", Tickets: 31, SLA: 94 },
+            { Product: "Flow CRM", Priority: "High", Tickets: 12, SLA: 87 },
+            { Product: "Flow BI", Priority: "Low", Tickets: 34, SLA: 97 },
+            { Product: "Flow BI", Priority: "Medium", Tickets: 46, SLA: 91 },
+            { Product: "Flow BI", Priority: "High", Tickets: 18, SLA: 82 },
+            { Product: "Flow Ops", Priority: "Low", Tickets: 28, SLA: 99 },
+            { Product: "Flow Ops", Priority: "Medium", Tickets: 37, SLA: 93 },
+            { Product: "Flow Ops", Priority: "High", Tickets: 9, SLA: 90 }
+          ]
+        },
+        chart: { type: "heatmap", x: "Product", y: "Tickets", group: "Priority", label: "Product" }
+      }
+    ]
+  };
 
   const defaults = {
     version: 1,
@@ -558,7 +655,8 @@
 
   function demoProject() {
     const project = clone(defaults);
-    const demo = clone(demos[Math.floor(Math.random() * demos.length)]);
+    const availableDemos = demos[language()] || demos.de;
+    const demo = clone(availableDemos[Math.floor(Math.random() * availableDemos.length)]);
     project.meta = Object.assign(project.meta, demo.meta);
     project.data = demo.data;
     project.chart = Object.assign(project.chart, demo.chart);
