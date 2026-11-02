@@ -11,6 +11,41 @@
     Bloom: ["#b71f5c", "#e16462", "#f2bd45", "#2a9d8f", "#2878b5", "#6d5dfc"]
   };
 
+  const translations = {
+    de: {
+      language: "Sprache", german: "Deutsch", english: "English",
+      data: "Daten", visualize: "Visualisieren", annotate: "Beschriften", publish: "Veröffentlichen",
+      creating: "Erstellen", demo: "Demo", workflow: "Workflow", saving: "Speichert...", saved: "Gespeichert", ready: "Bereit", localProject: "Lokales Projekt", copied: "Kopiert", notSaved: "Nicht gespeichert",
+      uploadData: "Daten hochladen", dropData: "CSV, TSV oder JSON hier ablegen", uploadHint: "Die erste Zeile wird als Spaltenkopf gelesen. JSON sollte ein Array aus Objekten sein.", fileChoose: "Datei auswählen", pasteData: "Direkt einfügen", pasteExample: "Jahr,Produkt,Umsatz\n2024,Atlas,91", importData: "Daten übernehmen", rowsColumns: "{rows} Zeilen, {columns} Spalten",
+      passwordProtection: "Passwortschutz", encryptedStored: "Die Daten sind sicher verschlüsselt gespeichert. Methode: {method}.", encryptedWith: "Die Daten sind sicher mit {method} verschlüsselt. Ohne Passwort können Personen mit Webspace-Zugriff die gespeicherten Daten nicht entschlüsseln.", enterPassword: "Passwort eingeben", decryptData: "Daten entschlüsseln", passwordToRemove: "Passwort zum Entfernen", removeProtection: "Passwortschutz entfernen", unencryptedStored: "Die Daten liegen derzeit unverschlüsselt auf dem Server.", setPassword: "Passwort festlegen", confirmPassword: "Passwort wiederholen", encryptData: "Mit Passwort verschlüsseln",
+      visualization: "Visualisierung", bar: "Balken", line: "Linie", area: "Fläche", scatter: "Punkte", pie: "Kreis", table: "Tabelle", cards: "Kennzahlen", heatmap: "Heatmap", map: "Karte",
+      aggregation: "Aggregation", sum: "Summe", average: "Durchschnitt", count: "Anzahl", sorting: "Sortierung", original: "Original", ascending: "Aufsteigend", descending: "Absteigend", category: "X / Kategorie", xValue: "X / Wert", yValue: "Y / Wert", group: "Gruppe / Serie", none: "Keine", label: "Beschriftung", automatic: "Automatisch", columns: "Spalten", tableOptions: "Tabelle", maximumRows: "Maximale Zeilen", sortBy: "Sortieren nach", originalOrder: "Originalreihenfolge", direction: "Richtung", visibleColumns: "Sichtbare Spalten",
+      mapType: "Kartentyp", symbolMap: "Symbolkarte", locatorMap: "Locator-Karte", choroplethMap: "Flächenkarte", mapData: "Kartendaten", country: "Land / ISO-M49", countryHint: "Ländernamen müssen den englischen Namen der Weltkarte entsprechen (z. B. Germany) oder als ISO-M49-Code vorliegen (z. B. 276).", latitude: "Latitude", longitude: "Longitude", symbolSize: "Symbolgröße", uniform: "Einheitlich",
+      axisLabels: "Achsenbeschriftungen", xAxis: "X-Achse", yAxis: "Y-Achse", columnLabel: "Spaltenlabel", customText: "Eigener Text", xAxisText: "Text unter der X-Achse", yAxisText: "Text an der Y-Achse", xAxisPlaceholder: "z. B. Monat oder Zeitraum", yAxisPlaceholder: "z. B. Umsatz in EUR",
+      appearance: "Darstellung", horizontalBars: "Balken horizontal", stackSeries: "Serien stapeln", showLegend: "Legende anzeigen", showGrid: "Raster anzeigen", showValues: "Werte beschriften", donut: "Kreis als Donut",
+      text: "Text", title: "Titel", titleSize: "Titelgröße", description: "Beschreibung", descriptionSize: "Beschreibung Schriftgröße", source: "Quelle", byline: "Byline", theme: "Theme", custom: "Eigene", color: "Farbe", background: "Hintergrund", darkPreview: "Dunkle Vorschau", font: "Schrift", fontSource: "Quelle", systemFont: "Systemschrift", googleFontUrl: "Google Font URL", ownFile: "Eigene Datei", ownFontFile: "Eigene Schriftdatei", active: "Aktiv", format: "Format", width: "Breite", height: "Höhe", padding: "Innenabstand", radius: "Radius",
+      projectLink: "Projektlink", linkHint: "Wer diesen Link besitzt, kann das Projekt ansehen und bearbeiten. Es gibt keinen Login und keine Wiederherstellung ohne Link.", copy: "Kopieren", saveNow: "Jetzt speichern", txtLink: "TXT-Link", embed: "Einbetten", copyEmbed: "Embed kopieren", downloadSvg: "SVG herunterladen", downloadPng: "PNG herunterladen", privacy: "Datenschutz", privacyHint: "Die Daten liegen als JSON-Datei auf dem Webspace {domain}. Die zufällige URL ist der Zugriffsschutz; für sensible Daten kann zusätzlich der Passwortschutz unter „Daten“ aktiviert werden.", notSavedYet: "Noch nicht gespeichert",
+      noData: "Noch keine Daten geladen.", selectColumn: "Mindestens eine Tabellenspalte auswählen.", previewAfterUpload: "Daten hochladen, dann erscheint hier die Vorschau.", chooseNumeric: "Für diese Visualisierung bitte eine numerische Wertespalte auswählen.", scatterNumeric: "Ein Punktdiagramm benötigt zwei numerische Spalten für X und Y.", choroplethNumeric: "Für eine Flächenkarte bitte eine Länder- und eine numerische Wertespalte auswählen.", mapCoordinates: "Für eine Karte bitte numerische Latitude- und Longitude-Spalten auswählen.", invalidCoordinates: "Die Koordinaten liegen außerhalb der gültigen Bereiche für Latitude und Longitude.", loadingChoropleth: "Flächenkarte wird geladen ...", mapSymbolDescription: "Symbolkarte aus Latitude- und Longitude-Daten", mapLocatorDescription: "Locator-Karte aus Latitude- und Longitude-Daten", mapChoroplethDescription: "Flächenkarte nach Ländern",
+      passwordMin: "Bitte ein Passwort mit mindestens 8 Zeichen verwenden.", passwordMismatch: "Die Passwörter stimmen nicht überein.", loadDataFirst: "Bitte zuerst Daten laden.", encryptionFailed: "Die Daten konnten nicht verschlüsselt werden.", decryptFailed: "Das Passwort passt nicht oder die Daten konnten nicht entschlüsselt werden.", removeFailed: "Das Passwort passt nicht. Der Passwortschutz wurde nicht entfernt.", homeConfirm: "Bist du sicher, dass du das aktuelle Projekt und die Projekt-URL gespeichert hast?", decryptBeforeImport: "Bitte die vorhandenen Daten zuerst mit dem Passwort entschlüsseln, bevor neue Daten übernommen werden.", importFailed: "Die Daten konnten nicht gelesen werden. Bitte CSV, TSV oder ein JSON-Array verwenden.", cryptoUnavailable: "WebCrypto ist in diesem Browser oder Kontext nicht verfügbar.", column: "Spalte", row: "Zeile", noGroup: "Ohne Gruppe", value: "Wert", point: "Punkt", unknown: "Unbekannt", createdWith: "Erstellt mit Dataflow", untitledProject: "Unbenanntes Projekt"
+    },
+    en: {
+      language: "Language", german: "Deutsch", english: "English",
+      data: "Data", visualize: "Visualize", annotate: "Annotate", publish: "Publish",
+      creating: "Create", demo: "Demo", workflow: "Workflow", saving: "Saving...", saved: "Saved", ready: "Ready", localProject: "Local project", copied: "Copied", notSaved: "Not saved",
+      uploadData: "Upload data", dropData: "Drop CSV, TSV, or JSON here", uploadHint: "The first row is read as column headers. JSON should be an array of objects.", fileChoose: "Choose file", pasteData: "Paste directly", pasteExample: "Year,Product,Revenue\n2024,Atlas,91", importData: "Import data", rowsColumns: "{rows} rows, {columns} columns",
+      passwordProtection: "Password protection", encryptedStored: "The data is securely stored encrypted. Method: {method}.", encryptedWith: "The data is securely encrypted with {method}. Without the password, people with webspace access cannot decrypt the stored data.", enterPassword: "Enter password", decryptData: "Decrypt data", passwordToRemove: "Password to remove protection", removeProtection: "Remove password protection", unencryptedStored: "The data is currently stored unencrypted on the server.", setPassword: "Set password", confirmPassword: "Repeat password", encryptData: "Encrypt with password",
+      visualization: "Visualization", bar: "Bar", line: "Line", area: "Area", scatter: "Scatter", pie: "Pie", table: "Table", cards: "Metrics", heatmap: "Heatmap", map: "Map",
+      aggregation: "Aggregation", sum: "Sum", average: "Average", count: "Count", sorting: "Sorting", original: "Original", ascending: "Ascending", descending: "Descending", category: "X / Category", xValue: "X / Value", yValue: "Y / Value", group: "Group / Series", none: "None", label: "Label", automatic: "Automatic", columns: "Columns", tableOptions: "Table", maximumRows: "Maximum rows", sortBy: "Sort by", originalOrder: "Original order", direction: "Direction", visibleColumns: "Visible columns",
+      mapType: "Map type", symbolMap: "Symbol map", locatorMap: "Locator map", choroplethMap: "Choropleth map", mapData: "Map data", country: "Country / ISO-M49", countryHint: "Country names must match the English names in the world map (for example, Germany) or use ISO-M49 codes (for example, 276).", latitude: "Latitude", longitude: "Longitude", symbolSize: "Symbol size", uniform: "Uniform",
+      axisLabels: "Axis labels", xAxis: "X axis", yAxis: "Y axis", columnLabel: "Column label", customText: "Custom text", xAxisText: "Text below the X axis", yAxisText: "Text beside the Y axis", xAxisPlaceholder: "e.g. month or period", yAxisPlaceholder: "e.g. revenue in EUR",
+      appearance: "Appearance", horizontalBars: "Horizontal bars", stackSeries: "Stack series", showLegend: "Show legend", showGrid: "Show grid", showValues: "Show values", donut: "Show as donut",
+      text: "Text", title: "Title", titleSize: "Title size", description: "Description", descriptionSize: "Description font size", source: "Source", byline: "Byline", theme: "Theme", custom: "Custom", color: "Color", background: "Background", darkPreview: "Dark preview", font: "Font", fontSource: "Source", systemFont: "System font", googleFontUrl: "Google Font URL", ownFile: "Own file", ownFontFile: "Own font file", active: "Active", format: "Format", width: "Width", height: "Height", padding: "Padding", radius: "Radius",
+      projectLink: "Project link", linkHint: "Anyone with this link can view and edit the project. There is no login and no recovery without the link.", copy: "Copy", saveNow: "Save now", txtLink: "TXT link", embed: "Embed", copyEmbed: "Copy embed", downloadSvg: "Download SVG", downloadPng: "Download PNG", privacy: "Privacy", privacyHint: "The data is stored as a JSON file on the webspace {domain}. The random URL protects access; password protection can also be enabled under “Data” for sensitive data.", notSavedYet: "Not saved yet",
+      noData: "No data loaded yet.", selectColumn: "Select at least one table column.", previewAfterUpload: "Upload data to see the preview.", chooseNumeric: "Select a numeric value column for this visualization.", scatterNumeric: "A scatter chart needs two numeric columns for X and Y.", choroplethNumeric: "A choropleth map needs a country column and a numeric value column.", mapCoordinates: "A map needs numeric latitude and longitude columns.", invalidCoordinates: "The coordinates are outside the valid latitude and longitude ranges.", loadingChoropleth: "Loading choropleth map ...", mapSymbolDescription: "Symbol map from latitude and longitude data", mapLocatorDescription: "Locator map from latitude and longitude data", mapChoroplethDescription: "Choropleth map by country",
+      passwordMin: "Use a password with at least 8 characters.", passwordMismatch: "The passwords do not match.", loadDataFirst: "Load data first.", encryptionFailed: "The data could not be encrypted.", decryptFailed: "The password is incorrect or the data could not be decrypted.", removeFailed: "The password is incorrect. Password protection was not removed.", homeConfirm: "Are you sure you have saved the current project and its project URL?", decryptBeforeImport: "Decrypt the existing data with the password before importing new data.", importFailed: "The data could not be read. Use CSV, TSV, or a JSON array.", cryptoUnavailable: "WebCrypto is not available in this browser or context.", column: "Column", row: "Row", noGroup: "No group", value: "Value", point: "Point", unknown: "Unknown", createdWith: "Created with Dataflow", untitledProject: "Untitled project"
+    }
+  };
+
   const sampleRows = [
     { Jahr: "2020", Produkt: "Atlas", Umsatz: 42, Region: "Europa", Ort: "Berlin", Anteil: 18, Lat: 52.52, Lon: 13.405 },
     { Jahr: "2021", Produkt: "Atlas", Umsatz: 58, Region: "Nordamerika", Ort: "New York", Anteil: 24, Lat: 40.713, Lon: -74.006 },
@@ -111,6 +146,7 @@
 
   const defaults = {
     version: 1,
+    language: detectLanguage(),
     meta: {
       title: "Unbenanntes Projekt",
       description: "",
@@ -194,6 +230,30 @@
 
   function clone(value) {
     return JSON.parse(JSON.stringify(value));
+  }
+
+  function detectLanguage() {
+    const browserLanguages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "de"];
+    return browserLanguages.some((language) => String(language).toLowerCase().startsWith("en")) ? "en" : "de";
+  }
+
+  function language() {
+    return state.language === "en" ? "en" : "de";
+  }
+
+  function t(key, values = {}) {
+    const message = (translations[language()] && translations[language()][key]) || translations.de[key] || key;
+    return message.replace(/\{(\w+)\}/g, (match, name) => values[name] === undefined ? match : String(values[name]));
+  }
+
+  function languageSwitch() {
+    return `<label class="language-switch"><span class="visually-hidden">${esc(t("language"))}</span><select data-language aria-label="${esc(t("language"))}"><option value="de"${language() === "de" ? " selected" : ""}>${esc(t("german"))}</option><option value="en"${language() === "en" ? " selected" : ""}>${esc(t("english"))}</option></select></label>`;
+  }
+
+  function localizeProjectDefaults(project) {
+    project.meta.title = t("untitledProject");
+    project.meta.byline = t("createdWith");
+    return project;
   }
 
   function esc(value) {
@@ -373,7 +433,7 @@
   }
 
   async function encryptRows(password) {
-    if (!cryptoAvailable()) throw new Error("WebCrypto ist in diesem Browser oder Kontext nicht verfügbar.");
+    if (!cryptoAvailable()) throw new Error(t("cryptoUnavailable"));
     const salt = crypto.getRandomValues(new Uint8Array(16));
     const iv = crypto.getRandomValues(new Uint8Array(12));
     const iterations = 210000;
@@ -415,6 +475,7 @@
   }
 
   function render() {
+    document.documentElement.lang = language();
     if (boot.home && !token) {
       renderHome();
       return;
@@ -429,13 +490,13 @@
       <main class="app-shell">
         <header class="topbar">
           <button class="brand brand-button" data-go-home><span class="brand-mark"></span><span>Dataflow</span></button>
-          <nav class="tabs" aria-label="Workflow">
-            ${tabButton("upload", "1", "Daten")}
-            ${tabButton("visualize", "2", "Visualisieren")}
-            ${tabButton("annotate", "3", "Beschriften")}
-            ${tabButton("publish", "4", "Veröffentlichen")}
+          <nav class="tabs" aria-label="${esc(t("workflow"))}">
+            ${tabButton("upload", "1", t("data"))}
+            ${tabButton("visualize", "2", t("visualize"))}
+            ${tabButton("annotate", "3", t("annotate"))}
+            ${tabButton("publish", "4", t("publish"))}
           </nav>
-          <div class="status" data-status>${saving ? "Speichert..." : statusText()}</div>
+          <div class="topbar-actions">${languageSwitch()}<div class="status" data-status>${saving ? t("saving") : statusText()}</div></div>
         </header>
         <div class="workspace">
           <aside class="sidebar">${renderSidebar()}</aside>
@@ -450,21 +511,28 @@
   }
 
   function renderHome() {
+    document.documentElement.lang = language();
     app.innerHTML = `
       <main class="start-shell">
         <header class="start-topbar">
           <div class="brand"><span class="brand-mark"></span><span>Dataflow</span></div>
+          ${languageSwitch()}
         </header>
         <section class="start-center">
-          <button class="start-create" data-start-empty>Erstellen</button>
+          <button class="start-create" data-start-empty>${esc(t("creating"))}</button>
         </section>
-        <button class="start-demo" data-start-demo>Demo</button>
+        <button class="start-demo" data-start-demo>${esc(t("demo"))}</button>
       </main>
     `;
     bindHomeEvents();
   }
 
   function bindHomeEvents() {
+    const select = document.querySelector("[data-language]");
+    if (select) select.addEventListener("change", () => {
+      state.language = select.value === "en" ? "en" : "de";
+      renderHome();
+    });
     const emptyButton = document.querySelector("[data-start-empty]");
     if (emptyButton) {
       emptyButton.addEventListener("click", () => startProject(false));
@@ -476,9 +544,11 @@
   }
 
   function startProject(useDemo) {
+    const selectedLanguage = language();
     boot.home = false;
     token = "";
-    state = useDemo ? demoProject() : clone(defaults);
+    state = useDemo ? demoProject() : localizeProjectDefaults(clone(defaults));
+    state.language = selectedLanguage;
     activeTab = "upload";
     lastSavedAt = "";
     sessionPassword = "";
@@ -512,9 +582,9 @@
   }
 
   function statusText() {
-    if (!token) return "Lokales Projekt";
-    if (lastSavedAt) return "Gespeichert";
-    return "Bereit";
+    if (!token) return t("localProject");
+    if (lastSavedAt) return t("saved");
+    return t("ready");
   }
 
   function renderSidebar() {
@@ -530,25 +600,25 @@
     const rows = state.data.rows || [];
     return `
       <div class="panel">
-        <h2 class="panel-title">Daten hochladen</h2>
+        <h2 class="panel-title">${esc(t("uploadData"))}</h2>
         <div class="dropzone" data-dropzone>
-          <strong>CSV, TSV oder JSON hier ablegen</strong>
-          <span class="hint">Die erste Zeile wird als Spaltenkopf gelesen. JSON sollte ein Array aus Objekten sein.</span>
-          <input type="file" data-file accept=".csv,.tsv,.txt,.json,application/json,text/csv">
+          <strong>${esc(t("dropData"))}</strong>
+          <span class="hint">${esc(t("uploadHint"))}</span>
+          <label class="file-select">${esc(t("fileChoose"))}<input type="file" data-file accept=".csv,.tsv,.txt,.json,application/json,text/csv"></label>
         </div>
       </div>
       <div class="panel">
-        <label>Direkt einfügen
-          <textarea data-paste placeholder="Jahr,Produkt,Umsatz&#10;2024,Atlas,91"></textarea>
+        <label>${esc(t("pasteData"))}
+          <textarea data-paste placeholder="${esc(t("pasteExample"))}"></textarea>
         </label>
-        <button data-import-paste>Daten übernehmen</button>
+        <button data-import-paste>${esc(t("importData"))}</button>
       </div>
       <div class="panel">
-        <h2 class="panel-title">${rows.length} Zeilen, ${columns().length} Spalten</h2>
+        <h2 class="panel-title">${esc(t("rowsColumns", { rows: rows.length, columns: columns().length }))}</h2>
         <div class="data-table-wrap">${renderDataTable(rows.slice(0, 50))}</div>
       </div>
       <div class="panel">
-        <h2 class="panel-title">Passwortschutz</h2>
+        <h2 class="panel-title">${esc(t("passwordProtection"))}</h2>
         ${renderEncryptionPanel()}
       </div>
     `;
@@ -557,30 +627,30 @@
   function renderEncryptionPanel() {
     if (state.security.encrypted && !state.data.rows.length) {
       return `
-        <div class="notice good">Die Daten sind sicher verschlüsselt gespeichert. Methode: ${esc(encryptionMethodText())}.</div>
-        <label>Passwort eingeben<input type="password" data-unlock-password autocomplete="current-password"></label>
+        <div class="notice good">${esc(t("encryptedStored", { method: encryptionMethodText() }))}</div>
+        <label>${esc(t("enterPassword"))}<input type="password" data-unlock-password autocomplete="current-password"></label>
         <div class="small-actions">
-          <button class="primary" data-unlock-data>Daten entschlüsseln</button>
+          <button class="primary" data-unlock-data>${esc(t("decryptData"))}</button>
         </div>
       `;
     }
 
     if (state.security.encrypted) {
       return `
-        <div class="notice good">Die Daten sind sicher mit ${esc(encryptionMethodText())} verschlüsselt. Ohne Passwort können Personen mit Webspace-Zugriff die gespeicherten Daten nicht entschlüsseln.</div>
-        <label>Passwort zum Entfernen<input type="password" data-remove-password autocomplete="current-password"></label>
+        <div class="notice good">${esc(t("encryptedWith", { method: encryptionMethodText() }))}</div>
+        <label>${esc(t("passwordToRemove"))}<input type="password" data-remove-password autocomplete="current-password"></label>
         <div class="small-actions">
-          <button data-remove-encryption>Passwortschutz entfernen</button>
+          <button data-remove-encryption>${esc(t("removeProtection"))}</button>
         </div>
       `;
     }
 
     return `
-      <div class="notice">Die Daten liegen derzeit unverschlüsselt auf dem Server.</div>
-      <label>Passwort festlegen<input type="password" data-encrypt-password autocomplete="new-password"></label>
-      <label>Passwort wiederholen<input type="password" data-encrypt-password-confirm autocomplete="new-password"></label>
+      <div class="notice">${esc(t("unencryptedStored"))}</div>
+      <label>${esc(t("setPassword"))}<input type="password" data-encrypt-password autocomplete="new-password"></label>
+      <label>${esc(t("confirmPassword"))}<input type="password" data-encrypt-password-confirm autocomplete="new-password"></label>
       <div class="small-actions">
-        <button class="primary" data-encrypt-data>Mit Passwort verschlüsseln</button>
+        <button class="primary" data-encrypt-data>${esc(t("encryptData"))}</button>
       </div>
     `;
   }
@@ -590,17 +660,17 @@
     const axisTypes = ["bar", "line", "area", "scatter", "heatmap"];
     return `
       <div class="panel">
-        <h2 class="panel-title">Visualisierung</h2>
+        <h2 class="panel-title">${esc(t("visualization"))}</h2>
         <div class="chart-types">
-          ${typeButton("bar", "Balken", iconBars())}
-          ${typeButton("line", "Linie", iconLine())}
-          ${typeButton("area", "Fläche", iconArea())}
-          ${typeButton("scatter", "Punkte", iconScatter())}
-          ${typeButton("pie", "Kreis", iconPie())}
-          ${typeButton("table", "Tabelle", iconTable())}
-          ${typeButton("cards", "Kennzahlen", iconCards())}
-          ${typeButton("heatmap", "Heatmap", iconHeat())}
-          ${typeButton("map", "Karte", iconMap())}
+          ${typeButton("bar", t("bar"), iconBars())}
+          ${typeButton("line", t("line"), iconLine())}
+          ${typeButton("area", t("area"), iconArea())}
+          ${typeButton("scatter", t("scatter"), iconScatter())}
+          ${typeButton("pie", t("pie"), iconPie())}
+          ${typeButton("table", t("table"), iconTable())}
+          ${typeButton("cards", t("cards"), iconCards())}
+          ${typeButton("heatmap", t("heatmap"), iconHeat())}
+          ${typeButton("map", t("map"), iconMap())}
         </div>
       </div>
       ${renderVisualizeColumns(type)}
@@ -610,50 +680,50 @@
   }
 
   function renderVisualizeColumns(type) {
-    const aggregation = `<label>Aggregation<select data-bind="chart.aggregate">
-      ${option("sum", "Summe", state.chart.aggregate)}
-      ${option("avg", "Durchschnitt", state.chart.aggregate)}
-      ${option("count", "Anzahl", state.chart.aggregate)}
+    const aggregation = `<label>${esc(t("aggregation"))}<select data-bind="chart.aggregate">
+      ${option("sum", t("sum"), state.chart.aggregate)}
+      ${option("avg", t("average"), state.chart.aggregate)}
+      ${option("count", t("count"), state.chart.aggregate)}
     </select></label>`;
-    const sorting = `<label>Sortierung<select data-bind="chart.sort">
-      ${option("none", "Original", state.chart.sort)}
-      ${option("asc", "Aufsteigend", state.chart.sort)}
-      ${option("desc", "Absteigend", state.chart.sort)}
+    const sorting = `<label>${esc(t("sorting"))}<select data-bind="chart.sort">
+      ${option("none", t("original"), state.chart.sort)}
+      ${option("asc", t("ascending"), state.chart.sort)}
+      ${option("desc", t("descending"), state.chart.sort)}
     </select></label>`;
-    const category = `<label>X / Kategorie<select data-bind="chart.x">${columnOptions(state.chart.x, false)}</select></label>`;
-    const numericX = `<label>X / Wert<select data-bind="chart.x">${columnOptions(state.chart.x, true)}</select></label>`;
-    const value = `<label>Y / Wert<select data-bind="chart.y">${columnOptions(state.chart.y, true)}</select></label>`;
-    const group = `<label>Gruppe / Serie<select data-bind="chart.group"><option value="">Keine</option>${columnOptions(state.chart.group, false)}</select></label>`;
-    const label = `<label>Beschriftung<select data-bind="chart.label"><option value="">Automatisch</option>${columnOptions(state.chart.label, false)}</select></label>`;
+    const category = `<label>${esc(t("category"))}<select data-bind="chart.x">${columnOptions(state.chart.x, false)}</select></label>`;
+    const numericX = `<label>${esc(t("xValue"))}<select data-bind="chart.x">${columnOptions(state.chart.x, true)}</select></label>`;
+    const value = `<label>${esc(t("yValue"))}<select data-bind="chart.y">${columnOptions(state.chart.y, true)}</select></label>`;
+    const group = `<label>${esc(t("group"))}<select data-bind="chart.group"><option value="">${esc(t("none"))}</option>${columnOptions(state.chart.group, false)}</select></label>`;
+    const label = `<label>${esc(t("label"))}<select data-bind="chart.label"><option value="">${esc(t("automatic"))}</option>${columnOptions(state.chart.label, false)}</select></label>`;
 
     if (type === "table") {
       const visibleColumns = state.chart.tableColumns;
-      return `<div class="panel"><h2 class="panel-title">Tabelle</h2>
-        <div class="field-row"><label>Maximale Zeilen<input type="number" min="1" max="1000" data-bind="chart.tableLimit" value="${esc(state.chart.tableLimit)}"></label><label>Sortieren nach<select data-bind="chart.tableSort"><option value="">Originalreihenfolge</option>${columnOptions(state.chart.tableSort, false)}</select></label></div>
-        ${state.chart.tableSort ? `<label>Richtung<select data-bind="chart.tableSortDirection">${option("asc", "Aufsteigend", state.chart.tableSortDirection)}${option("desc", "Absteigend", state.chart.tableSortDirection)}</select></label>` : ""}
-        <div class="table-columns"><span class="hint">Sichtbare Spalten</span>${columns().map((column) => `<label class="check-option"><input type="checkbox" data-table-column="${esc(column)}"${!Array.isArray(visibleColumns) || visibleColumns.includes(column) ? " checked" : ""}><span>${esc(column)}</span></label>`).join("")}</div>
+      return `<div class="panel"><h2 class="panel-title">${esc(t("tableOptions"))}</h2>
+        <div class="field-row"><label>${esc(t("maximumRows"))}<input type="number" min="1" max="1000" data-bind="chart.tableLimit" value="${esc(state.chart.tableLimit)}"></label><label>${esc(t("sortBy"))}<select data-bind="chart.tableSort"><option value="">${esc(t("originalOrder"))}</option>${columnOptions(state.chart.tableSort, false)}</select></label></div>
+        ${state.chart.tableSort ? `<label>${esc(t("direction"))}<select data-bind="chart.tableSortDirection">${option("asc", t("ascending"), state.chart.tableSortDirection)}${option("desc", t("descending"), state.chart.tableSortDirection)}</select></label>` : ""}
+        <div class="table-columns"><span class="hint">${esc(t("visibleColumns"))}</span>${columns().map((column) => `<label class="check-option"><input type="checkbox" data-table-column="${esc(column)}"${!Array.isArray(visibleColumns) || visibleColumns.includes(column) ? " checked" : ""}><span>${esc(column)}</span></label>`).join("")}</div>
       </div>`;
     }
     if (type === "map") {
-      const mapMode = `<label>Kartentyp<select data-bind="chart.mapMode">${option("symbol", "Symbolkarte", state.chart.mapMode)}${option("locator", "Locator-Karte", state.chart.mapMode)}${option("choropleth", "Flächenkarte", state.chart.mapMode)}</select></label>`;
+      const mapMode = `<label>${esc(t("mapType"))}<select data-bind="chart.mapMode">${option("symbol", t("symbolMap"), state.chart.mapMode)}${option("locator", t("locatorMap"), state.chart.mapMode)}${option("choropleth", t("choroplethMap"), state.chart.mapMode)}</select></label>`;
       if (state.chart.mapMode === "choropleth") {
-        return `<div class="panel"><h2 class="panel-title">Kartendaten</h2>
-          ${mapMode}<div class="field-row"><label>Land / ISO-M49<select data-bind="chart.mapRegion">${columnOptions(state.chart.mapRegion, false)}</select></label>${value}</div>
-          <div class="field-row">${aggregation}${sorting}</div><div class="hint">Ländernamen müssen den englischen Namen der Weltkarte entsprechen (z. B. Germany) oder als ISO-M49-Code vorliegen (z. B. 276).</div>
+        return `<div class="panel"><h2 class="panel-title">${esc(t("mapData"))}</h2>
+          ${mapMode}<div class="field-row"><label>${esc(t("country"))}<select data-bind="chart.mapRegion">${columnOptions(state.chart.mapRegion, false)}</select></label>${value}</div>
+          <div class="field-row">${aggregation}${sorting}</div><div class="hint">${esc(t("countryHint"))}</div>
         </div>`;
       }
-      return `<div class="panel"><h2 class="panel-title">Kartendaten</h2>
-        ${mapMode}<div class="field-row"><label>Latitude<select data-bind="chart.lat"><option value="">Keine</option>${columnOptions(state.chart.lat, true)}</select></label><label>Longitude<select data-bind="chart.lon"><option value="">Keine</option>${columnOptions(state.chart.lon, true)}</select></label></div>
-        <div class="field-row">${state.chart.mapMode === "symbol" ? `<label>Symbolgröße<select data-bind="chart.y"><option value="">Einheitlich</option>${columnOptions(state.chart.y, true)}</select></label>` : ""}${label}</div>
+      return `<div class="panel"><h2 class="panel-title">${esc(t("mapData"))}</h2>
+        ${mapMode}<div class="field-row"><label>${esc(t("latitude"))}<select data-bind="chart.lat"><option value="">${esc(t("none"))}</option>${columnOptions(state.chart.lat, true)}</select></label><label>${esc(t("longitude"))}<select data-bind="chart.lon"><option value="">${esc(t("none"))}</option>${columnOptions(state.chart.lon, true)}</select></label></div>
+        <div class="field-row">${state.chart.mapMode === "symbol" ? `<label>${esc(t("symbolSize"))}<select data-bind="chart.y"><option value="">${esc(t("uniform"))}</option>${columnOptions(state.chart.y, true)}</select></label>` : ""}${label}</div>
       </div>`;
     }
     if (type === "scatter") {
-      return `<div class="panel"><h2 class="panel-title">Spalten</h2><div class="field-row">${numericX}${value}</div><div class="field-row">${label}</div></div>`;
+      return `<div class="panel"><h2 class="panel-title">${esc(t("columns"))}</h2><div class="field-row">${numericX}${value}</div><div class="field-row">${label}</div></div>`;
     }
     if (type === "pie" || type === "cards") {
-      return `<div class="panel"><h2 class="panel-title">Spalten</h2><div class="field-row">${category}${value}</div><div class="field-row">${aggregation}${sorting}</div></div>`;
+      return `<div class="panel"><h2 class="panel-title">${esc(t("columns"))}</h2><div class="field-row">${category}${value}</div><div class="field-row">${aggregation}${sorting}</div></div>`;
     }
-    return `<div class="panel"><h2 class="panel-title">Spalten</h2>
+    return `<div class="panel"><h2 class="panel-title">${esc(t("columns"))}</h2>
       <div class="field-row">${category}${value}</div>
       <div class="field-row">${group}</div>
       <div class="field-row">${aggregation}${sorting}</div>
@@ -662,140 +732,140 @@
 
   function renderAxisControls() {
     return `<div class="panel">
-      <h2 class="panel-title">Achsenbeschriftungen</h2>
+      <h2 class="panel-title">${esc(t("axisLabels"))}</h2>
       <div class="field-row">
-        <label>X-Achse<select data-bind="chart.xAxisLabelMode">
-          ${option("none", "Keine", state.chart.xAxisLabelMode)}
-          ${option("column", "Spaltenlabel", state.chart.xAxisLabelMode)}
-          ${option("custom", "Eigener Text", state.chart.xAxisLabelMode)}
+        <label>${esc(t("xAxis"))}<select data-bind="chart.xAxisLabelMode">
+          ${option("none", t("none"), state.chart.xAxisLabelMode)}
+          ${option("column", t("columnLabel"), state.chart.xAxisLabelMode)}
+          ${option("custom", t("customText"), state.chart.xAxisLabelMode)}
         </select></label>
-        <label>Y-Achse<select data-bind="chart.yAxisLabelMode">
-          ${option("none", "Keine", state.chart.yAxisLabelMode)}
-          ${option("column", "Spaltenlabel", state.chart.yAxisLabelMode)}
-          ${option("custom", "Eigener Text", state.chart.yAxisLabelMode)}
+        <label>${esc(t("yAxis"))}<select data-bind="chart.yAxisLabelMode">
+          ${option("none", t("none"), state.chart.yAxisLabelMode)}
+          ${option("column", t("columnLabel"), state.chart.yAxisLabelMode)}
+          ${option("custom", t("customText"), state.chart.yAxisLabelMode)}
         </select></label>
       </div>
-      ${state.chart.xAxisLabelMode === "custom" ? `<label>Text unter der X-Achse<input data-bind="chart.xAxisLabel" value="${esc(state.chart.xAxisLabel || "")}" placeholder="z. B. Monat oder Zeitraum"></label>` : ""}
-      ${state.chart.yAxisLabelMode === "custom" ? `<label>Text an der Y-Achse<input data-bind="chart.yAxisLabel" value="${esc(state.chart.yAxisLabel || "")}" placeholder="z. B. Umsatz in EUR"></label>` : ""}
+      ${state.chart.xAxisLabelMode === "custom" ? `<label>${esc(t("xAxisText"))}<input data-bind="chart.xAxisLabel" value="${esc(state.chart.xAxisLabel || "")}" placeholder="${esc(t("xAxisPlaceholder"))}"></label>` : ""}
+      ${state.chart.yAxisLabelMode === "custom" ? `<label>${esc(t("yAxisText"))}<input data-bind="chart.yAxisLabel" value="${esc(state.chart.yAxisLabel || "")}" placeholder="${esc(t("yAxisPlaceholder"))}"></label>` : ""}
     </div>`;
   }
 
   function renderVisualizeAppearance(type) {
     const controls = [];
-    if (type === "bar") controls.push(toggle("chart.horizontal", "Balken horizontal"), toggle("chart.stacked", "Serien stapeln"));
-    if (["bar", "line", "area"].includes(type)) controls.push(toggle("chart.showLegend", "Legende anzeigen"));
-    if (["bar", "line", "area", "scatter"].includes(type)) controls.push(toggle("chart.showGrid", "Raster anzeigen"));
-    if (["bar", "line", "area", "scatter", "heatmap"].includes(type)) controls.push(toggle("chart.showLabels", "Werte beschriften"));
-    if (type === "pie") controls.push(toggle("chart.donut", "Kreis als Donut"));
-    return controls.length ? `<div class="panel"><h2 class="panel-title">Darstellung</h2>${controls.join("")}</div>` : "";
+    if (type === "bar") controls.push(toggle("chart.horizontal", t("horizontalBars")), toggle("chart.stacked", t("stackSeries")));
+    if (["bar", "line", "area"].includes(type)) controls.push(toggle("chart.showLegend", t("showLegend")));
+    if (["bar", "line", "area", "scatter"].includes(type)) controls.push(toggle("chart.showGrid", t("showGrid")));
+    if (["bar", "line", "area", "scatter", "heatmap"].includes(type)) controls.push(toggle("chart.showLabels", t("showValues")));
+    if (type === "pie") controls.push(toggle("chart.donut", t("donut")));
+    return controls.length ? `<div class="panel"><h2 class="panel-title">${esc(t("appearance"))}</h2>${controls.join("")}</div>` : "";
   }
 
   function renderAnnotate() {
     const paletteEntries = Object.entries(palettes);
     return `
       <div class="panel">
-        <h2 class="panel-title">Text</h2>
-        <label>Titel<input data-bind="meta.title" value="${esc(state.meta.title)}"></label>
-        <label>Titelgröße<input type="number" min="16" max="54" data-bind="style.titleSize" value="${esc(state.style.titleSize)}"></label>
-        <label>Beschreibung<textarea data-bind="meta.description">${esc(state.meta.description)}</textarea></label>
-        <label>Beschreibung Schriftgröße<input type="number" min="11" max="32" data-bind="style.descriptionSize" value="${esc(state.style.descriptionSize)}"></label>
-        <label>Quelle<input data-bind="meta.source" value="${esc(state.meta.source)}"></label>
-        <label>Byline<input data-bind="meta.byline" value="${esc(state.meta.byline)}"></label>
+        <h2 class="panel-title">${esc(t("text"))}</h2>
+        <label>${esc(t("title"))}<input data-bind="meta.title" value="${esc(state.meta.title)}"></label>
+        <label>${esc(t("titleSize"))}<input type="number" min="16" max="54" data-bind="style.titleSize" value="${esc(state.style.titleSize)}"></label>
+        <label>${esc(t("description"))}<textarea data-bind="meta.description">${esc(state.meta.description)}</textarea></label>
+        <label>${esc(t("descriptionSize"))}<input type="number" min="11" max="32" data-bind="style.descriptionSize" value="${esc(state.style.descriptionSize)}"></label>
+        <label>${esc(t("source"))}<input data-bind="meta.source" value="${esc(state.meta.source)}"></label>
+        <label>${esc(t("byline"))}<input data-bind="meta.byline" value="${esc(state.meta.byline)}"></label>
       </div>
       <div class="panel">
-        <h2 class="panel-title">Theme</h2>
+        <h2 class="panel-title">${esc(t("theme"))}</h2>
         <div class="swatches">
           ${paletteEntries.map(([name, colors]) => `<button title="${esc(name)}" class="swatch ${state.style.palette === name ? "active" : ""}" data-palette="${esc(name)}" style="background: linear-gradient(90deg, ${colors.join(", ")})"></button>`).join("")}
-          <button title="Eigene" class="swatch swatch-custom ${state.style.palette === "Eigenes" ? "active" : ""}" data-palette="Eigenes"><span>Eigene</span></button>
+          <button title="${esc(t("custom"))}" class="swatch swatch-custom ${state.style.palette === "Eigenes" ? "active" : ""}" data-palette="Eigenes"><span>${esc(t("custom"))}</span></button>
         </div>
         ${state.style.palette === "Eigenes" ? `<div class="custom-colors">
-          ${(state.style.customColors || defaults.style.customColors).map((color, index) => `<label>Farbe ${index + 1}<input type="color" data-custom-color="${index}" value="${esc(color)}"></label>`).join("")}
+          ${(state.style.customColors || defaults.style.customColors).map((color, index) => `<label>${esc(t("color"))} ${index + 1}<input type="color" data-custom-color="${index}" value="${esc(color)}"></label>`).join("")}
         </div>` : ""}
         <div class="field-row">
-          <label>Hintergrund<input type="color" data-bind="style.background" value="${esc(state.style.background)}"></label>
-          <label>Text<input type="color" data-bind="style.textColor" value="${esc(state.style.textColor)}"></label>
+          <label>${esc(t("background"))}<input type="color" data-bind="style.background" value="${esc(state.style.background)}"></label>
+          <label>${esc(t("text"))}<input type="color" data-bind="style.textColor" value="${esc(state.style.textColor)}"></label>
         </div>
-        ${toggle("style.dark", "Dunkle Vorschau")}
+        ${toggle("style.dark", t("darkPreview"))}
       </div>
       <div class="panel">
-        <h2 class="panel-title">Schrift</h2>
+        <h2 class="panel-title">${esc(t("font"))}</h2>
         <div class="field-row">
-          <label>Quelle<select data-bind="style.fontMode">
-            ${option("system", "Systemschrift", state.style.fontMode)}
-            ${option("google", "Google Font URL", state.style.fontMode)}
-            ${option("upload", "Eigene Datei", state.style.fontMode)}
+          <label>${esc(t("fontSource"))}<select data-bind="style.fontMode">
+            ${option("system", t("systemFont"), state.style.fontMode)}
+            ${option("google", t("googleFontUrl"), state.style.fontMode)}
+            ${option("upload", t("ownFile"), state.style.fontMode)}
           </select></label>
-          ${state.style.fontMode === "system" ? `<label>Systemschrift<select data-bind="style.font">
+          ${state.style.fontMode === "system" ? `<label>${esc(t("systemFont"))}<select data-bind="style.font">
             ${option("Inter", "Inter/System", state.style.font)}
             ${option("Georgia", "Georgia", state.style.font)}
             ${option("Arial", "Arial", state.style.font)}
             ${option("Verdana", "Verdana", state.style.font)}
           </select></label>` : ""}
         </div>
-        ${state.style.fontMode === "google" ? `<label>Google-Font-URL
+        ${state.style.fontMode === "google" ? `<label>${esc(t("googleFontUrl"))}
           <input data-bind="style.googleFontUrl" placeholder="https://fonts.google.com/specimen/Roboto" value="${esc(state.style.googleFontUrl)}">
         </label>` : ""}
-        ${state.style.fontMode === "upload" ? `<label>Eigene Schriftdatei
+        ${state.style.fontMode === "upload" ? `<label>${esc(t("ownFontFile"))}
           <input type="file" data-font-file accept=".woff,.woff2,.ttf,.otf,font/woff,font/woff2,font/ttf,font/otf">
         </label>` : ""}
         <div class="hint">${esc(fontStatusText())}</div>
       </div>
       <div class="panel">
-        <h2 class="panel-title">Format</h2>
+        <h2 class="panel-title">${esc(t("format"))}</h2>
         <div class="field-row">
-          <label>Breite<input type="number" min="320" max="1600" data-bind="style.width" value="${esc(state.style.width)}"></label>
-          <label>Höhe<input type="number" min="180" max="1000" data-bind="style.height" value="${esc(state.style.height)}"></label>
+          <label>${esc(t("width"))}<input type="number" min="320" max="1600" data-bind="style.width" value="${esc(state.style.width)}"></label>
+          <label>${esc(t("height"))}<input type="number" min="180" max="1000" data-bind="style.height" value="${esc(state.style.height)}"></label>
         </div>
         <div class="field-row">
-          <label>Innenabstand<input type="number" min="12" max="80" data-bind="style.chartPadding" value="${esc(state.style.chartPadding)}"></label>
-          <label>Radius<input type="number" min="0" max="18" data-bind="style.rounded" value="${esc(state.style.rounded)}"></label>
+          <label>${esc(t("padding"))}<input type="number" min="12" max="80" data-bind="style.chartPadding" value="${esc(state.style.chartPadding)}"></label>
+          <label>${esc(t("radius"))}<input type="number" min="0" max="18" data-bind="style.rounded" value="${esc(state.style.rounded)}"></label>
         </div>
       </div>
     `;
   }
 
   function renderPublish() {
-    const link = token ? projectUrl("project") : "Noch nicht gespeichert";
+    const link = token ? projectUrl("project") : t("notSavedYet");
     const embed = token ? `<iframe src="${projectUrl("embed")}" width="${state.style.width}" height="${state.style.height + 150}" style="border:0;width:100%;max-width:${state.style.width}px"></iframe>` : "";
     return `
       <div class="panel">
-        <h2 class="panel-title">Projektlink</h2>
-        <div class="notice">Wer diesen Link besitzt, kann das Projekt ansehen und bearbeiten. Es gibt keinen Login und keine Wiederherstellung ohne Link.</div>
+        <h2 class="panel-title">${esc(t("projectLink"))}</h2>
+        <div class="notice">${esc(t("linkHint"))}</div>
         <div class="copybox">
           <input readonly value="${esc(link)}" data-project-url>
-          <button data-copy="project">Kopieren</button>
+          <button data-copy="project">${esc(t("copy"))}</button>
         </div>
         <div class="small-actions">
-          <button class="primary" data-save-now>Jetzt speichern</button>
-          ${token ? `<a href="${esc(apiUrl(`?action=link&token=${encodeURIComponent(token)}`))}"><button>TXT-Link</button></a>` : ""}
+          <button class="primary" data-save-now>${esc(t("saveNow"))}</button>
+          ${token ? `<a href="${esc(apiUrl(`?action=link&token=${encodeURIComponent(token)}`))}"><button>${esc(t("txtLink"))}</button></a>` : ""}
         </div>
       </div>
       <div class="panel">
-        <h2 class="panel-title">Einbetten</h2>
+        <h2 class="panel-title">${esc(t("embed"))}</h2>
         <textarea readonly data-embed-code>${esc(embed)}</textarea>
         <div class="small-actions">
-          <button data-copy="embed">Embed kopieren</button>
-          <button data-download-svg>SVG herunterladen</button>
-          <button data-download-png>PNG herunterladen</button>
+          <button data-copy="embed">${esc(t("copyEmbed"))}</button>
+          <button data-download-svg>${esc(t("downloadSvg"))}</button>
+          <button data-download-png>${esc(t("downloadPng"))}</button>
         </div>
       </div>
       <div class="panel">
-        <h2 class="panel-title">Datenschutz</h2>
-        <p class="hint">Die Daten liegen als JSON-Datei auf dem Webspace ${esc(currentDomain())}. Die zufällige URL ist der Zugriffsschutz; für sensible Daten kann zusätzlich der Passwortschutz unter „Daten“ aktiviert werden.</p>
+        <h2 class="panel-title">${esc(t("privacy"))}</h2>
+        <p class="hint">${esc(t("privacyHint", { domain: currentDomain() }))}</p>
       </div>
     `;
   }
 
   function fontStatusText() {
-    if (state.style.fontMode === "upload" && state.style.uploadedFontName) return `Aktiv: ${state.style.uploadedFontName}`;
-    if (state.style.fontMode === "google" && googleFontFamily(state.style.googleFontUrl)) return `Aktiv: ${googleFontFamily(state.style.googleFontUrl)}`;
-    return `Aktiv: ${activeFontName()}`;
+    if (state.style.fontMode === "upload" && state.style.uploadedFontName) return `${t("active")}: ${state.style.uploadedFontName}`;
+    if (state.style.fontMode === "google" && googleFontFamily(state.style.googleFontUrl)) return `${t("active")}: ${googleFontFamily(state.style.googleFontUrl)}`;
+    return `${t("active")}: ${activeFontName()}`;
   }
 
   function renderDataTable(rows, visibleColumns) {
-    if (!rows.length) return `<div class="empty-state">Noch keine Daten geladen.</div>`;
+    if (!rows.length) return `<div class="empty-state">${esc(t("noData"))}</div>`;
     const displayColumns = Array.isArray(visibleColumns) ? visibleColumns : columns();
-    if (!displayColumns.length) return `<div class="empty-state">Mindestens eine Tabellenspalte auswählen.</div>`;
+    if (!displayColumns.length) return `<div class="empty-state">${esc(t("selectColumn"))}</div>`;
     return `<table class="data-table"><thead><tr>${displayColumns.map((c) => `<th scope="col">${esc(c)}</th>`).join("")}</tr></thead><tbody>${rows.map((row) => `<tr>${displayColumns.map((c) => `<td>${esc(row[c])}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
   }
 
@@ -823,6 +893,14 @@
   }
 
   function bindEvents() {
+    document.querySelectorAll("[data-language]").forEach((select) => {
+      select.addEventListener("change", () => {
+        state.language = select.value === "en" ? "en" : "de";
+        render();
+        queueSave();
+      });
+    });
+
     document.querySelectorAll("[data-tab]").forEach((button) => {
       button.addEventListener("click", () => {
         activeTab = button.dataset.tab;
@@ -929,15 +1007,15 @@
         const password = document.querySelector("[data-encrypt-password]").value;
         const passwordConfirm = document.querySelector("[data-encrypt-password-confirm]").value;
         if (!password || password.length < 8) {
-          alert("Bitte ein Passwort mit mindestens 8 Zeichen verwenden.");
+          alert(t("passwordMin"));
           return;
         }
         if (password !== passwordConfirm) {
-          alert("Die Passwörter stimmen nicht überein.");
+          alert(t("passwordMismatch"));
           return;
         }
         if (!state.data.rows.length) {
-          alert("Bitte zuerst Daten laden.");
+          alert(t("loadDataFirst"));
           return;
         }
         try {
@@ -947,7 +1025,7 @@
           activeTab = "upload";
           render();
         } catch (error) {
-          alert(error.message || "Die Daten konnten nicht verschlüsselt werden.");
+          alert(error.message || t("encryptionFailed"));
         }
       });
     }
@@ -961,7 +1039,7 @@
           sessionPassword = password;
           render();
         } catch (error) {
-          alert("Das Passwort passt nicht oder die Daten konnten nicht entschlüsselt werden.");
+          alert(t("decryptFailed"));
         }
       });
     }
@@ -978,7 +1056,7 @@
           activeTab = "upload";
           render();
         } catch (error) {
-          alert("Das Passwort passt nicht. Der Passwortschutz wurde nicht entfernt.");
+          alert(t("removeFailed"));
         }
       });
     }
@@ -989,7 +1067,7 @@
     const homeButton = document.querySelector("[data-go-home]");
     if (homeButton) {
       homeButton.addEventListener("click", () => {
-        const ok = confirm("Bist du sicher, dass du das aktuelle Projekt und die Projekt-URL gespeichert hast?");
+        const ok = confirm(t("homeConfirm"));
         if (ok) location.href = appBase;
       });
     }
@@ -1000,7 +1078,7 @@
           ? document.querySelector("[data-embed-code]").value
           : document.querySelector("[data-project-url]").value;
         await navigator.clipboard.writeText(value);
-        setStatus("Kopiert");
+        setStatus(t("copied"));
       });
     });
 
@@ -1036,7 +1114,7 @@
   async function saveProject() {
     if (boot.embed) return;
     saving = true;
-    setStatus("Speichert...");
+    setStatus(t("saving"));
     try {
       if (!token) {
         const response = await fetch(apiUrl("?action=create"), {
@@ -1060,10 +1138,10 @@
         if (!payload.ok) throw new Error(payload.error || "Save failed");
       }
       lastSavedAt = new Date().toISOString();
-      setStatus("Gespeichert");
+      setStatus(t("saved"));
     } catch (error) {
       console.error(error);
-      setStatus("Nicht gespeichert");
+      setStatus(t("notSaved"));
     } finally {
       saving = false;
     }
@@ -1135,7 +1213,7 @@
 
   function importText(text, name) {
     if (state.security.encrypted && !sessionPassword) {
-      alert("Bitte die vorhandenen Daten zuerst mit dem Passwort entschlüsseln, bevor neue Daten übernommen werden.");
+      alert(t("decryptBeforeImport"));
       return;
     }
     try {
@@ -1148,7 +1226,7 @@
       render();
       queueSave();
     } catch (error) {
-      alert("Die Daten konnten nicht gelesen werden. Bitte CSV, TSV oder ein JSON-Array verwenden.");
+      alert(t("importFailed"));
     }
   }
 
@@ -1195,7 +1273,7 @@
     }
     pushRow();
 
-    const headers = (rows.shift() || []).map((header, index) => header.trim() || `Spalte ${index + 1}`);
+    const headers = (rows.shift() || []).map((header, index) => header.trim() || `${t("column")} ${index + 1}`);
     return rows
       .filter((items) => items.some((value) => String(value).trim() !== ""))
       .map((items) => Object.fromEntries(headers.map((header, index) => [header, cast(items[index] ?? "")])));
@@ -1258,7 +1336,7 @@
   }
 
   function renderChart() {
-    if (!state.data.rows.length) return `<div class="empty-state">Daten hochladen, dann erscheint hier die Vorschau.</div>`;
+    if (!state.data.rows.length) return `<div class="empty-state">${esc(t("previewAfterUpload"))}</div>`;
     const problem = chartDataProblem();
     if (problem) return `<div class="empty-state">${esc(problem)}</div>`;
     if (state.chart.type === "table") return renderTableViz();
@@ -1273,29 +1351,29 @@
   function chartDataProblem() {
     const numericYTypes = ["bar", "line", "area", "pie", "cards", "heatmap"];
     if (numericYTypes.includes(state.chart.type) && !isNumericColumn(state.chart.y)) {
-      return "Für diese Visualisierung bitte eine numerische Wertespalte auswählen.";
+      return t("chooseNumeric");
     }
     if (state.chart.type === "scatter") {
       if (!isNumericColumn(state.chart.x) || !isNumericColumn(state.chart.y)) {
-        return "Ein Punktdiagramm benötigt zwei numerische Spalten für X und Y.";
+        return t("scatterNumeric");
       }
     }
     if (state.chart.type === "map" && state.chart.mapMode === "choropleth") {
       if (!columns().includes(state.chart.mapRegion) || !isNumericColumn(state.chart.y)) {
-        return "Für eine Flächenkarte bitte eine Länder- und eine numerische Wertespalte auswählen.";
+        return t("choroplethNumeric");
       }
       return "";
     }
     if (state.chart.type === "map") {
       if (!isNumericColumn(state.chart.lat) || !isNumericColumn(state.chart.lon)) {
-        return "Für eine Karte bitte numerische Latitude- und Longitude-Spalten auswählen.";
+        return t("mapCoordinates");
       }
       const validCoordinates = state.data.rows.some((row) => {
         const lat = parseNumber(row[state.chart.lat]);
         const lon = parseNumber(row[state.chart.lon]);
         return Number.isFinite(lat) && Number.isFinite(lon) && Math.abs(lat) <= 90 && Math.abs(lon) <= 180;
       });
-      if (!validCoordinates) return "Die Koordinaten liegen außerhalb der gültigen Bereiche für Latitude und Longitude.";
+      if (!validCoordinates) return t("invalidCoordinates");
     }
     return "";
   }
@@ -1305,8 +1383,8 @@
     const useGroup = options.useGroup !== false;
     const map = new Map();
     state.data.rows.forEach((row, index) => {
-      const xVal = row[x] ?? `Zeile ${index + 1}`;
-      const gVal = useGroup && group ? row[group] || "Ohne Gruppe" : "Wert";
+      const xVal = row[x] ?? `${t("row")} ${index + 1}`;
+      const gVal = useGroup && group ? row[group] || t("noGroup") : t("value");
       const key = `${xVal}||${gVal}`;
       const entry = map.get(key) || { x: String(xVal), group: String(gVal), sum: 0, count: 0 };
       entry.sum += aggregate === "count" ? 1 : num(row[y]);
@@ -1599,10 +1677,10 @@
       const y = (90 - lat) / 180 * height;
       const value = parseNumber(row[state.chart.y]);
       const r = state.chart.mapMode === "locator" ? 6 : 5 + (Number.isFinite(value) ? Math.sqrt(Math.abs(value)) * 0.8 : 2);
-      const label = row[state.chart.label] || row[state.chart.x] || "Punkt";
+      const label = row[state.chart.label] || row[state.chart.x] || t("point");
       return `<circle cx="${x}" cy="${y}" r="${Math.min(26, r)}" fill="${colors[index % colors.length]}" opacity="0.72" stroke="white" stroke-width="1.5"><title>${esc(label)}${Number.isFinite(value) ? `: ${format(value)}` : ""}</title></circle>`;
     }).join("");
-    const mapDescription = state.chart.mapMode === "locator" ? "Locator-Karte aus Latitude- und Longitude-Daten" : "Symbolkarte aus Latitude- und Longitude-Daten";
+    const mapDescription = state.chart.mapMode === "locator" ? t("mapLocatorDescription") : t("mapSymbolDescription");
     return `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${esc(mapDescription)}">
       ${mapSvgMetadata(mapDescription)}
       <rect x="0" y="0" width="${width}" height="${height}" fill="${state.style.dark ? "#202629" : "#eef3f5"}"/>
@@ -1617,7 +1695,7 @@
   function renderChoroplethMap(width, height, colors, fg, land, coast) {
     if (!worldMapData) {
       loadWorldMap();
-      return `<svg viewBox="0 0 ${width} ${height}" role="img"><rect width="${width}" height="${height}" fill="${state.style.dark ? "#202629" : "#eef3f5"}"/><text x="18" y="28" font-size="13" fill="${fg}" opacity="0.58">Flächenkarte wird geladen ...</text></svg>`;
+      return `<svg viewBox="0 0 ${width} ${height}" role="img"><rect width="${width}" height="${height}" fill="${state.style.dark ? "#202629" : "#eef3f5"}"/><text x="18" y="28" font-size="13" fill="${fg}" opacity="0.58">${esc(t("loadingChoropleth"))}</text></svg>`;
     }
     const data = choroplethValues();
     const max = Math.max(1, ...Array.from(data.values()).map((entry) => Math.abs(entry.value)));
@@ -1629,7 +1707,7 @@
       const title = entry ? `${feature.name}: ${format(entry.value)}` : feature.name;
       return `<path d="${feature.path}" fill="${fill}" opacity="${opacity}" stroke="${coast}" stroke-width="0.6"><title>${esc(title)}</title></path>`;
     }).join("");
-    const mapDescription = "Flächenkarte nach Ländern";
+    const mapDescription = t("mapChoroplethDescription");
     return `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${esc(mapDescription)}">
       ${mapSvgMetadata(mapDescription)}
       <rect x="0" y="0" width="${width}" height="${height}" fill="${state.style.dark ? "#202629" : "#eef3f5"}"/>
@@ -1688,7 +1766,7 @@
     if (!data || !Array.isArray(data.features)) return [];
     return data.features.map((feature) => ({
       id: String(feature.properties && (feature.properties.ISO_N3_EH || feature.properties.ISO_N3) || ""),
-      name: String(feature.properties && feature.properties.NAME_EN || "Unbekannt"),
+      name: String(feature.properties && feature.properties.NAME_EN || t("unknown")),
       path: geoJsonPath(feature.geometry, width, height)
     })).filter((feature) => feature.path);
   }
@@ -1722,7 +1800,7 @@
     const numeric = isNumericColumn(column);
     return rows.sort((left, right) => {
       if (numeric) return direction * (parseNumber(left[column]) - parseNumber(right[column]));
-      return direction * String(left[column] ?? "").localeCompare(String(right[column] ?? ""), "de");
+      return direction * String(left[column] ?? "").localeCompare(String(right[column] ?? ""), language());
     });
   }
 
@@ -1742,7 +1820,7 @@
   }
 
   function format(value) {
-    return new Intl.NumberFormat("de-DE", { maximumFractionDigits: 2 }).format(num(value));
+    return new Intl.NumberFormat(language() === "en" ? "en-US" : "de-DE", { maximumFractionDigits: 2 }).format(num(value));
   }
 
   function shorten(value, length) {
