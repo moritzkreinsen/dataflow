@@ -677,7 +677,7 @@
             ${tabButton("annotate", "3", t("annotate"))}
             ${tabButton("publish", "4", t("publish"))}
           </nav>
-          <div class="topbar-actions">${languageSwitch()}<div class="status" data-status>${saving ? t("saving") : statusText()}</div></div>
+          <div class="topbar-actions"><div class="status" data-status>${saving ? t("saving") : statusText()}</div>${languageSwitch()}</div>
         </header>
         <div class="workspace">
           <aside class="sidebar">${renderSidebar()}</aside>
@@ -695,13 +695,16 @@
     document.documentElement.lang = language();
     app.innerHTML = `
       <main class="start-shell">
-        <header class="start-topbar">
-          <div class="brand"><span class="brand-mark"></span><span>Dataflow</span></div>
-          ${languageSwitch()}
-        </header>
+        <div class="start-language">${languageSwitch()}</div>
         <section class="start-center">
-          <button class="start-create" data-start-empty>${esc(t("creating"))}</button>
+          <div class="start-identity">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <h1>Dataflow</h1>
+            <p>Open source. 100% free, forever. No login. Encrypt your data. Stay in control.</p>
+            <button class="start-create" data-start-empty>${esc(t("creating"))}</button>
+          </div>
         </section>
+        <a class="start-repository" href="https://github.com/moritzkreinsen/dataflow" target="_blank" rel="noreferrer">GitHub</a>
         <button class="start-demo" data-start-demo>${esc(t("demo"))}</button>
       </main>
     `;
