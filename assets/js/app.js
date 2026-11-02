@@ -202,16 +202,21 @@
   }
 
   function num(value) {
-    if (typeof value === "number") return Number.isFinite(value) ? value : 0;
+    const parsed = parseNumber(value);
+    return Number.isFinite(parsed) ? parsed : 0;
+  }
+
+  function parseNumber(value) {
+    if (typeof value === "number") return Number.isFinite(value) ? value : Number.NaN;
     const cleaned = String(value ?? "").trim().replace(/\s/g, "").replace(",", ".");
     const parsed = Number(cleaned);
-    return Number.isFinite(parsed) ? parsed : 0;
+    return Number.isFinite(parsed) ? parsed : Number.NaN;
   }
 
   function isNumericColumn(column) {
     const rows = state.data.rows.slice(0, 30);
     return rows.length > 0 && rows.some((row) => String(row[column] ?? "").trim() !== "") &&
-      rows.every((row) => String(row[column] ?? "").trim() === "" || Number.isFinite(num(row[column])));
+      rows.every((row) => String(row[column] ?? "").trim() === "" || Number.isFinite(parseNumber(row[column])));
   }
 
   function columns() {
@@ -842,6 +847,7 @@
     document.querySelectorAll("[data-type]").forEach((button) => {
       button.addEventListener("click", () => {
         state.chart.type = button.dataset.type;
+        normalizeChartColumns();
         updateAndSave(true);
       });
     });
@@ -1188,6 +1194,21 @@
     state.chart.label = cols.find((col) => /name|label|ort|stadt|land/i.test(col)) || state.chart.x;
   }
 
+  function normalizeChartColumns() {
+    const numeric = columns().filter(isNumericColumn);
+    if (["scatter"].includes(state.chart.type)) {
+      if (!numeric.includes(state.chart.x)) state.chart.x = numeric[0] || "";
+      if (!numeric.includes(state.chart.y) || (state.chart.y === state.chart.x && numeric.length > 1)) {
+        state.chart.y = numeric.find((col) => col !== state.chart.x) || numeric[0] || "";
+      }
+    }
+    if (state.chart.type === "map") {
+      if (!numeric.includes(state.chart.y)) state.chart.y = numeric[0] || "";
+      if (!numeric.includes(state.chart.lat)) state.chart.lat = columns().find((col) => /lat|breite/i.test(col)) || "";
+      if (!numeric.includes(state.chart.lon)) state.chart.lon = columns().find((col) => /lon|lng|laenge|länge/i.test(col)) || "";
+    }
+  }
+
   function renderVisualization() {
     applyFontAssets();
     const style = state.style;
@@ -1205,6 +1226,8 @@
 
   function renderChart() {
     if (!state.data.rows.length) return `<div class="empty-state">Daten hochladen, dann erscheint hier die Vorschau.</div>`;
+    const problem = chartDataProblem();
+    if (problem) return `<div class="empty-state">${esc(problem)}</div>`;
     if (state.chart.type === "table") return renderTableViz();
     if (state.chart.type === "cards") return renderCards();
     if (state.chart.type === "pie") return renderPie();
@@ -1214,12 +1237,37 @@
     return renderXYChart(state.chart.type);
   }
 
-  function aggregateRows() {
+  function chartDataProblem() {
+    const numericYTypes = ["bar", "line", "area", "pie", "cards", "heatmap"];
+    if (numericYTypes.includes(state.chart.type) && !isNumericColumn(state.chart.y)) {
+      return "Für diese Visualisierung bitte eine numerische Wertespalte auswählen.";
+    }
+    if (state.chart.type === "scatter") {
+      if (!isNumericColumn(state.chart.x) || !isNumericColumn(state.chart.y)) {
+        return "Ein Punktdiagramm benötigt zwei numerische Spalten für X und Y.";
+      }
+    }
+    if (state.chart.type === "map") {
+      if (!isNumericColumn(state.chart.lat) || !isNumericColumn(state.chart.lon)) {
+        return "Für eine Karte bitte numerische Latitude- und Longitude-Spalten auswählen.";
+      }
+      const validCoordinates = state.data.rows.some((row) => {
+        const lat = parseNumber(row[state.chart.lat]);
+        const lon = parseNumber(row[state.chart.lon]);
+        return Number.isFinite(lat) && Number.isFinite(lon) && Math.abs(lat) <= 90 && Math.abs(lon) <= 180;
+      });
+      if (!validCoordinates) return "Die Koordinaten liegen außerhalb der gültigen Bereiche für Latitude und Longitude.";
+    }
+    return "";
+  }
+
+  function aggregateRows(options = {}) {
     const { x, y, group, aggregate, sort } = state.chart;
+    const useGroup = options.useGroup !== false;
     const map = new Map();
     state.data.rows.forEach((row, index) => {
       const xVal = row[x] ?? `Zeile ${index + 1}`;
-      const gVal = group ? row[group] || "Ohne Gruppe" : "Wert";
+      const gVal = useGroup && group ? row[group] || "Ohne Gruppe" : "Wert";
       const key = `${xVal}||${gVal}`;
       const entry = map.get(key) || { x: String(xVal), group: String(gVal), sum: 0, count: 0 };
       entry.sum += aggregate === "count" ? 1 : num(row[y]);
@@ -1378,7 +1426,7 @@
   }
 
   function renderPie() {
-    const data = aggregateRows().slice(0, 10);
+    const data = aggregateRows({ useGroup: false }).slice(0, 10);
     const width = Number(state.style.width) || 860;
     const height = Number(state.style.height) || 440;
     const radius = Math.min(width, height) * 0.32;
@@ -1474,14 +1522,18 @@
     const fg = state.style.dark ? "#f7f7f1" : state.style.textColor;
     const land = state.style.dark ? "#384247" : "#d8e0d7";
     const coast = state.style.dark ? "#59666d" : "#b9c4b7";
-    const rows = state.data.rows.filter((row) => Number.isFinite(num(row[state.chart.lat])) && Number.isFinite(num(row[state.chart.lon])));
+    const rows = state.data.rows.filter((row) => {
+      const lat = parseNumber(row[state.chart.lat]);
+      const lon = parseNumber(row[state.chart.lon]);
+      return Number.isFinite(lat) && Number.isFinite(lon) && Math.abs(lat) <= 90 && Math.abs(lon) <= 180;
+    });
     const lon2Column = columns().find((col) => /lon.*(2|max|end|bis)|lng.*(2|max|end|bis)|longitude.*(2|max|end|bis)/i.test(col));
     const lat2Column = columns().find((col) => /lat.*(2|max|end|bis)|latitude.*(2|max|end|bis)|breite.*(2|max|end|bis)/i.test(col));
     const ranges = lat2Column && lon2Column ? rows.map((row, index) => {
-      const lat1 = num(row[state.chart.lat]);
-      const lon1 = num(row[state.chart.lon]);
-      const lat2 = num(row[lat2Column]);
-      const lon2 = num(row[lon2Column]);
+      const lat1 = parseNumber(row[state.chart.lat]);
+      const lon1 = parseNumber(row[state.chart.lon]);
+      const lat2 = parseNumber(row[lat2Column]);
+      const lon2 = parseNumber(row[lon2Column]);
       const x1 = (Math.min(lon1, lon2) + 180) / 360 * width;
       const x2 = (Math.max(lon1, lon2) + 180) / 360 * width;
       const y1 = (90 - Math.max(lat1, lat2)) / 180 * height;
@@ -1489,8 +1541,8 @@
       return `<rect x="${x1}" y="${y1}" width="${Math.max(2, x2 - x1)}" height="${Math.max(2, y2 - y1)}" fill="${colors[index % colors.length]}" opacity="0.18" stroke="${colors[index % colors.length]}" stroke-width="1.6"><title>${esc(row[state.chart.label] || row[state.chart.x])}</title></rect>`;
     }).join("") : "";
     const points = rows.map((row, index) => {
-      const lat = num(row[state.chart.lat]);
-      const lon = num(row[state.chart.lon]);
+      const lat = parseNumber(row[state.chart.lat]);
+      const lon = parseNumber(row[state.chart.lon]);
       const x = (lon + 180) / 360 * width;
       const y = (90 - lat) / 180 * height;
       const r = 5 + Math.sqrt(Math.abs(num(row[state.chart.y]))) * 0.8;
@@ -1583,7 +1635,7 @@
   }
 
   function renderCards() {
-    const data = aggregateRows().slice(0, 8);
+    const data = aggregateRows({ useGroup: false }).slice(0, 8);
     const colors = chartColors();
     return `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px">${data.map((d, i) => `
       <div style="border-top:4px solid ${colors[i % colors.length]};padding:14px 0;border-bottom:1px solid currentColor">
