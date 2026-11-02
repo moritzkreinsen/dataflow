@@ -181,6 +181,8 @@
   let saveTimer = null;
   let lastSavedAt = "";
   let sessionPassword = "";
+  let worldMapTopology = null;
+  let worldMapLoading = false;
   const appBase = boot.base || "./";
 
   const app = document.getElementById("app");
@@ -1482,20 +1484,77 @@
       <text x="18" y="28" font-size="13" fill="${fg}" opacity="0.58">Symbolkarte aus Latitude/Longitude</text>
       ${ranges}
       ${points}
+      <text x="${width - 14}" y="${height - 12}" text-anchor="end" font-size="10" fill="${fg}" opacity="0.5">Kartengrundlage: Natural Earth</text>
     </svg>`;
   }
 
   function worldMapShapes(width, height, land, coast) {
-    const paths = [
-      "M52 92 C88 65 152 54 207 74 C248 90 271 125 263 161 C251 209 206 220 194 259 C181 303 225 329 208 365 C195 392 151 369 126 333 C101 298 101 262 73 232 C42 199 20 145 52 92 Z",
-      "M250 287 C289 282 329 305 349 346 C368 385 355 438 318 471 C291 445 276 405 253 371 C233 342 216 309 250 287 Z",
-      "M413 122 C468 91 562 88 633 114 C695 137 746 178 781 235 C739 250 692 245 641 225 C603 210 568 229 531 251 C486 279 442 270 397 246 C366 229 358 153 413 122 Z",
-      "M469 242 C517 240 563 266 586 310 C613 361 589 424 540 457 C499 423 476 374 443 333 C416 299 419 252 469 242 Z",
-      "M643 176 C697 151 770 152 825 184 C872 211 916 258 904 316 C851 321 821 286 780 270 C731 251 679 252 638 224 C618 210 622 186 643 176 Z",
-      "M822 314 C870 309 929 333 956 369 C928 404 878 413 834 394 C798 378 786 329 822 314 Z",
-      "M419 56 C465 38 516 44 547 72 C525 96 467 98 429 84 C408 76 399 65 419 56 Z"
-    ];
-    return paths.map((path) => `<path d="${path}" transform="scale(${width / 1000} ${height / 500})" fill="${land}" stroke="${coast}" stroke-width="${1.2 / Math.max(width / 1000, height / 500)}" opacity="0.88"/>`).join("");
+    if (!worldMapTopology) {
+      loadWorldMap();
+      return "";
+    }
+    const paths = worldTopologyPaths(worldMapTopology, width, height);
+    return paths.map((path) => `<path d="${path}" fill="${land}" stroke="${coast}" stroke-width="0.6" opacity="0.9"/>`).join("");
+  }
+
+  async function loadWorldMap() {
+    if (worldMapTopology || worldMapLoading) return;
+    worldMapLoading = true;
+    try {
+      const response = await fetch(`${appBase}assets/data/world-110m.json`);
+      if (!response.ok) throw new Error("World map could not be loaded.");
+      worldMapTopology = await response.json();
+      const frame = document.querySelector(".preview-frame");
+      if (frame && state.chart.type === "map") frame.innerHTML = renderVisualization();
+    } catch (error) {
+      console.warn(error);
+    } finally {
+      worldMapLoading = false;
+    }
+  }
+
+  function worldTopologyPaths(topology, width, height) {
+    const object = topology.objects && topology.objects.countries;
+    if (!object || !Array.isArray(object.geometries)) return [];
+    return object.geometries.flatMap((geometry) => {
+      if (geometry.type === "Polygon") return polygonPath(geometry.arcs, topology, width, height);
+      if (geometry.type === "MultiPolygon") return geometry.arcs.flatMap((polygon) => polygonPath(polygon, topology, width, height));
+      return [];
+    });
+  }
+
+  function polygonPath(rings, topology, width, height) {
+    const d = rings.map((ring) => {
+      const points = ring.flatMap((arcIndex, index) => {
+        const arc = topologyArc(topology, arcIndex);
+        return index ? arc.slice(1) : arc;
+      });
+      return points.map((point, index) => `${index ? "L" : "M"}${mapX(point[0], width)},${mapY(point[1], height)}`).join("") + "Z";
+    }).join("");
+    return d ? [d] : [];
+  }
+
+  function topologyArc(topology, index) {
+    const reverse = index < 0;
+    const source = topology.arcs[reverse ? ~index : index] || [];
+    const scale = topology.transform ? topology.transform.scale : [1, 1];
+    const translate = topology.transform ? topology.transform.translate : [0, 0];
+    let x = 0;
+    let y = 0;
+    const points = source.map((point) => {
+      x += point[0];
+      y += point[1];
+      return [x * scale[0] + translate[0], y * scale[1] + translate[1]];
+    });
+    return reverse ? points.reverse() : points;
+  }
+
+  function mapX(lon, width) {
+    return ((lon + 180) / 360) * width;
+  }
+
+  function mapY(lat, height) {
+    return ((90 - lat) / 180) * height;
   }
 
   function renderTableViz() {
