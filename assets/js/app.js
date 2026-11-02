@@ -22,7 +22,7 @@
       aggregation: "Aggregation", sum: "Summe", average: "Durchschnitt", count: "Anzahl", sorting: "Sortierung", original: "Original", ascending: "Aufsteigend", descending: "Absteigend", category: "X / Kategorie", xValue: "X / Wert", yValue: "Y / Wert", group: "Gruppe / Serie", none: "Keine", label: "Beschriftung", automatic: "Automatisch", columns: "Spalten", tableOptions: "Tabelle", maximumRows: "Maximale Zeilen", sortBy: "Sortieren nach", originalOrder: "Originalreihenfolge", direction: "Richtung", visibleColumns: "Sichtbare Spalten",
       mapType: "Kartentyp", symbolMap: "Symbolkarte", locatorMap: "Locator-Karte", choroplethMap: "Flächenkarte", mapData: "Kartendaten", country: "Land / ISO-M49", countryHint: "Ländernamen müssen den englischen Namen der Weltkarte entsprechen (z. B. Germany) oder als ISO-M49-Code vorliegen (z. B. 276).", latitude: "Latitude", longitude: "Longitude", symbolSize: "Symbolgröße", uniform: "Einheitlich",
       axisLabels: "Achsenbeschriftungen", xAxis: "X-Achse", yAxis: "Y-Achse", columnLabel: "Spaltenlabel", customText: "Eigener Text", xAxisText: "Text unter der X-Achse", yAxisText: "Text an der Y-Achse", xAxisPlaceholder: "z. B. Monat oder Zeitraum", yAxisPlaceholder: "z. B. Umsatz in EUR",
-      appearance: "Darstellung", horizontalBars: "Balken horizontal", stackSeries: "Serien stapeln", showLegend: "Legende anzeigen", showGrid: "Raster anzeigen", showValues: "Werte beschriften", donut: "Kreis als Donut", smoothLines: "Linien glätten", waterfallTotal: "Gesamtsumme", primaryAxis: "Linke Y-Achse", secondaryAxis: "Rechte Y-Achse", secondaryAxisLabel: "Beschriftung der rechten Y-Achse", columnsAndLine: "Säulen und Linie", twoLines: "Zwei Linien",
+      appearance: "Darstellung", horizontalBars: "Balken horizontal", stackSeries: "Serien stapeln", stackPercent: "Auf 100 % stapeln", showLegend: "Legende anzeigen", showGrid: "Raster anzeigen", showValues: "Werte beschriften", showSymbols: "Punktmarker anzeigen", donut: "Kreis als Donut", smoothLines: "Linien glätten", waterfallTotal: "Gesamtsumme", primaryAxis: "Linke Y-Achse", secondaryAxis: "Rechte Y-Achse", secondaryAxisLabel: "Beschriftung der rechten Y-Achse", columnsAndLine: "Säulen und Linie", twoLines: "Zwei Linien",
       text: "Text", title: "Titel", titleSize: "Titelgröße", description: "Beschreibung", descriptionSize: "Beschreibung Schriftgröße", source: "Quelle", byline: "Byline", theme: "Theme", custom: "Eigene", color: "Farbe", background: "Hintergrund", darkPreview: "Dunkle Vorschau", font: "Schrift", fontSource: "Quelle", systemFont: "Systemschrift", googleFontUrl: "Google Font URL", ownFile: "Eigene Datei", ownFontFile: "Eigene Schriftdatei", active: "Aktiv", format: "Format", width: "Breite", height: "Höhe", padding: "Innenabstand", radius: "Radius",
       projectLink: "Projektlink", linkHint: "Wer diesen Link besitzt, kann das Projekt ansehen und bearbeiten. Es gibt keinen Login und keine Wiederherstellung ohne Link.", copy: "Kopieren", saveNow: "Jetzt speichern", txtLink: "TXT-Link", embed: "Einbetten", copyEmbed: "Embed kopieren", downloadSvg: "SVG herunterladen", downloadPng: "PNG herunterladen", privacy: "Datenschutz", privacyHint: "Die Daten liegen als JSON-Datei auf dem Webspace {domain}. Die zufällige URL ist der Zugriffsschutz; für sensible Daten kann zusätzlich der Passwortschutz unter „Daten“ aktiviert werden.", notSavedYet: "Noch nicht gespeichert",
       noData: "Noch keine Daten geladen.", selectColumn: "Mindestens eine Tabellenspalte auswählen.", previewAfterUpload: "Daten hochladen, dann erscheint hier die Vorschau.", chooseNumeric: "Für diese Visualisierung bitte eine numerische Wertespalte auswählen.", scatterNumeric: "Ein Punktdiagramm benötigt zwei numerische Spalten für X und Y.", choroplethNumeric: "Für eine Flächenkarte bitte eine Länder- und eine numerische Wertespalte auswählen.", mapCoordinates: "Für eine Karte bitte numerische Latitude- und Longitude-Spalten auswählen.", invalidCoordinates: "Die Koordinaten liegen außerhalb der gültigen Bereiche für Latitude und Longitude.", loadingChoropleth: "Flächenkarte wird geladen ...", mapSymbolDescription: "Symbolkarte aus Latitude- und Longitude-Daten", mapLocatorDescription: "Locator-Karte aus Latitude- und Longitude-Daten", mapChoroplethDescription: "Flächenkarte nach Ländern",
@@ -38,7 +38,7 @@
       aggregation: "Aggregation", sum: "Sum", average: "Average", count: "Count", sorting: "Sorting", original: "Original", ascending: "Ascending", descending: "Descending", category: "X / Category", xValue: "X / Value", yValue: "Y / Value", group: "Group / Series", none: "None", label: "Label", automatic: "Automatic", columns: "Columns", tableOptions: "Table", maximumRows: "Maximum rows", sortBy: "Sort by", originalOrder: "Original order", direction: "Direction", visibleColumns: "Visible columns",
       mapType: "Map type", symbolMap: "Symbol map", locatorMap: "Locator map", choroplethMap: "Choropleth map", mapData: "Map data", country: "Country / ISO-M49", countryHint: "Country names must match the English names in the world map (for example, Germany) or use ISO-M49 codes (for example, 276).", latitude: "Latitude", longitude: "Longitude", symbolSize: "Symbol size", uniform: "Uniform",
       axisLabels: "Axis labels", xAxis: "X axis", yAxis: "Y axis", columnLabel: "Column label", customText: "Custom text", xAxisText: "Text below the X axis", yAxisText: "Text beside the Y axis", xAxisPlaceholder: "e.g. month or period", yAxisPlaceholder: "e.g. revenue in EUR",
-      appearance: "Appearance", horizontalBars: "Horizontal bars", stackSeries: "Stack series", showLegend: "Show legend", showGrid: "Show grid", showValues: "Show values", donut: "Show as donut", smoothLines: "Smooth lines", waterfallTotal: "Total", primaryAxis: "Left Y axis", secondaryAxis: "Right Y axis", secondaryAxisLabel: "Right Y-axis label", columnsAndLine: "Columns and line", twoLines: "Two lines",
+      appearance: "Appearance", horizontalBars: "Horizontal bars", stackSeries: "Stack series", stackPercent: "Stack to 100%", showLegend: "Show legend", showGrid: "Show grid", showValues: "Show values", showSymbols: "Show point markers", donut: "Show as donut", smoothLines: "Smooth lines", waterfallTotal: "Total", primaryAxis: "Left Y axis", secondaryAxis: "Right Y axis", secondaryAxisLabel: "Right Y-axis label", columnsAndLine: "Columns and line", twoLines: "Two lines",
       text: "Text", title: "Title", titleSize: "Title size", description: "Description", descriptionSize: "Description font size", source: "Source", byline: "Byline", theme: "Theme", custom: "Custom", color: "Color", background: "Background", darkPreview: "Dark preview", font: "Font", fontSource: "Source", systemFont: "System font", googleFontUrl: "Google Font URL", ownFile: "Own file", ownFontFile: "Own font file", active: "Active", format: "Format", width: "Width", height: "Height", padding: "Padding", radius: "Radius",
       projectLink: "Project link", linkHint: "Anyone with this link can view and edit the project. There is no login and no recovery without the link.", copy: "Copy", saveNow: "Save now", txtLink: "TXT link", embed: "Embed", copyEmbed: "Copy embed", downloadSvg: "Download SVG", downloadPng: "Download PNG", privacy: "Privacy", privacyHint: "The data is stored as a JSON file on the webspace {domain}. The random URL protects access; password protection can also be enabled under “Data” for sensitive data.", notSavedYet: "Not saved yet",
       noData: "No data loaded yet.", selectColumn: "Select at least one table column.", previewAfterUpload: "Upload data to see the preview.", chooseNumeric: "Select a numeric value column for this visualization.", scatterNumeric: "A scatter chart needs two numeric columns for X and Y.", choroplethNumeric: "A choropleth map needs a country column and a numeric value column.", mapCoordinates: "A map needs numeric latitude and longitude columns.", invalidCoordinates: "The coordinates are outside the valid latitude and longitude ranges.", loadingChoropleth: "Loading choropleth map ...", mapSymbolDescription: "Symbol map from latitude and longitude data", mapLocatorDescription: "Locator map from latitude and longitude data", mapChoroplethDescription: "Choropleth map by country",
@@ -276,9 +276,11 @@
       sort: "none",
       horizontal: false,
       stacked: false,
+      stackedPercent: false,
       showLegend: true,
       showGrid: true,
       showLabels: false,
+      showSymbols: true,
       waterfallTotal: true,
       xAxisLabelMode: "none",
       xAxisLabel: "",
@@ -868,11 +870,11 @@
 
   function renderVisualizeAppearance(type) {
     const controls = [];
-    if (type === "bar") controls.push(toggle("chart.horizontal", t("horizontalBars")), toggle("chart.stacked", t("stackSeries")));
+    if (type === "bar") controls.push(toggle("chart.horizontal", t("horizontalBars")), toggle("chart.stacked", t("stackSeries")), !state.chart.horizontal ? toggle("chart.stackedPercent", t("stackPercent")) : "");
     if (["bar", "barHorizontal", "line", "area", "dot", "dual"].includes(type)) controls.push(toggle("chart.showLegend", t("showLegend")));
     if (["bar", "barHorizontal", "line", "area", "dot", "scatter", "dual", "waterfall"].includes(type)) controls.push(toggle("chart.showGrid", t("showGrid")));
     if (["bar", "barHorizontal", "line", "area", "dot", "scatter", "dual", "waterfall", "heatmap"].includes(type)) controls.push(toggle("chart.showLabels", t("showValues")));
-    if (["line", "area"].includes(type)) controls.push(toggle("chart.curve", t("smoothLines")));
+    if (["line", "area"].includes(type)) controls.push(toggle("chart.curve", t("smoothLines")), toggle("chart.showSymbols", t("showSymbols")));
     if (type === "waterfall") controls.push(toggle("chart.waterfallTotal", t("waterfallTotal")));
     if (type === "pie") controls.push(toggle("chart.donut", t("donut")));
     return controls.length ? `<div class="panel"><h2 class="panel-title">${esc(t("appearance"))}</h2>${controls.join("")}</div>` : "";
@@ -1562,14 +1564,16 @@
       h: height - pad - 46 - xAxisTitleSpace - legendHeight
     };
     const totals = xValues.map((_, index) => matrix.reduce((sum, row) => sum + Math.max(0, row[index]), 0));
-    const max = Math.max(1, ...(state.chart.stacked ? totals : matrix.flat()).map(Math.abs));
+    const percentStacked = state.chart.stackedPercent && !state.chart.horizontal && type === "bar";
+    const displayMatrix = percentStacked ? matrix.map((row) => row.map((value, index) => totals[index] ? value / totals[index] * 100 : 0)) : matrix;
+    const max = percentStacked ? 100 : Math.max(1, ...(isStackedSeries() ? totals : displayMatrix.flat()).map(Math.abs));
     const colors = chartColors();
     const fg = state.style.dark ? "#f7f7f1" : state.style.textColor;
     const muted = state.style.dark ? "#8d949b" : "#6b7077";
-    const grid = state.chart.showGrid ? gridLines(plot, max, fg) : "";
+    const grid = state.chart.showGrid ? gridLines(plot, max, fg, percentStacked) : "";
 
     let body = "";
-    if (type === "bar") body = state.chart.horizontal ? horizontalBars(xValues, groups, matrix, plot, max, colors, fg) : verticalBars(xValues, groups, matrix, plot, max, colors, fg);
+    if (type === "bar") body = state.chart.horizontal ? horizontalBars(xValues, groups, matrix, plot, max, colors, fg) : verticalBars(xValues, groups, displayMatrix, plot, max, colors, fg, percentStacked);
     if (type === "barHorizontal") body = horizontalBars(xValues, groups, matrix, plot, max, colors, fg);
     if (type === "line" || type === "area") body = lineChart(type, xValues, groups, matrix, plot, max, colors, fg);
 
@@ -1581,14 +1585,19 @@
     </svg>`;
   }
 
-  function gridLines(plot, max, fg) {
+  function gridLines(plot, max, fg, percent) {
     let out = "";
     for (let i = 0; i <= 4; i += 1) {
       const y = plot.y + plot.h - (plot.h * i / 4);
       out += `<line x1="${plot.x}" y1="${y}" x2="${plot.x + plot.w}" y2="${y}" stroke="${fg}" opacity="0.12"/>`;
-      out += `<text x="${plot.x - 8}" y="${y + 4}" text-anchor="end" font-size="11" fill="${fg}" opacity="0.62">${format(max * i / 4)}</text>`;
+      const value = max * i / 4;
+      out += `<text x="${plot.x - 8}" y="${y + 4}" text-anchor="end" font-size="11" fill="${fg}" opacity="0.62">${percent ? `${format(value)} %` : format(value)}</text>`;
     }
     return out;
+  }
+
+  function isStackedSeries() {
+    return state.chart.stacked || state.chart.stackedPercent;
   }
 
   function axisTitle(axis) {
@@ -1613,7 +1622,7 @@
     return categories + `<line x1="${plot.x}" y1="${plot.y + plot.h}" x2="${plot.x + plot.w}" y2="${plot.y + plot.h}" stroke="${fg}" opacity="0.25"/>` + xTitle + yTitle;
   }
 
-  function verticalBars(xValues, groups, matrix, plot, max, colors, fg) {
+  function verticalBars(xValues, groups, matrix, plot, max, colors, fg, percent) {
     const step = plot.w / Math.max(1, xValues.length);
     const gap = Math.min(18, step * 0.22);
     let out = "";
@@ -1622,15 +1631,16 @@
       groups.forEach((group, gi) => {
         const value = matrix[gi][xi];
         const h = Math.abs(value) / max * plot.h;
-        const barW = state.chart.stacked ? step - gap : (step - gap) / groups.length;
-        const x = plot.x + step * xi + gap / 2 + (state.chart.stacked ? 0 : gi * barW);
-        const y = state.chart.stacked ? stackedY - h : plot.y + plot.h - h;
+        const stacked = isStackedSeries();
+        const barW = stacked ? step - gap : (step - gap) / groups.length;
+        const x = plot.x + step * xi + gap / 2 + (stacked ? 0 : gi * barW);
+        const y = stacked ? stackedY - h : plot.y + plot.h - h;
         stackedY = y;
         out += `<rect x="${x}" y="${y}" width="${Math.max(1, barW - 2)}" height="${h}" rx="${state.style.rounded}" fill="${colors[gi % colors.length]}"><title>${esc(group)}: ${format(value)}</title></rect>`;
         if (state.chart.showLabels) {
           const inside = h >= 22;
           const labelY = inside ? y + Math.min(h - 6, h / 2 + 4) : Math.max(plot.y + 11, y - 4);
-          out += `<text x="${x + barW / 2}" y="${labelY}" text-anchor="middle" font-size="11" font-weight="650" fill="${fg}">${format(value)}</text>`;
+          out += `<text x="${x + barW / 2}" y="${labelY}" text-anchor="middle" font-size="11" font-weight="650" fill="${fg}">${percent ? `${format(value)} %` : format(value)}</text>`;
         }
       });
     });
@@ -1659,7 +1669,7 @@
       });
       const d = state.chart.curve ? smoothLinePath(points) : points.map((p, i) => `${i ? "L" : "M"}${p[0]},${p[1]}`).join(" ");
       const area = type === "area" ? `<path d="${d} L${points[points.length - 1][0]},${plot.y + plot.h} L${points[0][0]},${plot.y + plot.h} Z" fill="${colors[gi % colors.length]}" opacity="0.16"/>` : "";
-      const dots = points.map((p) => `<circle cx="${p[0]}" cy="${p[1]}" r="4" fill="${colors[gi % colors.length]}"><title>${esc(group)}: ${format(p[2])}</title></circle>`).join("");
+      const dots = state.chart.showSymbols ? points.map((p) => `<circle cx="${p[0]}" cy="${p[1]}" r="4" fill="${colors[gi % colors.length]}"><title>${esc(group)}: ${format(p[2])}</title></circle>`).join("") : "";
       const labels = state.chart.showLabels ? points.map((p, index) => lineValueLabel(p, index, points.length, gi, groups.length, plot, fg)).join("") : "";
       return `${area}<path d="${d}" fill="none" stroke="${colors[gi % colors.length]}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>${dots}${labels}`;
     }).join("");
