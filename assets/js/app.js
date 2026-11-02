@@ -18,11 +18,11 @@
       creating: "Erstellen", demo: "Demo", workflow: "Workflow", saving: "Speichert...", saved: "Gespeichert", ready: "Bereit", localProject: "Lokales Projekt", copied: "Kopiert", notSaved: "Nicht gespeichert",
       uploadData: "Daten hochladen", dropData: "CSV, TSV oder JSON hier ablegen", uploadHint: "Die erste Zeile wird als Spaltenkopf gelesen. JSON sollte ein Array aus Objekten sein.", fileChoose: "Datei auswählen", pasteData: "Direkt einfügen", pasteExample: "Jahr,Produkt,Umsatz\n2024,Atlas,91", importData: "Daten übernehmen", rowsColumns: "{rows} Zeilen, {columns} Spalten",
       passwordProtection: "Passwortschutz", encryptedStored: "Die Daten sind sicher verschlüsselt gespeichert. Methode: {method}.", encryptedWith: "Die Daten sind sicher mit {method} verschlüsselt. Ohne Passwort können Personen mit Webspace-Zugriff die gespeicherten Daten nicht entschlüsseln.", enterPassword: "Passwort eingeben", decryptData: "Daten entschlüsseln", passwordToRemove: "Passwort zum Entfernen", removeProtection: "Passwortschutz entfernen", unencryptedStored: "Die Daten liegen derzeit unverschlüsselt auf dem Server.", setPassword: "Passwort festlegen", confirmPassword: "Passwort wiederholen", encryptData: "Mit Passwort verschlüsseln",
-      visualization: "Visualisierung", bar: "Säulen", horizontalBar: "Balken", line: "Linie", area: "Fläche", dot: "Dot-Plot", scatter: "Streudiagramm", pie: "Kreis", waterfall: "Waterfall", table: "Tabelle", cards: "Kennzahlen", heatmap: "Heatmap", map: "Karte",
+      visualization: "Visualisierung", bar: "Säulen", horizontalBar: "Balken", line: "Linie", area: "Fläche", dot: "Dot-Plot", scatter: "Streudiagramm", pie: "Kreis", dual: "Zwei Y-Achsen", waterfall: "Waterfall", table: "Tabelle", cards: "Kennzahlen", heatmap: "Heatmap", map: "Karte",
       aggregation: "Aggregation", sum: "Summe", average: "Durchschnitt", count: "Anzahl", sorting: "Sortierung", original: "Original", ascending: "Aufsteigend", descending: "Absteigend", category: "X / Kategorie", xValue: "X / Wert", yValue: "Y / Wert", group: "Gruppe / Serie", none: "Keine", label: "Beschriftung", automatic: "Automatisch", columns: "Spalten", tableOptions: "Tabelle", maximumRows: "Maximale Zeilen", sortBy: "Sortieren nach", originalOrder: "Originalreihenfolge", direction: "Richtung", visibleColumns: "Sichtbare Spalten",
       mapType: "Kartentyp", symbolMap: "Symbolkarte", locatorMap: "Locator-Karte", choroplethMap: "Flächenkarte", mapData: "Kartendaten", country: "Land / ISO-M49", countryHint: "Ländernamen müssen den englischen Namen der Weltkarte entsprechen (z. B. Germany) oder als ISO-M49-Code vorliegen (z. B. 276).", latitude: "Latitude", longitude: "Longitude", symbolSize: "Symbolgröße", uniform: "Einheitlich",
       axisLabels: "Achsenbeschriftungen", xAxis: "X-Achse", yAxis: "Y-Achse", columnLabel: "Spaltenlabel", customText: "Eigener Text", xAxisText: "Text unter der X-Achse", yAxisText: "Text an der Y-Achse", xAxisPlaceholder: "z. B. Monat oder Zeitraum", yAxisPlaceholder: "z. B. Umsatz in EUR",
-      appearance: "Darstellung", horizontalBars: "Balken horizontal", stackSeries: "Serien stapeln", showLegend: "Legende anzeigen", showGrid: "Raster anzeigen", showValues: "Werte beschriften", donut: "Kreis als Donut", smoothLines: "Linien glätten", waterfallTotal: "Gesamtsumme",
+      appearance: "Darstellung", horizontalBars: "Balken horizontal", stackSeries: "Serien stapeln", showLegend: "Legende anzeigen", showGrid: "Raster anzeigen", showValues: "Werte beschriften", donut: "Kreis als Donut", smoothLines: "Linien glätten", waterfallTotal: "Gesamtsumme", primaryAxis: "Linke Y-Achse", secondaryAxis: "Rechte Y-Achse", secondaryAxisLabel: "Beschriftung der rechten Y-Achse", columnsAndLine: "Säulen und Linie", twoLines: "Zwei Linien",
       text: "Text", title: "Titel", titleSize: "Titelgröße", description: "Beschreibung", descriptionSize: "Beschreibung Schriftgröße", source: "Quelle", byline: "Byline", theme: "Theme", custom: "Eigene", color: "Farbe", background: "Hintergrund", darkPreview: "Dunkle Vorschau", font: "Schrift", fontSource: "Quelle", systemFont: "Systemschrift", googleFontUrl: "Google Font URL", ownFile: "Eigene Datei", ownFontFile: "Eigene Schriftdatei", active: "Aktiv", format: "Format", width: "Breite", height: "Höhe", padding: "Innenabstand", radius: "Radius",
       projectLink: "Projektlink", linkHint: "Wer diesen Link besitzt, kann das Projekt ansehen und bearbeiten. Es gibt keinen Login und keine Wiederherstellung ohne Link.", copy: "Kopieren", saveNow: "Jetzt speichern", txtLink: "TXT-Link", embed: "Einbetten", copyEmbed: "Embed kopieren", downloadSvg: "SVG herunterladen", downloadPng: "PNG herunterladen", privacy: "Datenschutz", privacyHint: "Die Daten liegen als JSON-Datei auf dem Webspace {domain}. Die zufällige URL ist der Zugriffsschutz; für sensible Daten kann zusätzlich der Passwortschutz unter „Daten“ aktiviert werden.", notSavedYet: "Noch nicht gespeichert",
       noData: "Noch keine Daten geladen.", selectColumn: "Mindestens eine Tabellenspalte auswählen.", previewAfterUpload: "Daten hochladen, dann erscheint hier die Vorschau.", chooseNumeric: "Für diese Visualisierung bitte eine numerische Wertespalte auswählen.", scatterNumeric: "Ein Punktdiagramm benötigt zwei numerische Spalten für X und Y.", choroplethNumeric: "Für eine Flächenkarte bitte eine Länder- und eine numerische Wertespalte auswählen.", mapCoordinates: "Für eine Karte bitte numerische Latitude- und Longitude-Spalten auswählen.", invalidCoordinates: "Die Koordinaten liegen außerhalb der gültigen Bereiche für Latitude und Longitude.", loadingChoropleth: "Flächenkarte wird geladen ...", mapSymbolDescription: "Symbolkarte aus Latitude- und Longitude-Daten", mapLocatorDescription: "Locator-Karte aus Latitude- und Longitude-Daten", mapChoroplethDescription: "Flächenkarte nach Ländern",
@@ -34,11 +34,11 @@
       creating: "Create", demo: "Demo", workflow: "Workflow", saving: "Saving...", saved: "Saved", ready: "Ready", localProject: "Local project", copied: "Copied", notSaved: "Not saved",
       uploadData: "Upload data", dropData: "Drop CSV, TSV, or JSON here", uploadHint: "The first row is read as column headers. JSON should be an array of objects.", fileChoose: "Choose file", pasteData: "Paste directly", pasteExample: "Year,Product,Revenue\n2024,Atlas,91", importData: "Import data", rowsColumns: "{rows} rows, {columns} columns",
       passwordProtection: "Password protection", encryptedStored: "The data is securely stored encrypted. Method: {method}.", encryptedWith: "The data is securely encrypted with {method}. Without the password, people with webspace access cannot decrypt the stored data.", enterPassword: "Enter password", decryptData: "Decrypt data", passwordToRemove: "Password to remove protection", removeProtection: "Remove password protection", unencryptedStored: "The data is currently stored unencrypted on the server.", setPassword: "Set password", confirmPassword: "Repeat password", encryptData: "Encrypt with password",
-      visualization: "Visualization", bar: "Column", horizontalBar: "Bar", line: "Line", area: "Area", dot: "Dot plot", scatter: "Scatter", pie: "Pie", waterfall: "Waterfall", table: "Table", cards: "Metrics", heatmap: "Heatmap", map: "Map",
+      visualization: "Visualization", bar: "Column", horizontalBar: "Bar", line: "Line", area: "Area", dot: "Dot plot", scatter: "Scatter", pie: "Pie", dual: "Dual axis", waterfall: "Waterfall", table: "Table", cards: "Metrics", heatmap: "Heatmap", map: "Map",
       aggregation: "Aggregation", sum: "Sum", average: "Average", count: "Count", sorting: "Sorting", original: "Original", ascending: "Ascending", descending: "Descending", category: "X / Category", xValue: "X / Value", yValue: "Y / Value", group: "Group / Series", none: "None", label: "Label", automatic: "Automatic", columns: "Columns", tableOptions: "Table", maximumRows: "Maximum rows", sortBy: "Sort by", originalOrder: "Original order", direction: "Direction", visibleColumns: "Visible columns",
       mapType: "Map type", symbolMap: "Symbol map", locatorMap: "Locator map", choroplethMap: "Choropleth map", mapData: "Map data", country: "Country / ISO-M49", countryHint: "Country names must match the English names in the world map (for example, Germany) or use ISO-M49 codes (for example, 276).", latitude: "Latitude", longitude: "Longitude", symbolSize: "Symbol size", uniform: "Uniform",
       axisLabels: "Axis labels", xAxis: "X axis", yAxis: "Y axis", columnLabel: "Column label", customText: "Custom text", xAxisText: "Text below the X axis", yAxisText: "Text beside the Y axis", xAxisPlaceholder: "e.g. month or period", yAxisPlaceholder: "e.g. revenue in EUR",
-      appearance: "Appearance", horizontalBars: "Horizontal bars", stackSeries: "Stack series", showLegend: "Show legend", showGrid: "Show grid", showValues: "Show values", donut: "Show as donut", smoothLines: "Smooth lines", waterfallTotal: "Total",
+      appearance: "Appearance", horizontalBars: "Horizontal bars", stackSeries: "Stack series", showLegend: "Show legend", showGrid: "Show grid", showValues: "Show values", donut: "Show as donut", smoothLines: "Smooth lines", waterfallTotal: "Total", primaryAxis: "Left Y axis", secondaryAxis: "Right Y axis", secondaryAxisLabel: "Right Y-axis label", columnsAndLine: "Columns and line", twoLines: "Two lines",
       text: "Text", title: "Title", titleSize: "Title size", description: "Description", descriptionSize: "Description font size", source: "Source", byline: "Byline", theme: "Theme", custom: "Custom", color: "Color", background: "Background", darkPreview: "Dark preview", font: "Font", fontSource: "Source", systemFont: "System font", googleFontUrl: "Google Font URL", ownFile: "Own file", ownFontFile: "Own font file", active: "Active", format: "Format", width: "Width", height: "Height", padding: "Padding", radius: "Radius",
       projectLink: "Project link", linkHint: "Anyone with this link can view and edit the project. There is no login and no recovery without the link.", copy: "Copy", saveNow: "Save now", txtLink: "TXT link", embed: "Embed", copyEmbed: "Copy embed", downloadSvg: "Download SVG", downloadPng: "Download PNG", privacy: "Privacy", privacyHint: "The data is stored as a JSON file on the webspace {domain}. The random URL protects access; password protection can also be enabled under “Data” for sensitive data.", notSavedYet: "Not saved yet",
       noData: "No data loaded yet.", selectColumn: "Select at least one table column.", previewAfterUpload: "Upload data to see the preview.", chooseNumeric: "Select a numeric value column for this visualization.", scatterNumeric: "A scatter chart needs two numeric columns for X and Y.", choroplethNumeric: "A choropleth map needs a country column and a numeric value column.", mapCoordinates: "A map needs numeric latitude and longitude columns.", invalidCoordinates: "The coordinates are outside the valid latitude and longitude ranges.", loadingChoropleth: "Loading choropleth map ...", mapSymbolDescription: "Symbol map from latitude and longitude data", mapLocatorDescription: "Locator map from latitude and longitude data", mapChoroplethDescription: "Choropleth map by country",
@@ -267,6 +267,7 @@
       type: "bar",
       x: "Jahr",
       y: "Umsatz",
+      y2: "",
       group: "Produkt",
       lat: "Lat",
       lon: "Lon",
@@ -283,6 +284,8 @@
       xAxisLabel: "",
       yAxisLabelMode: "none",
       yAxisLabel: "",
+      y2AxisLabel: "",
+      dualMode: "columns-line",
       curve: false,
       donut: true,
       tableLimit: 100,
@@ -756,7 +759,7 @@
 
   function renderVisualize() {
     const type = state.chart.type;
-    const axisTypes = ["bar", "barHorizontal", "line", "area", "dot", "scatter", "waterfall", "heatmap"];
+    const axisTypes = ["bar", "barHorizontal", "line", "area", "dot", "scatter", "dual", "waterfall", "heatmap"];
     return `
       <div class="panel">
         <h2 class="panel-title">${esc(t("visualization"))}</h2>
@@ -768,6 +771,7 @@
           ${typeButton("dot", t("dot"), iconDot())}
           ${typeButton("scatter", t("scatter"), iconScatter())}
           ${typeButton("pie", t("pie"), iconPie())}
+          ${typeButton("dual", t("dual"), iconDualAxis())}
           ${typeButton("waterfall", t("waterfall"), iconWaterfall())}
           ${typeButton("table", t("table"), iconTable())}
           ${typeButton("cards", t("cards"), iconCards())}
@@ -795,6 +799,7 @@
     const category = `<label>${esc(t("category"))}<select data-bind="chart.x">${columnOptions(state.chart.x, false)}</select></label>`;
     const numericX = `<label>${esc(t("xValue"))}<select data-bind="chart.x">${columnOptions(state.chart.x, true)}</select></label>`;
     const value = `<label>${esc(t("yValue"))}<select data-bind="chart.y">${columnOptions(state.chart.y, true)}</select></label>`;
+    const secondaryValue = `<label>${esc(t("secondaryAxis"))}<select data-bind="chart.y2">${columnOptions(state.chart.y2, true)}</select></label>`;
     const group = `<label>${esc(t("group"))}<select data-bind="chart.group"><option value="">${esc(t("none"))}</option>${columnOptions(state.chart.group, false)}</select></label>`;
     const label = `<label>${esc(t("label"))}<select data-bind="chart.label"><option value="">${esc(t("automatic"))}</option>${columnOptions(state.chart.label, false)}</select></label>`;
 
@@ -821,6 +826,15 @@
     }
     if (type === "scatter") {
       return `<div class="panel"><h2 class="panel-title">${esc(t("columns"))}</h2><div class="field-row">${numericX}${value}</div><div class="field-row">${label}</div></div>`;
+    }
+    if (type === "dual") {
+      return `<div class="panel"><h2 class="panel-title">${esc(t("columns"))}</h2>
+        <label>${esc(t("category"))}<select data-bind="chart.x">${columnOptions(state.chart.x, false)}</select></label>
+        <div class="field-row"><label>${esc(t("primaryAxis"))}<select data-bind="chart.y">${columnOptions(state.chart.y, true)}</select></label>${secondaryValue}</div>
+        <div class="field-row">${aggregation}${sorting}</div>
+        <label>${esc(t("appearance"))}<select data-bind="chart.dualMode">${option("columns-line", t("columnsAndLine"), state.chart.dualMode)}${option("lines", t("twoLines"), state.chart.dualMode)}</select></label>
+        <label>${esc(t("secondaryAxisLabel"))}<input data-bind="chart.y2AxisLabel" value="${esc(state.chart.y2AxisLabel || "")}" placeholder="${esc(state.chart.y2 || "")}"></label>
+      </div>`;
     }
     if (type === "pie" || type === "cards" || type === "waterfall") {
       return `<div class="panel"><h2 class="panel-title">${esc(t("columns"))}</h2><div class="field-row">${category}${value}</div><div class="field-row">${aggregation}${sorting}</div></div>`;
@@ -855,9 +869,9 @@
   function renderVisualizeAppearance(type) {
     const controls = [];
     if (type === "bar") controls.push(toggle("chart.horizontal", t("horizontalBars")), toggle("chart.stacked", t("stackSeries")));
-    if (["bar", "barHorizontal", "line", "area", "dot"].includes(type)) controls.push(toggle("chart.showLegend", t("showLegend")));
-    if (["bar", "barHorizontal", "line", "area", "dot", "scatter", "waterfall"].includes(type)) controls.push(toggle("chart.showGrid", t("showGrid")));
-    if (["bar", "barHorizontal", "line", "area", "dot", "scatter", "waterfall", "heatmap"].includes(type)) controls.push(toggle("chart.showLabels", t("showValues")));
+    if (["bar", "barHorizontal", "line", "area", "dot", "dual"].includes(type)) controls.push(toggle("chart.showLegend", t("showLegend")));
+    if (["bar", "barHorizontal", "line", "area", "dot", "scatter", "dual", "waterfall"].includes(type)) controls.push(toggle("chart.showGrid", t("showGrid")));
+    if (["bar", "barHorizontal", "line", "area", "dot", "scatter", "dual", "waterfall", "heatmap"].includes(type)) controls.push(toggle("chart.showLabels", t("showValues")));
     if (["line", "area"].includes(type)) controls.push(toggle("chart.curve", t("smoothLines")));
     if (type === "waterfall") controls.push(toggle("chart.waterfallTotal", t("waterfallTotal")));
     if (type === "pie") controls.push(toggle("chart.donut", t("donut")));
@@ -1413,6 +1427,12 @@
         state.chart.y = numeric.find((col) => col !== state.chart.x) || numeric[0] || "";
       }
     }
+    if (state.chart.type === "dual") {
+      if (!numeric.includes(state.chart.y)) state.chart.y = numeric[0] || "";
+      if (!numeric.includes(state.chart.y2) || state.chart.y2 === state.chart.y) {
+        state.chart.y2 = numeric.find((column) => column !== state.chart.y) || numeric[0] || "";
+      }
+    }
     if (state.chart.type === "map") {
       if (state.chart.mapMode === "choropleth") {
         if (!columns().includes(state.chart.mapRegion)) state.chart.mapRegion = state.chart.x || columns()[0] || "";
@@ -1446,6 +1466,7 @@
     if (state.chart.type === "table") return renderTableViz();
     if (state.chart.type === "cards") return renderCards();
     if (state.chart.type === "pie") return renderPie();
+    if (state.chart.type === "dual") return renderDualAxis();
     if (state.chart.type === "dot") return renderDotPlot();
     if (state.chart.type === "scatter") return renderScatter();
     if (state.chart.type === "waterfall") return renderWaterfall();
@@ -1463,6 +1484,9 @@
       if (!isNumericColumn(state.chart.x) || !isNumericColumn(state.chart.y)) {
         return t("scatterNumeric");
       }
+    }
+    if (state.chart.type === "dual") {
+      if (!isNumericColumn(state.chart.y) || !isNumericColumn(state.chart.y2)) return t("chooseNumeric");
     }
     if (state.chart.type === "map" && state.chart.mapMode === "choropleth") {
       if (!columns().includes(state.chart.mapRegion) || !isNumericColumn(state.chart.y)) {
@@ -1691,6 +1715,84 @@
     }).join("");
     const labels = data.map((d, index) => `<rect x="${width * 0.68}" y="${height * 0.2 + index * 24}" width="12" height="12" rx="2" fill="${colors[index % colors.length]}"/><text x="${width * 0.68 + 18}" y="${height * 0.2 + index * 24 + 11}" font-size="13" fill="${fg}">${esc(shorten(d.x, 22))} ${format(d.value)}</text>`).join("");
     return `<svg viewBox="0 0 ${width} ${height}" role="img">${slices}${labels}</svg>`;
+  }
+
+  function aggregateColumnByCategory(column) {
+    const values = new Map();
+    state.data.rows.forEach((row, index) => {
+      const category = String(row[state.chart.x] ?? `${t("row")} ${index + 1}`);
+      const entry = values.get(category) || { x: category, sum: 0, count: 0 };
+      entry.sum += state.chart.aggregate === "count" ? 1 : num(row[column]);
+      entry.count += 1;
+      values.set(category, entry);
+    });
+    const rows = Array.from(values.values()).map((entry) => ({
+      x: entry.x,
+      value: state.chart.aggregate === "avg" ? entry.sum / Math.max(1, entry.count) : entry.sum
+    }));
+    if (state.chart.sort === "asc") rows.sort((left, right) => left.value - right.value);
+    if (state.chart.sort === "desc") rows.sort((left, right) => right.value - left.value);
+    return rows;
+  }
+
+  function renderDualAxis() {
+    const primary = aggregateColumnByCategory(state.chart.y);
+    const secondaryByCategory = new Map(aggregateColumnByCategory(state.chart.y2).map((row) => [row.x, row.value]));
+    const width = Number(state.style.width) || 860;
+    const height = Number(state.style.height) || 440;
+    const xTitle = axisTitle("x");
+    const yTitle = axisTitle("y");
+    const y2Title = String(state.chart.y2AxisLabel || state.chart.y2 || "");
+    const plot = { x: 76 + (yTitle ? 20 : 0), y: 20, w: width - 152 - (yTitle ? 20 : 0) - (y2Title ? 20 : 0), h: height - 78 - (xTitle ? 22 : 0) };
+    const primaryValues = primary.map((row) => row.value);
+    const secondaryValues = primary.map((row) => secondaryByCategory.get(row.x) || 0);
+    const minPrimary = Math.min(0, ...primaryValues);
+    const maxPrimary = Math.max(1, ...primaryValues);
+    const minSecondary = Math.min(0, ...secondaryValues);
+    const maxSecondary = Math.max(1, ...secondaryValues);
+    const colors = chartColors();
+    const fg = state.style.dark ? "#f7f7f1" : state.style.textColor;
+    const muted = state.style.dark ? "#8d949b" : "#6b7077";
+    const steps = primary.length;
+    const step = plot.w / Math.max(1, steps);
+    const grid = state.chart.showGrid ? Array.from({ length: 5 }, (_, index) => {
+      const ratio = index / 4;
+      const y = plot.y + plot.h - plot.h * ratio;
+      const primaryValue = minPrimary + (maxPrimary - minPrimary) * ratio;
+      const secondaryValue = minSecondary + (maxSecondary - minSecondary) * ratio;
+      return `<line x1="${plot.x}" y1="${y}" x2="${plot.x + plot.w}" y2="${y}" stroke="${fg}" opacity="0.12"/><text x="${plot.x - 8}" y="${y + 4}" text-anchor="end" font-size="11" fill="${muted}">${format(primaryValue)}</text><text x="${plot.x + plot.w + 8}" y="${y + 4}" font-size="11" fill="${muted}">${format(secondaryValue)}</text>`;
+    }).join("") : "";
+    const columns = state.chart.dualMode === "columns-line" ? primary.map((row, index) => {
+      const value = row.value;
+      const zeroY = plot.y + plot.h - scaleRange(0, minPrimary, maxPrimary, plot.h);
+      const valueY = plot.y + plot.h - scaleRange(value, minPrimary, maxPrimary, plot.h);
+      const x = plot.x + index * step + step * 0.22;
+      const barWidth = step * 0.56;
+      const y = Math.min(zeroY, valueY);
+      const barHeight = Math.max(1, Math.abs(valueY - zeroY));
+      const label = state.chart.showLabels ? `<text x="${x + barWidth / 2}" y="${value >= 0 ? y - 5 : y + barHeight + 13}" text-anchor="middle" font-size="11" font-weight="650" fill="${fg}">${format(value)}</text>` : "";
+      return `<rect x="${x}" y="${y}" width="${barWidth}" height="${barHeight}" rx="${state.style.rounded}" fill="${colors[0]}"><title>${esc(state.chart.y)}: ${format(value)}</title></rect>${label}`;
+    }).join("") : "";
+    const linePoints = primary.map((row, index) => {
+      const value = secondaryByCategory.get(row.x) || 0;
+      return [plot.x + index * step + step / 2, plot.y + plot.h - scaleRange(value, minSecondary, maxSecondary, plot.h), value];
+    });
+    const primaryLinePoints = primary.map((row, index) => [plot.x + index * step + step / 2, plot.y + plot.h - scaleRange(row.value, minPrimary, maxPrimary, plot.h), row.value]);
+    const primaryLine = state.chart.dualMode === "lines" ? dualLine(primaryLinePoints, colors[0], fg, state.chart.y, state.chart.showLabels) : "";
+    const secondaryLine = dualLine(linePoints, colors[1 % colors.length], fg, state.chart.y2, state.chart.showLabels);
+    const categoryLabels = primary.map((row, index) => `<text x="${plot.x + index * step + step / 2}" y="${plot.y + plot.h + 21}" text-anchor="middle" font-size="11" fill="${muted}">${esc(shorten(row.x, 12))}</text>`).join("");
+    const xAxis = `<line x1="${plot.x}" y1="${plot.y + plot.h}" x2="${plot.x + plot.w}" y2="${plot.y + plot.h}" stroke="${fg}" opacity="0.25"/>`;
+    const xLabel = xTitle ? `<text x="${plot.x + plot.w / 2}" y="${height - 8}" text-anchor="middle" font-size="12" font-weight="650" fill="${fg}">${esc(xTitle)}</text>` : "";
+    const leftLabel = yTitle ? `<text x="18" y="${plot.y + plot.h / 2}" text-anchor="middle" font-size="12" font-weight="650" fill="${fg}" transform="rotate(-90 18 ${plot.y + plot.h / 2})">${esc(yTitle)}</text>` : "";
+    const rightLabel = y2Title ? `<text x="${width - 16}" y="${plot.y + plot.h / 2}" text-anchor="middle" font-size="12" font-weight="650" fill="${fg}" transform="rotate(90 ${width - 16} ${plot.y + plot.h / 2})">${esc(y2Title)}</text>` : "";
+    return `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${esc(state.meta.title)}">${grid}${xAxis}${columns}${primaryLine}${secondaryLine}${categoryLabels}${xLabel}${leftLabel}${rightLabel}${legend([state.chart.y, state.chart.y2], colors, width, height, fg)}</svg>`;
+  }
+
+  function dualLine(points, color, fg, label, showValues) {
+    if (!points.length) return "";
+    const d = points.map((point, index) => `${index ? "L" : "M"}${point[0]},${point[1]}`).join(" ");
+    const labels = showValues ? points.map((point, index) => `<text x="${point[0]}" y="${Math.max(12, point[1] - 9 - (index % 2) * 12)}" text-anchor="middle" font-size="11" font-weight="650" fill="${fg}">${format(point[2])}</text>`).join("") : "";
+    return `<path d="${d}" fill="none" stroke="${color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>${points.map((point) => `<circle cx="${point[0]}" cy="${point[1]}" r="4" fill="${color}"><title>${esc(label)}: ${format(point[2])}</title></circle>`).join("")}${labels}`;
   }
 
   function arcPath(cx, cy, r, start, end, inner) {
@@ -2151,6 +2253,7 @@
   function iconDot() { return `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 5h16v1H4zm0 7h16v1H4zm0 7h16v1H4z" opacity=".25"/><circle cx="9" cy="5.5" r="2"/><circle cx="15" cy="12.5" r="2"/><circle cx="12" cy="19.5" r="2"/></svg>`; }
   function iconScatter() { return `<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="7" cy="15" r="2"/><circle cx="12" cy="9" r="2"/><circle cx="17" cy="13" r="2"/><circle cx="19" cy="5" r="2"/></svg>`; }
   function iconPie() { return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a9 9 0 1 1-8 5"/><path d="M12 3v9h9"/></svg>`; }
+  function iconDualAxis() { return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4v16M20 4v16M4 20h16"/><rect x="7" y="11" width="3" height="7" fill="currentColor" opacity=".25"/><rect x="12" y="7" width="3" height="11" fill="currentColor" opacity=".25"/><path d="m6 15 5-6 4 3 4-7"/></svg>`; }
   function iconWaterfall() { return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="12" width="4" height="7"/><rect x="10" y="7" width="4" height="8"/><rect x="16" y="10" width="4" height="9"/><path d="M8 12h2m4-5h2" stroke-dasharray="2 2"/></svg>`; }
   function iconTable() { return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="5" width="16" height="14"/><path d="M4 10h16M9 5v14M15 5v14"/></svg>`; }
   function iconCards() { return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="5" width="7" height="14"/><rect x="13" y="5" width="7" height="14"/></svg>`; }
