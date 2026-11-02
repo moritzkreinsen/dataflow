@@ -142,6 +142,48 @@
         ]
       },
       chart: { type: "heatmap", x: "Produkt", y: "Tickets", group: "Priorität", label: "Produkt" }
+    },
+    {
+      meta: { title: "Beliebteste Formate", description: "Fiktive Rangfolge der meistgehörten Podcast-Formate.", source: "Quelle: Dataflow Demo", byline: "Erstellt mit Dataflow" },
+      data: {
+        columns: ["Format", "Hörerinnen und Hörer"],
+        rows: [
+          { Format: "Nachrichten", "Hörerinnen und Hörer": 82 }, { Format: "Wissen", "Hörerinnen und Hörer": 68 }, { Format: "Comedy", "Hörerinnen und Hörer": 61 }, { Format: "Interview", "Hörerinnen und Hörer": 47 }, { Format: "Kultur", "Hörerinnen und Hörer": 39 }
+        ]
+      },
+      chart: { type: "barHorizontal", x: "Format", y: "Hörerinnen und Hörer", label: "Format", sort: "desc", showLabels: true }
+    },
+    {
+      meta: { title: "Reaktionszeit nach Team", description: "Fiktive durchschnittliche Antwortzeit in Minuten.", source: "Quelle: Fiktiver Servicebericht", byline: "Erstellt mit Dataflow" },
+      data: {
+        columns: ["Monat", "Team", "Minuten"],
+        rows: [
+          { Monat: "Jan", Team: "Support", Minuten: 42 }, { Monat: "Jan", Team: "Vertrieb", Minuten: 68 }, { Monat: "Jan", Team: "Erfolg", Minuten: 31 },
+          { Monat: "Feb", Team: "Support", Minuten: 37 }, { Monat: "Feb", Team: "Vertrieb", Minuten: 59 }, { Monat: "Feb", Team: "Erfolg", Minuten: 28 },
+          { Monat: "Mrz", Team: "Support", Minuten: 35 }, { Monat: "Mrz", Team: "Vertrieb", Minuten: 52 }, { Monat: "Mrz", Team: "Erfolg", Minuten: 26 }
+        ]
+      },
+      chart: { type: "dot", x: "Monat", y: "Minuten", group: "Team", label: "Team", showLegend: true }
+    },
+    {
+      meta: { title: "Vom Umsatz zum Ergebnis", description: "Fiktive monatliche Überleitung zum operativen Ergebnis.", source: "Quelle: Dataflow Demo", byline: "Erstellt mit Dataflow" },
+      data: {
+        columns: ["Position", "Betrag"],
+        rows: [
+          { Position: "Umsatz", Betrag: 1240 }, { Position: "Material", Betrag: -410 }, { Position: "Personal", Betrag: -355 }, { Position: "Marketing", Betrag: -96 }, { Position: "Sonstiges", Betrag: -74 }
+        ]
+      },
+      chart: { type: "waterfall", x: "Position", y: "Betrag", label: "Position", showLabels: true, waterfallTotal: true }
+    },
+    {
+      meta: { title: "Reichweite und Conversion", description: "Fiktive Kampagnenwerte mit zwei unterschiedlichen Skalen.", source: "Quelle: Fiktives Marketing-Dashboard", byline: "Erstellt mit Dataflow" },
+      data: {
+        columns: ["Monat", "Reichweite", "Conversion"],
+        rows: [
+          { Monat: "Jan", Reichweite: 18200, Conversion: 2.8 }, { Monat: "Feb", Reichweite: 21400, Conversion: 3.1 }, { Monat: "Mrz", Reichweite: 24900, Conversion: 3.6 }, { Monat: "Apr", Reichweite: 27800, Conversion: 4.2 }
+        ]
+      },
+      chart: { type: "dual", x: "Monat", y: "Reichweite", y2: "Conversion", label: "Monat", y2AxisLabel: "Conversion in %", showLegend: true, showLabels: true }
     }
     ],
     en: [
@@ -236,8 +278,44 @@
             { Product: "Flow Ops", Priority: "High", Tickets: 9, SLA: 90 }
           ]
         },
-        chart: { type: "heatmap", x: "Product", y: "Tickets", group: "Priority", label: "Product" }
-      }
+      chart: { type: "heatmap", x: "Product", y: "Tickets", group: "Priority", label: "Product" }
+    },
+    {
+      meta: { title: "Most popular formats", description: "Fictional ranking of the most listened-to podcast formats.", source: "Source: Dataflow demo", byline: "Created with Dataflow" },
+      data: {
+        columns: ["Format", "Listeners"],
+        rows: [{ Format: "News", Listeners: 82 }, { Format: "Science", Listeners: 68 }, { Format: "Comedy", Listeners: 61 }, { Format: "Interview", Listeners: 47 }, { Format: "Culture", Listeners: 39 }]
+      },
+      chart: { type: "barHorizontal", x: "Format", y: "Listeners", label: "Format", sort: "desc", showLabels: true }
+    },
+    {
+      meta: { title: "Response time by team", description: "Fictional average response time in minutes.", source: "Source: Fictional service report", byline: "Created with Dataflow" },
+      data: {
+        columns: ["Month", "Team", "Minutes"],
+        rows: [
+          { Month: "Jan", Team: "Support", Minutes: 42 }, { Month: "Jan", Team: "Sales", Minutes: 68 }, { Month: "Jan", Team: "Success", Minutes: 31 },
+          { Month: "Feb", Team: "Support", Minutes: 37 }, { Month: "Feb", Team: "Sales", Minutes: 59 }, { Month: "Feb", Team: "Success", Minutes: 28 },
+          { Month: "Mar", Team: "Support", Minutes: 35 }, { Month: "Mar", Team: "Sales", Minutes: 52 }, { Month: "Mar", Team: "Success", Minutes: 26 }
+        ]
+      },
+      chart: { type: "dot", x: "Month", y: "Minutes", group: "Team", label: "Team", showLegend: true }
+    },
+    {
+      meta: { title: "From revenue to profit", description: "Fictional monthly bridge to operating profit.", source: "Source: Dataflow demo", byline: "Created with Dataflow" },
+      data: {
+        columns: ["Item", "Amount"],
+        rows: [{ Item: "Revenue", Amount: 1240 }, { Item: "Materials", Amount: -410 }, { Item: "Payroll", Amount: -355 }, { Item: "Marketing", Amount: -96 }, { Item: "Other", Amount: -74 }]
+      },
+      chart: { type: "waterfall", x: "Item", y: "Amount", label: "Item", showLabels: true, waterfallTotal: true }
+    },
+    {
+      meta: { title: "Reach and conversion", description: "Fictional campaign figures with two different scales.", source: "Source: Fictional marketing dashboard", byline: "Created with Dataflow" },
+      data: {
+        columns: ["Month", "Reach", "Conversion"],
+        rows: [{ Month: "Jan", Reach: 18200, Conversion: 2.8 }, { Month: "Feb", Reach: 21400, Conversion: 3.1 }, { Month: "Mar", Reach: 24900, Conversion: 3.6 }, { Month: "Apr", Reach: 27800, Conversion: 4.2 }]
+      },
+      chart: { type: "dual", x: "Month", y: "Reach", y2: "Conversion", label: "Month", y2AxisLabel: "Conversion %", showLegend: true, showLabels: true }
+    }
     ]
   };
 
