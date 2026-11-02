@@ -576,6 +576,8 @@
   }
 
   function renderVisualize() {
+    const type = state.chart.type;
+    const axisTypes = ["bar", "line", "area", "scatter", "heatmap"];
     return `
       <div class="panel">
         <h2 class="panel-title">Visualisierung</h2>
@@ -591,61 +593,79 @@
           ${typeButton("map", "Karte", iconMap())}
         </div>
       </div>
-      <div class="panel">
-        <h2 class="panel-title">Spalten</h2>
-        <div class="field-row">
-          <label>X / Kategorie<select data-bind="chart.x">${columnOptions(state.chart.x, false)}</select></label>
-          <label>Y / Wert<select data-bind="chart.y">${columnOptions(state.chart.y, true)}</select></label>
-        </div>
-        <div class="field-row">
-          <label>Gruppe / Serie<select data-bind="chart.group"><option value="">Keine</option>${columnOptions(state.chart.group, false)}</select></label>
-          <label>Beschriftung<select data-bind="chart.label"><option value="">Automatisch</option>${columnOptions(state.chart.label, false)}</select></label>
-        </div>
-        <div class="field-row">
-          <label>Latitude<select data-bind="chart.lat"><option value="">Keine</option>${columnOptions(state.chart.lat, true)}</select></label>
-          <label>Longitude<select data-bind="chart.lon"><option value="">Keine</option>${columnOptions(state.chart.lon, true)}</select></label>
-        </div>
-        <div class="field-row">
-          <label>Aggregation<select data-bind="chart.aggregate">
-            ${option("sum", "Summe", state.chart.aggregate)}
-            ${option("avg", "Durchschnitt", state.chart.aggregate)}
-            ${option("count", "Anzahl", state.chart.aggregate)}
-          </select></label>
-          <label>Sortierung<select data-bind="chart.sort">
-            ${option("none", "Original", state.chart.sort)}
-            ${option("asc", "Aufsteigend", state.chart.sort)}
-            ${option("desc", "Absteigend", state.chart.sort)}
-          </select></label>
-        </div>
-      </div>
-      <div class="panel">
-        <h2 class="panel-title">Achsenbeschriftungen</h2>
-        <div class="field-row">
-          <label>X-Achse<select data-bind="chart.xAxisLabelMode">
-            ${option("none", "Keine", state.chart.xAxisLabelMode)}
-            ${option("column", "Spaltenlabel", state.chart.xAxisLabelMode)}
-            ${option("custom", "Eigener Text", state.chart.xAxisLabelMode)}
-          </select></label>
-          <label>Y-Achse<select data-bind="chart.yAxisLabelMode">
-            ${option("none", "Keine", state.chart.yAxisLabelMode)}
-            ${option("column", "Spaltenlabel", state.chart.yAxisLabelMode)}
-            ${option("custom", "Eigener Text", state.chart.yAxisLabelMode)}
-          </select></label>
-        </div>
-        ${state.chart.xAxisLabelMode === "custom" ? `<label>Text unter der X-Achse<input data-bind="chart.xAxisLabel" value="${esc(state.chart.xAxisLabel || "")}" placeholder="z. B. Monat oder Zeitraum"></label>` : ""}
-        ${state.chart.yAxisLabelMode === "custom" ? `<label>Text an der Y-Achse<input data-bind="chart.yAxisLabel" value="${esc(state.chart.yAxisLabel || "")}" placeholder="z. B. Umsatz in EUR"></label>` : ""}
-      </div>
-      <div class="panel">
-        <h2 class="panel-title">Darstellung</h2>
-        ${toggle("chart.horizontal", "Balken horizontal")}
-        ${toggle("chart.stacked", "Serien stapeln")}
-        ${toggle("chart.showLegend", "Legende anzeigen")}
-        ${toggle("chart.showGrid", "Raster anzeigen")}
-        ${toggle("chart.showLabels", "Werte beschriften")}
-        ${toggle("chart.curve", "Linie glätten")}
-        ${toggle("chart.donut", "Kreis als Donut")}
-      </div>
+      ${renderVisualizeColumns(type)}
+      ${axisTypes.includes(type) ? renderAxisControls() : ""}
+      ${renderVisualizeAppearance(type)}
     `;
+  }
+
+  function renderVisualizeColumns(type) {
+    const aggregation = `<label>Aggregation<select data-bind="chart.aggregate">
+      ${option("sum", "Summe", state.chart.aggregate)}
+      ${option("avg", "Durchschnitt", state.chart.aggregate)}
+      ${option("count", "Anzahl", state.chart.aggregate)}
+    </select></label>`;
+    const sorting = `<label>Sortierung<select data-bind="chart.sort">
+      ${option("none", "Original", state.chart.sort)}
+      ${option("asc", "Aufsteigend", state.chart.sort)}
+      ${option("desc", "Absteigend", state.chart.sort)}
+    </select></label>`;
+    const category = `<label>X / Kategorie<select data-bind="chart.x">${columnOptions(state.chart.x, false)}</select></label>`;
+    const numericX = `<label>X / Wert<select data-bind="chart.x">${columnOptions(state.chart.x, true)}</select></label>`;
+    const value = `<label>Y / Wert<select data-bind="chart.y">${columnOptions(state.chart.y, true)}</select></label>`;
+    const group = `<label>Gruppe / Serie<select data-bind="chart.group"><option value="">Keine</option>${columnOptions(state.chart.group, false)}</select></label>`;
+    const label = `<label>Beschriftung<select data-bind="chart.label"><option value="">Automatisch</option>${columnOptions(state.chart.label, false)}</select></label>`;
+
+    if (type === "table") {
+      return `<div class="panel"><h2 class="panel-title">Tabelle</h2><label>Maximale Zeilen<input type="number" min="1" max="1000" data-bind="chart.tableLimit" value="${esc(state.chart.tableLimit)}"></label></div>`;
+    }
+    if (type === "map") {
+      return `<div class="panel"><h2 class="panel-title">Kartendaten</h2>
+        <div class="field-row"><label>Latitude<select data-bind="chart.lat"><option value="">Keine</option>${columnOptions(state.chart.lat, true)}</select></label><label>Longitude<select data-bind="chart.lon"><option value="">Keine</option>${columnOptions(state.chart.lon, true)}</select></label></div>
+        <div class="field-row"><label>Symbolgröße<select data-bind="chart.y"><option value="">Einheitlich</option>${columnOptions(state.chart.y, true)}</select></label>${label}</div>
+      </div>`;
+    }
+    if (type === "scatter") {
+      return `<div class="panel"><h2 class="panel-title">Spalten</h2><div class="field-row">${numericX}${value}</div><div class="field-row">${label}</div></div>`;
+    }
+    if (type === "pie" || type === "cards") {
+      return `<div class="panel"><h2 class="panel-title">Spalten</h2><div class="field-row">${category}${value}</div><div class="field-row">${aggregation}${sorting}</div></div>`;
+    }
+    return `<div class="panel"><h2 class="panel-title">Spalten</h2>
+      <div class="field-row">${category}${value}</div>
+      <div class="field-row">${group}</div>
+      <div class="field-row">${aggregation}${sorting}</div>
+    </div>`;
+  }
+
+  function renderAxisControls() {
+    return `<div class="panel">
+      <h2 class="panel-title">Achsenbeschriftungen</h2>
+      <div class="field-row">
+        <label>X-Achse<select data-bind="chart.xAxisLabelMode">
+          ${option("none", "Keine", state.chart.xAxisLabelMode)}
+          ${option("column", "Spaltenlabel", state.chart.xAxisLabelMode)}
+          ${option("custom", "Eigener Text", state.chart.xAxisLabelMode)}
+        </select></label>
+        <label>Y-Achse<select data-bind="chart.yAxisLabelMode">
+          ${option("none", "Keine", state.chart.yAxisLabelMode)}
+          ${option("column", "Spaltenlabel", state.chart.yAxisLabelMode)}
+          ${option("custom", "Eigener Text", state.chart.yAxisLabelMode)}
+        </select></label>
+      </div>
+      ${state.chart.xAxisLabelMode === "custom" ? `<label>Text unter der X-Achse<input data-bind="chart.xAxisLabel" value="${esc(state.chart.xAxisLabel || "")}" placeholder="z. B. Monat oder Zeitraum"></label>` : ""}
+      ${state.chart.yAxisLabelMode === "custom" ? `<label>Text an der Y-Achse<input data-bind="chart.yAxisLabel" value="${esc(state.chart.yAxisLabel || "")}" placeholder="z. B. Umsatz in EUR"></label>` : ""}
+    </div>`;
+  }
+
+  function renderVisualizeAppearance(type) {
+    const controls = [];
+    if (type === "bar") controls.push(toggle("chart.horizontal", "Balken horizontal"), toggle("chart.stacked", "Serien stapeln"));
+    if (["bar", "line", "area"].includes(type)) controls.push(toggle("chart.showLegend", "Legende anzeigen"));
+    if (["bar", "line", "area", "scatter"].includes(type)) controls.push(toggle("chart.showGrid", "Raster anzeigen"));
+    if (["bar", "line", "area", "scatter", "heatmap"].includes(type)) controls.push(toggle("chart.showLabels", "Werte beschriften"));
+    if (type === "pie") controls.push(toggle("chart.donut", "Kreis als Donut"));
+    return controls.length ? `<div class="panel"><h2 class="panel-title">Darstellung</h2>${controls.join("")}</div>` : "";
   }
 
   function renderAnnotate() {
