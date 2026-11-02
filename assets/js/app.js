@@ -186,7 +186,7 @@
   let saveTimer = null;
   let lastSavedAt = "";
   let sessionPassword = "";
-  let worldMapTopology = null;
+  let worldMapData = null;
   let worldMapLoading = false;
   const appBase = boot.base || "./";
 
@@ -1616,14 +1616,14 @@
   }
 
   function renderChoroplethMap(width, height, colors, fg, land, coast) {
-    if (!worldMapTopology) {
+    if (!worldMapData) {
       loadWorldMap();
       return `<svg viewBox="0 0 ${width} ${height}" role="img"><rect width="${width}" height="${height}" fill="${state.style.dark ? "#202629" : "#eef3f5"}"/><text x="18" y="28" font-size="13" fill="${fg}" opacity="0.58">Flächenkarte wird geladen ...</text></svg>`;
     }
     const data = choroplethValues();
     const max = Math.max(1, ...Array.from(data.values()).map((entry) => Math.abs(entry.value)));
     const color = colors[0];
-    const shapes = worldTopologyFeatures(worldMapTopology, width, height).map((feature) => {
+    const shapes = worldGeoFeatures(worldMapData, width, height).map((feature) => {
       const entry = data.get(normalizeCountryKey(feature.id)) || data.get(normalizeCountryKey(feature.name));
       const opacity = entry ? 0.18 + Math.abs(entry.value) / max * 0.72 : 1;
       const fill = entry ? color : land;
@@ -1656,21 +1656,21 @@
   }
 
   function worldMapShapes(width, height, land, coast) {
-    if (!worldMapTopology) {
+    if (!worldMapData) {
       loadWorldMap();
       return "";
     }
-    return worldTopologyFeatures(worldMapTopology, width, height)
+    return worldGeoFeatures(worldMapData, width, height)
       .map((feature) => `<path d="${feature.path}" fill="${land}" stroke="${coast}" stroke-width="0.6" opacity="0.9"/>`).join("");
   }
 
   async function loadWorldMap() {
-    if (worldMapTopology || worldMapLoading) return;
+    if (worldMapData || worldMapLoading) return;
     worldMapLoading = true;
     try {
-      const response = await fetch(`${appBase}assets/data/world-110m.json`);
+      const response = await fetch(`${appBase}assets/data/world-countries.geojson`);
       if (!response.ok) throw new Error("World map could not be loaded.");
-      worldMapTopology = await response.json();
+      worldMapData = await response.json();
       const frame = document.querySelector(".preview-frame");
       if (frame && state.chart.type === "map") frame.innerHTML = renderVisualization();
     } catch (error) {
@@ -1680,44 +1680,21 @@
     }
   }
 
-  function worldTopologyFeatures(topology, width, height) {
-    const object = topology.objects && topology.objects.countries;
-    if (!object || !Array.isArray(object.geometries)) return [];
-    return object.geometries.map((geometry) => ({
-      id: String(geometry.id ?? ""),
-      name: String(geometry.properties && geometry.properties.name || geometry.id || "Unbekannt"),
-      path: geometry.type === "Polygon"
-        ? polygonPath(geometry.arcs, topology, width, height)
-        : geometry.type === "MultiPolygon"
-          ? geometry.arcs.map((polygon) => polygonPath(polygon, topology, width, height)).join("")
-          : ""
+  function worldGeoFeatures(data, width, height) {
+    if (!data || !Array.isArray(data.features)) return [];
+    return data.features.map((feature) => ({
+      id: String(feature.properties && (feature.properties.ISO_N3_EH || feature.properties.ISO_N3) || ""),
+      name: String(feature.properties && feature.properties.NAME_EN || "Unbekannt"),
+      path: geoJsonPath(feature.geometry, width, height)
     })).filter((feature) => feature.path);
   }
 
-  function polygonPath(rings, topology, width, height) {
-    const d = rings.map((ring) => {
-      const points = ring.flatMap((arcIndex, index) => {
-        const arc = topologyArc(topology, arcIndex);
-        return index ? arc.slice(1) : arc;
-      });
-      return points.map((point, index) => `${index ? "L" : "M"}${mapX(point[0], width)},${mapY(point[1], height)}`).join("") + "Z";
-    }).join("");
-    return d;
-  }
-
-  function topologyArc(topology, index) {
-    const reverse = index < 0;
-    const source = topology.arcs[reverse ? ~index : index] || [];
-    const scale = topology.transform ? topology.transform.scale : [1, 1];
-    const translate = topology.transform ? topology.transform.translate : [0, 0];
-    let x = 0;
-    let y = 0;
-    const points = source.map((point) => {
-      x += point[0];
-      y += point[1];
-      return [x * scale[0] + translate[0], y * scale[1] + translate[1]];
-    });
-    return reverse ? points.reverse() : points;
+  function geoJsonPath(geometry, width, height) {
+    if (!geometry) return "";
+    const polygons = geometry.type === "Polygon" ? [geometry.coordinates] : geometry.type === "MultiPolygon" ? geometry.coordinates : [];
+    return polygons.map((polygon) => polygon.map((ring) => {
+      return ring.map((point, index) => `${index ? "L" : "M"}${mapX(point[0], width)},${mapY(point[1], height)}`).join("") + "Z";
+    }).join("")).join("");
   }
 
   function mapX(lon, width) {
