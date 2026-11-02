@@ -154,7 +154,9 @@
       tableLimit: 100,
       tableColumns: null,
       tableSort: "",
-      tableSortDirection: "asc"
+      tableSortDirection: "asc",
+      mapMode: "symbol",
+      mapRegion: ""
     },
     style: {
       palette: "Dataflow",
@@ -633,9 +635,16 @@
       </div>`;
     }
     if (type === "map") {
+      const mapMode = `<label>Kartentyp<select data-bind="chart.mapMode">${option("symbol", "Symbolkarte", state.chart.mapMode)}${option("locator", "Locator-Karte", state.chart.mapMode)}${option("choropleth", "Flächenkarte", state.chart.mapMode)}</select></label>`;
+      if (state.chart.mapMode === "choropleth") {
+        return `<div class="panel"><h2 class="panel-title">Kartendaten</h2>
+          ${mapMode}<div class="field-row"><label>Land / ISO-M49<select data-bind="chart.mapRegion">${columnOptions(state.chart.mapRegion, false)}</select></label>${value}</div>
+          <div class="field-row">${aggregation}${sorting}</div><div class="hint">Ländernamen müssen den englischen Namen der Weltkarte entsprechen (z. B. Germany) oder als ISO-M49-Code vorliegen (z. B. 276).</div>
+        </div>`;
+      }
       return `<div class="panel"><h2 class="panel-title">Kartendaten</h2>
-        <div class="field-row"><label>Latitude<select data-bind="chart.lat"><option value="">Keine</option>${columnOptions(state.chart.lat, true)}</select></label><label>Longitude<select data-bind="chart.lon"><option value="">Keine</option>${columnOptions(state.chart.lon, true)}</select></label></div>
-        <div class="field-row"><label>Symbolgröße<select data-bind="chart.y"><option value="">Einheitlich</option>${columnOptions(state.chart.y, true)}</select></label>${label}</div>
+        ${mapMode}<div class="field-row"><label>Latitude<select data-bind="chart.lat"><option value="">Keine</option>${columnOptions(state.chart.lat, true)}</select></label><label>Longitude<select data-bind="chart.lon"><option value="">Keine</option>${columnOptions(state.chart.lon, true)}</select></label></div>
+        <div class="field-row">${state.chart.mapMode === "symbol" ? `<label>Symbolgröße<select data-bind="chart.y"><option value="">Einheitlich</option>${columnOptions(state.chart.y, true)}</select></label>` : ""}${label}</div>
       </div>`;
     }
     if (type === "scatter") {
@@ -835,11 +844,13 @@
           state.style.fontMode = "google";
           state.style.font = googleFontFamily(value) || state.style.font;
         }
+        if (input.dataset.bind === "chart.mapMode") normalizeChartColumns();
         updateAndSave(
           input.dataset.bind === "style.fontMode" ||
           input.dataset.bind === "style.googleFontUrl" ||
           input.dataset.bind === "chart.xAxisLabelMode" ||
-          input.dataset.bind === "chart.yAxisLabelMode"
+          input.dataset.bind === "chart.yAxisLabelMode" ||
+          input.dataset.bind === "chart.mapMode"
         );
       });
     });
@@ -1221,6 +1232,10 @@
       }
     }
     if (state.chart.type === "map") {
+      if (state.chart.mapMode === "choropleth") {
+        if (!columns().includes(state.chart.mapRegion)) state.chart.mapRegion = state.chart.x || columns()[0] || "";
+        return;
+      }
       if (!numeric.includes(state.chart.y)) state.chart.y = numeric[0] || "";
       if (!numeric.includes(state.chart.lat)) state.chart.lat = columns().find((col) => /lat|breite/i.test(col)) || "";
       if (!numeric.includes(state.chart.lon)) state.chart.lon = columns().find((col) => /lon|lng|laenge|länge/i.test(col)) || "";
@@ -1264,6 +1279,12 @@
       if (!isNumericColumn(state.chart.x) || !isNumericColumn(state.chart.y)) {
         return "Ein Punktdiagramm benötigt zwei numerische Spalten für X und Y.";
       }
+    }
+    if (state.chart.type === "map" && state.chart.mapMode === "choropleth") {
+      if (!columns().includes(state.chart.mapRegion) || !isNumericColumn(state.chart.y)) {
+        return "Für eine Flächenkarte bitte eine Länder- und eine numerische Wertespalte auswählen.";
+      }
+      return "";
     }
     if (state.chart.type === "map") {
       if (!isNumericColumn(state.chart.lat) || !isNumericColumn(state.chart.lon)) {
@@ -1552,6 +1573,7 @@
     const fg = state.style.dark ? "#f7f7f1" : state.style.textColor;
     const land = state.style.dark ? "#384247" : "#d8e0d7";
     const coast = state.style.dark ? "#59666d" : "#b9c4b7";
+    if (state.chart.mapMode === "choropleth") return renderChoroplethMap(width, height, colors, fg, land, coast);
     const rows = state.data.rows.filter((row) => {
       const lat = parseNumber(row[state.chart.lat]);
       const lon = parseNumber(row[state.chart.lon]);
@@ -1559,7 +1581,7 @@
     });
     const lon2Column = columns().find((col) => /lon.*(2|max|end|bis)|lng.*(2|max|end|bis)|longitude.*(2|max|end|bis)/i.test(col));
     const lat2Column = columns().find((col) => /lat.*(2|max|end|bis)|latitude.*(2|max|end|bis)|breite.*(2|max|end|bis)/i.test(col));
-    const ranges = lat2Column && lon2Column ? rows.map((row, index) => {
+    const ranges = state.chart.mapMode === "symbol" && lat2Column && lon2Column ? rows.map((row, index) => {
       const lat1 = parseNumber(row[state.chart.lat]);
       const lon1 = parseNumber(row[state.chart.lon]);
       const lat2 = parseNumber(row[lat2Column]);
@@ -1575,19 +1597,62 @@
       const lon = parseNumber(row[state.chart.lon]);
       const x = (lon + 180) / 360 * width;
       const y = (90 - lat) / 180 * height;
-      const r = 5 + Math.sqrt(Math.abs(num(row[state.chart.y]))) * 0.8;
-      return `<circle cx="${x}" cy="${y}" r="${Math.min(26, r)}" fill="${colors[index % colors.length]}" opacity="0.72" stroke="white" stroke-width="1.5"><title>${esc(row[state.chart.label] || row[state.chart.x])}: ${format(row[state.chart.y])}</title></circle>`;
+      const value = parseNumber(row[state.chart.y]);
+      const r = state.chart.mapMode === "locator" ? 6 : 5 + (Number.isFinite(value) ? Math.sqrt(Math.abs(value)) * 0.8 : 2);
+      const label = row[state.chart.label] || row[state.chart.x] || "Punkt";
+      return `<circle cx="${x}" cy="${y}" r="${Math.min(26, r)}" fill="${colors[index % colors.length]}" opacity="0.72" stroke="white" stroke-width="1.5"><title>${esc(label)}${Number.isFinite(value) ? `: ${format(value)}` : ""}</title></circle>`;
     }).join("");
+    const heading = state.chart.mapMode === "locator" ? "Locator-Karte aus Latitude/Longitude" : "Symbolkarte aus Latitude/Longitude";
     return `<svg viewBox="0 0 ${width} ${height}" role="img">
       <rect x="0" y="0" width="${width}" height="${height}" fill="${state.style.dark ? "#202629" : "#eef3f5"}"/>
       ${[-120, -60, 0, 60, 120].map((lon) => `<line x1="${(lon + 180) / 360 * width}" y1="0" x2="${(lon + 180) / 360 * width}" y2="${height}" stroke="${fg}" opacity="0.08"/>`).join("")}
       ${[-60, -30, 0, 30, 60].map((lat) => `<line x1="0" y1="${(90 - lat) / 180 * height}" x2="${width}" y2="${(90 - lat) / 180 * height}" stroke="${fg}" opacity="0.08"/>`).join("")}
       ${worldMapShapes(width, height, land, coast)}
-      <text x="18" y="28" font-size="13" fill="${fg}" opacity="0.58">Symbolkarte aus Latitude/Longitude</text>
+      <text x="18" y="28" font-size="13" fill="${fg}" opacity="0.58">${heading}</text>
       ${ranges}
       ${points}
       <text x="${width - 14}" y="${height - 12}" text-anchor="end" font-size="10" fill="${fg}" opacity="0.5">Kartengrundlage: Natural Earth</text>
     </svg>`;
+  }
+
+  function renderChoroplethMap(width, height, colors, fg, land, coast) {
+    if (!worldMapTopology) {
+      loadWorldMap();
+      return `<svg viewBox="0 0 ${width} ${height}" role="img"><rect width="${width}" height="${height}" fill="${state.style.dark ? "#202629" : "#eef3f5"}"/><text x="18" y="28" font-size="13" fill="${fg}" opacity="0.58">Flächenkarte wird geladen ...</text></svg>`;
+    }
+    const data = choroplethValues();
+    const max = Math.max(1, ...Array.from(data.values()).map((entry) => Math.abs(entry.value)));
+    const color = colors[0];
+    const shapes = worldTopologyFeatures(worldMapTopology, width, height).map((feature) => {
+      const entry = data.get(normalizeCountryKey(feature.id)) || data.get(normalizeCountryKey(feature.name));
+      const opacity = entry ? 0.18 + Math.abs(entry.value) / max * 0.72 : 1;
+      const fill = entry ? color : land;
+      const title = entry ? `${feature.name}: ${format(entry.value)}` : feature.name;
+      return `<path d="${feature.path}" fill="${fill}" opacity="${opacity}" stroke="${coast}" stroke-width="0.6"><title>${esc(title)}</title></path>`;
+    }).join("");
+    return `<svg viewBox="0 0 ${width} ${height}" role="img">
+      <rect x="0" y="0" width="${width}" height="${height}" fill="${state.style.dark ? "#202629" : "#eef3f5"}"/>
+      ${shapes}<text x="18" y="28" font-size="13" fill="${fg}" opacity="0.58">Flächenkarte nach Ländern</text>
+      <text x="${width - 14}" y="${height - 12}" text-anchor="end" font-size="10" fill="${fg}" opacity="0.5">Kartengrundlage: Natural Earth</text>
+    </svg>`;
+  }
+
+  function choroplethValues() {
+    const values = new Map();
+    state.data.rows.forEach((row) => {
+      const key = normalizeCountryKey(row[state.chart.mapRegion]);
+      if (!key) return;
+      const entry = values.get(key) || { sum: 0, count: 0, value: 0 };
+      entry.sum += state.chart.aggregate === "count" ? 1 : num(row[state.chart.y]);
+      entry.count += 1;
+      entry.value = state.chart.aggregate === "avg" ? entry.sum / entry.count : entry.sum;
+      values.set(key, entry);
+    });
+    return values;
+  }
+
+  function normalizeCountryKey(value) {
+    return String(value ?? "").trim().toLocaleLowerCase("en").normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/^0+/, "");
   }
 
   function worldMapShapes(width, height, land, coast) {
@@ -1595,8 +1660,8 @@
       loadWorldMap();
       return "";
     }
-    const paths = worldTopologyPaths(worldMapTopology, width, height);
-    return paths.map((path) => `<path d="${path}" fill="${land}" stroke="${coast}" stroke-width="0.6" opacity="0.9"/>`).join("");
+    return worldTopologyFeatures(worldMapTopology, width, height)
+      .map((feature) => `<path d="${feature.path}" fill="${land}" stroke="${coast}" stroke-width="0.6" opacity="0.9"/>`).join("");
   }
 
   async function loadWorldMap() {
@@ -1615,14 +1680,18 @@
     }
   }
 
-  function worldTopologyPaths(topology, width, height) {
+  function worldTopologyFeatures(topology, width, height) {
     const object = topology.objects && topology.objects.countries;
     if (!object || !Array.isArray(object.geometries)) return [];
-    return object.geometries.flatMap((geometry) => {
-      if (geometry.type === "Polygon") return polygonPath(geometry.arcs, topology, width, height);
-      if (geometry.type === "MultiPolygon") return geometry.arcs.flatMap((polygon) => polygonPath(polygon, topology, width, height));
-      return [];
-    });
+    return object.geometries.map((geometry) => ({
+      id: String(geometry.id ?? ""),
+      name: String(geometry.properties && geometry.properties.name || geometry.id || "Unbekannt"),
+      path: geometry.type === "Polygon"
+        ? polygonPath(geometry.arcs, topology, width, height)
+        : geometry.type === "MultiPolygon"
+          ? geometry.arcs.map((polygon) => polygonPath(polygon, topology, width, height)).join("")
+          : ""
+    })).filter((feature) => feature.path);
   }
 
   function polygonPath(rings, topology, width, height) {
@@ -1633,7 +1702,7 @@
       });
       return points.map((point, index) => `${index ? "L" : "M"}${mapX(point[0], width)},${mapY(point[1], height)}`).join("") + "Z";
     }).join("");
-    return d ? [d] : [];
+    return d;
   }
 
   function topologyArc(topology, index) {
