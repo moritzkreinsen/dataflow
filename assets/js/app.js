@@ -20,9 +20,9 @@
       passwordProtection: "Passwortschutz", encryptedStored: "Die Daten sind sicher verschlüsselt gespeichert. Methode: {method}.", encryptedWith: "Die Daten sind sicher mit {method} verschlüsselt. Ohne Passwort können Personen mit Webspace-Zugriff die gespeicherten Daten nicht entschlüsseln.", enterPassword: "Passwort eingeben", decryptData: "Daten entschlüsseln", passwordToRemove: "Passwort zum Entfernen", removeProtection: "Passwortschutz entfernen", unencryptedStored: "Die Daten liegen derzeit unverschlüsselt auf dem Server.", setPassword: "Passwort festlegen", confirmPassword: "Passwort wiederholen", encryptData: "Mit Passwort verschlüsseln",
       visualization: "Visualisierung", bar: "Säulen", horizontalBar: "Balken", line: "Linie", area: "Fläche", dot: "Dot-Plot", scatter: "Streudiagramm", pie: "Kreis", dual: "Zwei Y-Achsen", waterfall: "Waterfall", table: "Tabelle", cards: "Kennzahlen", heatmap: "Heatmap", map: "Karte",
       aggregation: "Aggregation", sum: "Summe", average: "Durchschnitt", count: "Anzahl", sorting: "Sortierung", original: "Original", ascending: "Aufsteigend", descending: "Absteigend", category: "X / Kategorie", xValue: "X / Wert", yValue: "Y / Wert", group: "Gruppe / Serie", none: "Keine", label: "Beschriftung", automatic: "Automatisch", columns: "Spalten", tableOptions: "Tabelle", maximumRows: "Maximale Zeilen", sortBy: "Sortieren nach", originalOrder: "Originalreihenfolge", direction: "Richtung", visibleColumns: "Sichtbare Spalten",
-      mapType: "Kartentyp", symbolMap: "Symbolkarte", locatorMap: "Locator-Karte", choroplethMap: "Flächenkarte", mapData: "Kartendaten", country: "Land / ISO-M49", countryHint: "Ländernamen müssen den englischen Namen der Weltkarte entsprechen (z. B. Germany) oder als ISO-M49-Code vorliegen (z. B. 276).", latitude: "Latitude", longitude: "Longitude", symbolSize: "Symbolgröße", uniform: "Einheitlich",
+      mapType: "Kartentyp", symbolMap: "Symbolkarte", locatorMap: "Locator-Karte", choroplethMap: "Flächenkarte", mapData: "Kartendaten", country: "Land / ISO-M49", countryHint: "Ländernamen müssen den englischen Namen der Weltkarte entsprechen (z. B. Germany) oder als ISO-M49-Code vorliegen (z. B. 276).", latitude: "Latitude", longitude: "Longitude", symbolSize: "Symbolgröße", uniform: "Einheitlich", mapDesign: "Kartengestaltung", mapStyle: "Kartenstil", mapLight: "Hell", mapMuted: "Gedämpft", mapDark: "Dunkel", mapView: "Kartenausschnitt", mapZoom: "Zoom", mapCenterLat: "Mittelpunkt Latitude", mapCenterLon: "Mittelpunkt Longitude", mapLabels: "Ortslabels anzeigen", mapLegend: "Legende anzeigen", mapCluster: "Nahe Symbole gruppieren", mapShape: "Symbolform", circle: "Kreis", square: "Quadrat", diamond: "Raute", mapAnnotation: "Kartenanmerkung", mapAnnotationPlaceholder: "z. B. Schwerpunkt in Europa", mapLegendTitle: "Legendentitel", mapColorScale: "Farbskala", sequential: "Sequenziell", diverging: "Divergierend", mapFitData: "Ausschnitt an Daten anpassen",
       axisLabels: "Achsenbeschriftungen", xAxis: "X-Achse", yAxis: "Y-Achse", columnLabel: "Spaltenlabel", customText: "Eigener Text", xAxisText: "Text unter der X-Achse", yAxisText: "Text an der Y-Achse", xAxisPlaceholder: "z. B. Monat oder Zeitraum", yAxisPlaceholder: "z. B. Umsatz in EUR",
-      appearance: "Darstellung", horizontalBars: "Balken horizontal", stackSeries: "Serien stapeln", stackPercent: "Auf 100 % stapeln", showLegend: "Legende anzeigen", showGrid: "Raster anzeigen", showValues: "Werte beschriften", showSymbols: "Punktmarker anzeigen", donut: "Kreis als Donut", smoothLines: "Linien glätten", waterfallTotal: "Gesamtsumme", primaryAxis: "Linke Y-Achse", secondaryAxis: "Rechte Y-Achse", secondaryAxisLabel: "Beschriftung der rechten Y-Achse", columnsAndLine: "Säulen und Linie", twoLines: "Zwei Linien",
+      appearance: "Darstellung", horizontalBars: "Balken horizontal", stackSeries: "Serien stapeln", stackPercent: "Auf 100 % stapeln", showLegend: "Legende anzeigen", showGrid: "Raster anzeigen", showValues: "Werte beschriften", showSymbols: "Punktmarker anzeigen", donut: "Kreis als Donut", smoothLines: "Linien glätten", waterfallTotal: "Gesamtsumme", primaryAxis: "Linke Y-Achse", secondaryAxis: "Rechte Y-Achse", secondaryAxisLabel: "Beschriftung der rechten Y-Achse", columnsAndLine: "Säulen und Linie", twoLines: "Zwei Linien", searchable: "Suche anzeigen", pagination: "Seitennavigation", rowsPerPage: "Zeilen pro Seite", stickyFirstColumn: "Erste Spalte fixieren", compactTable: "Kompakte Darstellung", sortableColumns: "Spalten sortierbar", highlightFirstRow: "Erste Zeile hervorheben", tableCellStyle: "Zellvisualisierung", noCellStyle: "Keine", heatmapCells: "Farbskala", barsInCells: "Balken in Zellen", tableAlignment: "Ausrichtung", autoAlignment: "Automatisch", alignLeft: "Links", alignCenter: "Zentriert", alignRight: "Rechts", previous: "Zurück", next: "Weiter", searchTable: "Tabelle durchsuchen", page: "Seite {page} von {pages}", labelDensity: "Beschriftungen", labelSmart: "Automatisch ohne Überschneidungen", labelAll: "Alle Werte (bei Bedarf versetzt)", labelNone: "Keine",
       text: "Text", title: "Titel", titleSize: "Titelgröße", description: "Beschreibung", descriptionSize: "Beschreibung Schriftgröße", source: "Quelle", byline: "Byline", theme: "Theme", custom: "Eigene", color: "Farbe", background: "Hintergrund", darkPreview: "Dunkle Vorschau", font: "Schrift", fontSource: "Quelle", systemFont: "Systemschrift", googleFontUrl: "Google Font URL", ownFile: "Eigene Datei", ownFontFile: "Eigene Schriftdatei", active: "Aktiv", format: "Format", width: "Breite", height: "Höhe", padding: "Innenabstand", radius: "Radius",
       projectLink: "Projektlink", linkHint: "Wer diesen Link besitzt, kann das Projekt ansehen und bearbeiten. Es gibt keinen Login und keine Wiederherstellung ohne Link.", copy: "Kopieren", saveNow: "Jetzt speichern", txtLink: "TXT-Link", embed: "Einbetten", copyEmbed: "Embed kopieren", downloadSvg: "SVG herunterladen", downloadPng: "PNG herunterladen", privacy: "Datenschutz", privacyHint: "Die Daten liegen als JSON-Datei auf dem Webspace {domain}. Die zufällige URL ist der Zugriffsschutz; für sensible Daten kann zusätzlich der Passwortschutz unter „Daten“ aktiviert werden.", notSavedYet: "Noch nicht gespeichert",
       noData: "Noch keine Daten geladen.", selectColumn: "Mindestens eine Tabellenspalte auswählen.", previewAfterUpload: "Daten hochladen, dann erscheint hier die Vorschau.", chooseNumeric: "Für diese Visualisierung bitte eine numerische Wertespalte auswählen.", scatterNumeric: "Ein Punktdiagramm benötigt zwei numerische Spalten für X und Y.", choroplethNumeric: "Für eine Flächenkarte bitte eine Länder- und eine numerische Wertespalte auswählen.", mapCoordinates: "Für eine Karte bitte numerische Latitude- und Longitude-Spalten auswählen.", invalidCoordinates: "Die Koordinaten liegen außerhalb der gültigen Bereiche für Latitude und Longitude.", loadingChoropleth: "Flächenkarte wird geladen ...", mapSymbolDescription: "Symbolkarte aus Latitude- und Longitude-Daten", mapLocatorDescription: "Locator-Karte aus Latitude- und Longitude-Daten", mapChoroplethDescription: "Flächenkarte nach Ländern",
@@ -36,9 +36,9 @@
       passwordProtection: "Password protection", encryptedStored: "The data is securely stored encrypted. Method: {method}.", encryptedWith: "The data is securely encrypted with {method}. Without the password, people with webspace access cannot decrypt the stored data.", enterPassword: "Enter password", decryptData: "Decrypt data", passwordToRemove: "Password to remove protection", removeProtection: "Remove password protection", unencryptedStored: "The data is currently stored unencrypted on the server.", setPassword: "Set password", confirmPassword: "Repeat password", encryptData: "Encrypt with password",
       visualization: "Visualization", bar: "Column", horizontalBar: "Bar", line: "Line", area: "Area", dot: "Dot plot", scatter: "Scatter", pie: "Pie", dual: "Dual axis", waterfall: "Waterfall", table: "Table", cards: "Metrics", heatmap: "Heatmap", map: "Map",
       aggregation: "Aggregation", sum: "Sum", average: "Average", count: "Count", sorting: "Sorting", original: "Original", ascending: "Ascending", descending: "Descending", category: "X / Category", xValue: "X / Value", yValue: "Y / Value", group: "Group / Series", none: "None", label: "Label", automatic: "Automatic", columns: "Columns", tableOptions: "Table", maximumRows: "Maximum rows", sortBy: "Sort by", originalOrder: "Original order", direction: "Direction", visibleColumns: "Visible columns",
-      mapType: "Map type", symbolMap: "Symbol map", locatorMap: "Locator map", choroplethMap: "Choropleth map", mapData: "Map data", country: "Country / ISO-M49", countryHint: "Country names must match the English names in the world map (for example, Germany) or use ISO-M49 codes (for example, 276).", latitude: "Latitude", longitude: "Longitude", symbolSize: "Symbol size", uniform: "Uniform",
+      mapType: "Map type", symbolMap: "Symbol map", locatorMap: "Locator map", choroplethMap: "Choropleth map", mapData: "Map data", country: "Country / ISO-M49", countryHint: "Country names must match the English names in the world map (for example, Germany) or use ISO-M49 codes (for example, 276).", latitude: "Latitude", longitude: "Longitude", symbolSize: "Symbol size", uniform: "Uniform", mapDesign: "Map design", mapStyle: "Map style", mapLight: "Light", mapMuted: "Muted", mapDark: "Dark", mapView: "Map view", mapZoom: "Zoom", mapCenterLat: "Center latitude", mapCenterLon: "Center longitude", mapLabels: "Show place labels", mapLegend: "Show legend", mapCluster: "Group nearby symbols", mapShape: "Symbol shape", circle: "Circle", square: "Square", diamond: "Diamond", mapAnnotation: "Map annotation", mapAnnotationPlaceholder: "e.g. focus in Europe", mapLegendTitle: "Legend title", mapColorScale: "Color scale", sequential: "Sequential", diverging: "Diverging", mapFitData: "Fit view to data",
       axisLabels: "Axis labels", xAxis: "X axis", yAxis: "Y axis", columnLabel: "Column label", customText: "Custom text", xAxisText: "Text below the X axis", yAxisText: "Text beside the Y axis", xAxisPlaceholder: "e.g. month or period", yAxisPlaceholder: "e.g. revenue in EUR",
-      appearance: "Appearance", horizontalBars: "Horizontal bars", stackSeries: "Stack series", stackPercent: "Stack to 100%", showLegend: "Show legend", showGrid: "Show grid", showValues: "Show values", showSymbols: "Show point markers", donut: "Show as donut", smoothLines: "Smooth lines", waterfallTotal: "Total", primaryAxis: "Left Y axis", secondaryAxis: "Right Y axis", secondaryAxisLabel: "Right Y-axis label", columnsAndLine: "Columns and line", twoLines: "Two lines",
+      appearance: "Appearance", horizontalBars: "Horizontal bars", stackSeries: "Stack series", stackPercent: "Stack to 100%", showLegend: "Show legend", showGrid: "Show grid", showValues: "Show values", showSymbols: "Show point markers", donut: "Show as donut", smoothLines: "Smooth lines", waterfallTotal: "Total", primaryAxis: "Left Y axis", secondaryAxis: "Right Y axis", secondaryAxisLabel: "Right Y-axis label", columnsAndLine: "Columns and line", twoLines: "Two lines", searchable: "Show search", pagination: "Pagination", rowsPerPage: "Rows per page", stickyFirstColumn: "Sticky first column", compactTable: "Compact layout", sortableColumns: "Sortable columns", highlightFirstRow: "Highlight first row", tableCellStyle: "Cell visualization", noCellStyle: "None", heatmapCells: "Color scale", barsInCells: "Bars in cells", tableAlignment: "Alignment", autoAlignment: "Automatic", alignLeft: "Left", alignCenter: "Centered", alignRight: "Right", previous: "Previous", next: "Next", searchTable: "Search table", page: "Page {page} of {pages}", labelDensity: "Labels", labelSmart: "Automatic, without overlaps", labelAll: "All values (offset if needed)", labelNone: "None",
       text: "Text", title: "Title", titleSize: "Title size", description: "Description", descriptionSize: "Description font size", source: "Source", byline: "Byline", theme: "Theme", custom: "Custom", color: "Color", background: "Background", darkPreview: "Dark preview", font: "Font", fontSource: "Source", systemFont: "System font", googleFontUrl: "Google Font URL", ownFile: "Own file", ownFontFile: "Own font file", active: "Active", format: "Format", width: "Width", height: "Height", padding: "Padding", radius: "Radius",
       projectLink: "Project link", linkHint: "Anyone with this link can view and edit the project. There is no login and no recovery without the link.", copy: "Copy", saveNow: "Save now", txtLink: "TXT link", embed: "Embed", copyEmbed: "Copy embed", downloadSvg: "Download SVG", downloadPng: "Download PNG", privacy: "Privacy", privacyHint: "The data is stored as a JSON file on the webspace {domain}. The random URL protects access; password protection can also be enabled under “Data” for sensitive data.", notSavedYet: "Not saved yet",
       noData: "No data loaded yet.", selectColumn: "Select at least one table column.", previewAfterUpload: "Upload data to see the preview.", chooseNumeric: "Select a numeric value column for this visualization.", scatterNumeric: "A scatter chart needs two numeric columns for X and Y.", choroplethNumeric: "A choropleth map needs a country column and a numeric value column.", mapCoordinates: "A map needs numeric latitude and longitude columns.", invalidCoordinates: "The coordinates are outside the valid latitude and longitude ranges.", loadingChoropleth: "Loading choropleth map ...", mapSymbolDescription: "Symbol map from latitude and longitude data", mapLocatorDescription: "Locator map from latitude and longitude data", mapChoroplethDescription: "Choropleth map by country",
@@ -372,8 +372,32 @@
       tableColumns: null,
       tableSort: "",
       tableSortDirection: "asc",
+      tableSearch: "",
+      tablePage: 1,
+      tablePageSize: 10,
+      tablePagination: true,
+      tableSearchable: true,
+      tableStickyFirst: true,
+      tableCompact: false,
+      tableSortable: true,
+      tableHighlightFirst: false,
+      tableCellStyle: "none",
+      tableAlignment: "auto",
+      labelDensity: "smart",
       mapMode: "symbol",
-      mapRegion: ""
+      mapRegion: "",
+      mapStyle: "light",
+      mapZoom: 1,
+      mapCenterLat: 0,
+      mapCenterLon: 0,
+      mapFitData: false,
+      mapShowLabels: false,
+      mapShowLegend: true,
+      mapCluster: false,
+      mapShape: "circle",
+      mapAnnotation: "",
+      mapLegendTitle: "",
+      mapColorScale: "sequential"
     },
     style: {
       palette: "Dataflow",
@@ -863,6 +887,7 @@
         </div>
       </div>
       ${renderVisualizeColumns(type)}
+      ${type === "map" ? renderMapDesignControls() : ""}
       ${axisTypes.includes(type) ? renderAxisControls() : ""}
       ${renderVisualizeAppearance(type)}
     `;
@@ -891,6 +916,8 @@
       return `<div class="panel"><h2 class="panel-title">${esc(t("tableOptions"))}</h2>
         <div class="field-row"><label>${esc(t("maximumRows"))}<input type="number" min="1" max="1000" data-bind="chart.tableLimit" value="${esc(state.chart.tableLimit)}"></label><label>${esc(t("sortBy"))}<select data-bind="chart.tableSort"><option value="">${esc(t("originalOrder"))}</option>${columnOptions(state.chart.tableSort, false)}</select></label></div>
         ${state.chart.tableSort ? `<label>${esc(t("direction"))}<select data-bind="chart.tableSortDirection">${option("asc", t("ascending"), state.chart.tableSortDirection)}${option("desc", t("descending"), state.chart.tableSortDirection)}</select></label>` : ""}
+        <div class="field-row"><label>${esc(t("rowsPerPage"))}<select data-bind="chart.tablePageSize">${[5, 10, 25, 50].map((size) => option(String(size), String(size), String(state.chart.tablePageSize))).join("")}</select></label><label>${esc(t("tableCellStyle"))}<select data-bind="chart.tableCellStyle">${option("none", t("noCellStyle"), state.chart.tableCellStyle)}${option("heatmap", t("heatmapCells"), state.chart.tableCellStyle)}${option("bar", t("barsInCells"), state.chart.tableCellStyle)}</select></label></div>
+        <label>${esc(t("tableAlignment"))}<select data-bind="chart.tableAlignment">${option("auto", t("autoAlignment"), state.chart.tableAlignment)}${option("left", t("alignLeft"), state.chart.tableAlignment)}${option("center", t("alignCenter"), state.chart.tableAlignment)}${option("right", t("alignRight"), state.chart.tableAlignment)}</select></label>
         <div class="table-columns"><span class="hint">${esc(t("visibleColumns"))}</span>${columns().map((column) => `<label class="check-option"><input type="checkbox" data-table-column="${esc(column)}"${!Array.isArray(visibleColumns) || visibleColumns.includes(column) ? " checked" : ""}><span>${esc(column)}</span></label>`).join("")}</div>
       </div>`;
     }
@@ -899,7 +926,7 @@
       if (state.chart.mapMode === "choropleth") {
         return `<div class="panel"><h2 class="panel-title">${esc(t("mapData"))}</h2>
           ${mapMode}<div class="field-row"><label>${esc(t("country"))}<select data-bind="chart.mapRegion">${columnOptions(state.chart.mapRegion, false)}</select></label>${value}</div>
-          <div class="field-row">${aggregation}${sorting}</div><div class="hint">${esc(t("countryHint"))}</div>
+          <div class="field-row">${aggregation}${sorting}</div><label>${esc(t("mapColorScale"))}<select data-bind="chart.mapColorScale">${option("sequential", t("sequential"), state.chart.mapColorScale)}${option("diverging", t("diverging"), state.chart.mapColorScale)}</select></label><div class="hint">${esc(t("countryHint"))}</div>
         </div>`;
       }
       return `<div class="panel"><h2 class="panel-title">${esc(t("mapData"))}</h2>
@@ -949,6 +976,16 @@
     </div>`;
   }
 
+  function renderMapDesignControls() {
+    return `<div class="panel"><h2 class="panel-title">${esc(t("mapDesign"))}</h2>
+      <label>${esc(t("mapStyle"))}<select data-bind="chart.mapStyle">${option("light", t("mapLight"), state.chart.mapStyle)}${option("muted", t("mapMuted"), state.chart.mapStyle)}${option("dark", t("mapDark"), state.chart.mapStyle)}</select></label>
+      <div class="field-row"><label>${esc(t("mapZoom"))}<input type="number" min="1" max="8" step="0.1" data-bind="chart.mapZoom" value="${esc(state.chart.mapZoom)}"></label><label>${esc(t("mapShape"))}<select data-bind="chart.mapShape">${option("circle", t("circle"), state.chart.mapShape)}${option("square", t("square"), state.chart.mapShape)}${option("diamond", t("diamond"), state.chart.mapShape)}</select></label></div>
+      <div class="field-row"><label>${esc(t("mapCenterLat"))}<input type="number" min="-85" max="85" step="0.1" data-bind="chart.mapCenterLat" value="${esc(state.chart.mapCenterLat)}"></label><label>${esc(t("mapCenterLon"))}<input type="number" min="-180" max="180" step="0.1" data-bind="chart.mapCenterLon" value="${esc(state.chart.mapCenterLon)}"></label></div>
+      <label>${esc(t("mapLegendTitle"))}<input data-bind="chart.mapLegendTitle" value="${esc(state.chart.mapLegendTitle || "")}"></label>
+      <label>${esc(t("mapAnnotation"))}<input data-bind="chart.mapAnnotation" value="${esc(state.chart.mapAnnotation || "")}" placeholder="${esc(t("mapAnnotationPlaceholder"))}"></label>
+    </div>`;
+  }
+
   function renderVisualizeAppearance(type) {
     const controls = [];
     if (type === "bar") controls.push(toggle("chart.horizontal", t("horizontalBars")), toggle("chart.stacked", t("stackSeries")), !state.chart.horizontal ? toggle("chart.stackedPercent", t("stackPercent")) : "");
@@ -958,6 +995,13 @@
     if (["line", "area"].includes(type)) controls.push(toggle("chart.curve", t("smoothLines")), toggle("chart.showSymbols", t("showSymbols")));
     if (type === "waterfall") controls.push(toggle("chart.waterfallTotal", t("waterfallTotal")));
     if (type === "pie") controls.push(toggle("chart.donut", t("donut")));
+    if (type === "table") controls.push(toggle("chart.tableSearchable", t("searchable")), toggle("chart.tablePagination", t("pagination")), toggle("chart.tableStickyFirst", t("stickyFirstColumn")), toggle("chart.tableCompact", t("compactTable")), toggle("chart.tableSortable", t("sortableColumns")), toggle("chart.tableHighlightFirst", t("highlightFirstRow")));
+    if (["bar", "barHorizontal", "line", "area", "dot", "scatter", "dual", "waterfall", "heatmap"].includes(type)) {
+      controls.push(`<label class="toggle-line"><span>${esc(t("labelDensity"))}</span><select data-bind="chart.labelDensity">${option("smart", t("labelSmart"), state.chart.labelDensity)}${option("all", t("labelAll"), state.chart.labelDensity)}${option("none", t("labelNone"), state.chart.labelDensity)}</select></label>`);
+    }
+    if (type === "map") {
+      controls.push(toggle("chart.mapShowLabels", t("mapLabels")), toggle("chart.mapShowLegend", t("mapLegend")), state.chart.mapMode !== "choropleth" ? toggle("chart.mapCluster", t("mapCluster")) : "", toggle("chart.mapFitData", t("mapFitData")));
+    }
     return controls.length ? `<div class="panel"><h2 class="panel-title">${esc(t("appearance"))}</h2>${controls.join("")}</div>` : "";
   }
 
@@ -1067,7 +1111,31 @@
     if (!rows.length) return `<div class="empty-state">${esc(t("noData"))}</div>`;
     const displayColumns = Array.isArray(visibleColumns) ? visibleColumns : columns();
     if (!displayColumns.length) return `<div class="empty-state">${esc(t("selectColumn"))}</div>`;
-    return `<table class="data-table"><thead><tr>${displayColumns.map((c) => `<th scope="col">${esc(c)}</th>`).join("")}</tr></thead><tbody>${rows.map((row) => `<tr>${displayColumns.map((c) => `<td>${esc(row[c])}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
+    const interactive = state.chart.type === "table";
+    const alignment = state.chart.tableAlignment || "auto";
+    const cellStyle = state.chart.tableCellStyle || "none";
+    const numericMaximum = Object.fromEntries(displayColumns.filter(isNumericColumn).map((column) => [column, Math.max(1, ...rows.map((row) => Math.abs(num(row[column]))))]));
+    const cell = (row, column) => {
+      const value = row[column] ?? "";
+      const numeric = isNumericColumn(column);
+      const classNames = [numeric ? "is-number" : "", alignment !== "auto" ? `align-${alignment}` : ""].filter(Boolean).join(" ");
+      if (cellStyle === "heatmap" && numeric) {
+        const alpha = Math.min(0.82, 0.12 + Math.abs(num(value)) / numericMaximum[column] * 0.7);
+        return `<td class="${classNames}" style="--cell-heat:${alpha}">${esc(format(value))}</td>`;
+      }
+      if (cellStyle === "bar" && numeric) {
+        const ratio = Math.min(100, Math.abs(num(value)) / numericMaximum[column] * 100);
+        return `<td class="${classNames}"><span class="table-cell-bar" style="--cell-bar:${ratio}%"></span><span>${esc(format(value))}</span></td>`;
+      }
+      return `<td class="${classNames}">${esc(numeric ? format(value) : value)}</td>`;
+    };
+    const headers = displayColumns.map((column) => {
+      const active = state.chart.tableSort === column;
+      const arrow = active ? (state.chart.tableSortDirection === "asc" ? " ↑" : " ↓") : "";
+      return `<th scope="col">${interactive && state.chart.tableSortable ? `<button class="table-sort" data-table-sort="${esc(column)}">${esc(column)}${arrow}</button>` : esc(column)}</th>`;
+    }).join("");
+    const table = `<table class="data-table ${state.chart.tableStickyFirst ? "sticky-first" : ""} ${state.chart.tableCompact ? "compact" : ""} ${state.chart.tableHighlightFirst ? "highlight-first" : ""}"><thead><tr>${headers}</tr></thead><tbody>${rows.map((row) => `<tr>${displayColumns.map((column) => cell(row, column)).join("")}</tr>`).join("")}</tbody></table>`;
+    return interactive ? `<div class="data-table-wrap table-visualization">${table}</div>` : table;
   }
 
   function typeButton(type, label, icon) {
@@ -1151,6 +1219,8 @@
         updateAndSave(true);
       });
     });
+
+    bindTablePreviewEvents();
 
     document.querySelectorAll("[data-type]").forEach((button) => {
       button.addEventListener("click", () => {
@@ -1296,6 +1366,35 @@
         if (file) importFontFile(file);
       });
     }
+  }
+
+  function bindTablePreviewEvents() {
+    document.querySelectorAll("[data-table-sort]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const column = button.dataset.tableSort;
+        state.chart.tableSortDirection = state.chart.tableSort === column && state.chart.tableSortDirection === "asc" ? "desc" : "asc";
+        state.chart.tableSort = column;
+        state.chart.tablePage = 1;
+        updateAndSave(true);
+      });
+    });
+    const tableSearch = document.querySelector("[data-table-search]");
+    if (tableSearch) {
+      tableSearch.addEventListener("input", () => {
+        state.chart.tableSearch = tableSearch.value;
+        state.chart.tablePage = 1;
+        const frame = document.querySelector(".preview-frame");
+        if (frame) frame.innerHTML = renderVisualization();
+        bindTablePreviewEvents();
+        queueSave();
+      });
+    }
+    document.querySelectorAll("[data-table-page]").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.chart.tablePage = Math.max(1, Number(button.dataset.tablePage) || 1);
+        updateAndSave(false);
+      });
+    });
   }
 
   function updateAndSave(fullRender) {
@@ -1494,11 +1593,13 @@
 
   function autoMapColumns(cols) {
     const numeric = cols.filter(isNumericColumn);
+    const latitude = cols.find((col) => /lat|breite/i.test(col)) || "";
+    const longitude = cols.find((col) => /lon|lng|laenge|länge/i.test(col)) || "";
     state.chart.x = cols.find((col) => !numeric.includes(col)) || cols[0] || "";
-    state.chart.y = numeric[0] || cols[1] || cols[0] || "";
+    state.chart.y = numeric.find((col) => col !== latitude && col !== longitude) || numeric[0] || cols[1] || cols[0] || "";
     state.chart.group = cols.find((col) => col !== state.chart.x && !numeric.includes(col)) || "";
-    state.chart.lat = cols.find((col) => /lat|breite/i.test(col)) || "";
-    state.chart.lon = cols.find((col) => /lon|lng|laenge|länge/i.test(col)) || "";
+    state.chart.lat = latitude;
+    state.chart.lon = longitude;
     state.chart.label = cols.find((col) => /name|label|ort|stadt|land/i.test(col)) || state.chart.x;
   }
 
@@ -1690,9 +1791,12 @@
 
   function axisLabels(xValues, plot, fg, muted, xAxisTitle, yAxisTitle) {
     const step = plot.w / Math.max(1, xValues.length);
+    const stride = Math.max(1, Math.ceil(xValues.length / Math.max(2, Math.floor(plot.w / 64))));
     const categories = xValues.map((x, index) => {
+      if (index % stride && index !== xValues.length - 1) return "";
       const cx = plot.x + step * index + step / 2;
-      return `<text x="${cx}" y="${plot.y + plot.h + 24}" text-anchor="middle" font-size="11" fill="${muted}">${esc(shorten(x, 12))}</text>`;
+      const rotate = step < 54 ? ` transform="rotate(-35 ${cx} ${plot.y + plot.h + 24})" text-anchor="end"` : " text-anchor=\"middle\"";
+      return `<text x="${cx}" y="${plot.y + plot.h + 24}"${rotate} font-size="11" fill="${muted}">${esc(shorten(x, step < 54 ? 16 : 12))}</text>`;
     }).join("");
     const xTitle = xAxisTitle
       ? `<text x="${plot.x + plot.w / 2}" y="${plot.y + plot.h + 48}" text-anchor="middle" font-size="12" font-weight="650" fill="${fg}">${esc(xAxisTitle)}</text>`
@@ -1703,10 +1807,34 @@
     return categories + `<line x1="${plot.x}" y1="${plot.y + plot.h}" x2="${plot.x + plot.w}" y2="${plot.y + plot.h}" stroke="${fg}" opacity="0.25"/>` + xTitle + yTitle;
   }
 
+  function labelLayer(candidates, bounds, fg) {
+    if (state.chart.labelDensity === "none") return "";
+    const placed = [];
+    const margin = 3;
+    return candidates.map((candidate) => {
+      const text = String(candidate.text ?? "");
+      const width = Math.max(12, text.length * 6.1);
+      const height = 12;
+      const offsets = candidate.offsets || [[0, 0]];
+      for (const offset of offsets) {
+        const x = Math.max(bounds.x + width / 2, Math.min(bounds.x + bounds.w - width / 2, candidate.x + offset[0]));
+        const y = Math.max(bounds.y + height, Math.min(bounds.y + bounds.h, candidate.y + offset[1]));
+        const box = { left: x - width / 2 - margin, right: x + width / 2 + margin, top: y - height - margin, bottom: y + margin };
+        const collides = placed.some((other) => box.left < other.right && box.right > other.left && box.top < other.bottom && box.bottom > other.top);
+        if (!collides || state.chart.labelDensity === "all") {
+          placed.push(box);
+          return `<text x="${x}" y="${y}" text-anchor="middle" font-size="11" font-weight="650" fill="${fg}">${esc(text)}</text>`;
+        }
+      }
+      return "";
+    }).join("");
+  }
+
   function verticalBars(xValues, groups, matrix, plot, max, colors, fg, percent) {
     const step = plot.w / Math.max(1, xValues.length);
     const gap = Math.min(18, step * 0.22);
     let out = "";
+    const labels = [];
     xValues.forEach((_, xi) => {
       let stackedY = plot.y + plot.h;
       groups.forEach((group, gi) => {
@@ -1721,28 +1849,32 @@
         if (state.chart.showLabels) {
           const inside = h >= 22;
           const labelY = inside ? y + Math.min(h - 6, h / 2 + 4) : Math.max(plot.y + 11, y - 4);
-          out += `<text x="${x + barW / 2}" y="${labelY}" text-anchor="middle" font-size="11" font-weight="650" fill="${fg}">${percent ? `${format(value)} %` : format(value)}</text>`;
+          labels.push({ x: x + barW / 2, y: labelY, text: percent ? `${format(value)} %` : format(value), offsets: inside ? [[0, 0]] : [[0, 0], [0, -13], [0, 13]] });
         }
       });
     });
-    return out;
+    return out + labelLayer(labels, plot, fg);
   }
 
   function horizontalBars(xValues, groups, matrix, plot, max, colors, fg) {
     const rows = aggregateRows().slice(0, 28);
     const step = plot.h / Math.max(1, rows.length);
-    return rows.map((row, index) => {
+    const labels = [];
+    const bars = rows.map((row, index) => {
       const w = Math.abs(row.value) / max * plot.w;
       const y = plot.y + index * step + 3;
+      if (state.chart.showLabels) labels.push({ x: w > 44 ? plot.x + w - 18 : plot.x + w + 18, y: y + step / 2 + 4, text: format(row.value), offsets: [[0, 0], [0, -12], [0, 12]] });
       return `<text x="${plot.x - 8}" y="${y + step / 2 + 4}" text-anchor="end" font-size="11" fill="${fg}" opacity="0.72">${esc(shorten(row.x, 14))}</text>
         <rect x="${plot.x}" y="${y}" width="${w}" height="${Math.max(2, step - 7)}" rx="${state.style.rounded}" fill="${colors[index % colors.length]}"><title>${esc(row.x)}: ${format(row.value)}</title></rect>
-        ${state.chart.showLabels ? `<text x="${w > 44 ? plot.x + w - 6 : plot.x + w + 6}" y="${y + step / 2 + 4}" text-anchor="${w > 44 ? "end" : "start"}" font-size="11" font-weight="650" fill="${fg}">${format(row.value)}</text>` : ""}`;
+        `;
     }).join("");
+    return bars + labelLayer(labels, plot, fg);
   }
 
   function lineChart(type, xValues, groups, matrix, plot, max, colors, fg) {
     const step = plot.w / Math.max(1, xValues.length - 1 || 1);
-    return groups.map((group, gi) => {
+    const labels = [];
+    const lines = groups.map((group, gi) => {
       const points = matrix[gi].map((value, xi) => {
         const x = plot.x + step * xi;
         const y = plot.y + plot.h - Math.abs(value) / max * plot.h;
@@ -1751,9 +1883,10 @@
       const d = state.chart.curve ? smoothLinePath(points) : points.map((p, i) => `${i ? "L" : "M"}${p[0]},${p[1]}`).join(" ");
       const area = type === "area" ? `<path d="${d} L${points[points.length - 1][0]},${plot.y + plot.h} L${points[0][0]},${plot.y + plot.h} Z" fill="${colors[gi % colors.length]}" opacity="0.16"/>` : "";
       const dots = state.chart.showSymbols ? points.map((p) => `<circle cx="${p[0]}" cy="${p[1]}" r="4" fill="${colors[gi % colors.length]}"><title>${esc(group)}: ${format(p[2])}</title></circle>`).join("") : "";
-      const labels = state.chart.showLabels ? points.map((p, index) => lineValueLabel(p, index, points.length, gi, groups.length, plot, fg)).join("") : "";
-      return `${area}<path d="${d}" fill="none" stroke="${colors[gi % colors.length]}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>${dots}${labels}`;
+      if (state.chart.showLabels) points.forEach((point, index) => labels.push(lineLabelCandidate(point, index, points.length, gi, groups.length)));
+      return `${area}<path d="${d}" fill="none" stroke="${colors[gi % colors.length]}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>${dots}`;
     }).join("");
+    return lines + labelLayer(labels, plot, fg);
   }
 
   function smoothLinePath(points) {
@@ -1768,22 +1901,32 @@
     return path;
   }
 
-  function lineValueLabel(point, index, pointCount, groupIndex, groupCount, plot, fg) {
+  function lineLabelCandidate(point, index, pointCount, groupIndex, groupCount) {
     const verticalOffset = -9 + (groupIndex - (groupCount - 1) / 2) * 14;
     const y = Math.max(plot.y + 12, Math.min(plot.y + plot.h - 8, point[1] + verticalOffset));
     const atStart = index === 0;
     const atEnd = index === pointCount - 1;
     const x = atStart ? point[0] + 6 : atEnd ? point[0] - 6 : point[0];
     const anchor = atStart ? "start" : atEnd ? "end" : "middle";
-    return `<text x="${x}" y="${y}" text-anchor="${anchor}" font-size="11" font-weight="650" fill="${fg}">${format(point[2])}</text>`;
+    return { x, y, text: format(point[2]), offsets: [[0, 0], [0, -13], [0, 13], [12, 0], [-12, 0]] };
   }
 
   function legend(groups, colors, width, height, fg) {
     if (!state.chart.showLegend || groups.length < 2) return "";
-    return `<g transform="translate(22 ${height - 22})">${groups.map((group, index) => {
-      const x = index * 132;
-      return `<rect x="${x}" y="-10" width="11" height="11" fill="${colors[index % colors.length]}" rx="2"/><text x="${x + 17}" y="0" font-size="12" fill="${fg}" opacity="0.72">${esc(shorten(group, 16))}</text>`;
-    }).join("")}</g>`;
+    let x = 0;
+    let y = 0;
+    const items = groups.map((group, index) => {
+      const text = shorten(group, 16);
+      const itemWidth = Math.min(150, 24 + text.length * 7);
+      if (x && x + itemWidth > width - 44) {
+        x = 0;
+        y -= 18;
+      }
+      const item = `<rect x="${x}" y="${y - 10}" width="11" height="11" fill="${colors[index % colors.length]}" rx="2"/><text x="${x + 17}" y="${y}" font-size="12" fill="${fg}" opacity="0.72">${esc(text)}</text>`;
+      x += itemWidth;
+      return item;
+    }).join("");
+    return `<g transform="translate(22 ${height - 22})">${items}</g>`;
   }
 
   function renderPie() {
@@ -1915,19 +2058,20 @@
     const colors = chartColors();
     const yStep = plot.h / Math.max(1, categories.length);
     const grid = state.chart.showGrid ? gridLinesRange(plot, min, max, fg, "x") : "";
+    const labels = [];
     const points = data.map((row) => {
       const categoryIndex = categories.indexOf(row.x);
       const groupIndex = groups.indexOf(row.group);
       const groupOffset = (groupIndex - (groups.length - 1) / 2) * Math.min(12, yStep / Math.max(2, groups.length));
       const x = plot.x + scaleRange(row.value, min, max, plot.w);
       const y = plot.y + yStep * categoryIndex + yStep / 2 + groupOffset;
-      const label = state.chart.showLabels ? `<text x="${x + 8}" y="${y + 4}" font-size="11" font-weight="650" fill="${fg}">${format(row.value)}</text>` : "";
-      return `<circle cx="${x}" cy="${y}" r="6" fill="${colors[groupIndex % colors.length]}"><title>${esc(row.x)} / ${esc(row.group)}: ${format(row.value)}</title></circle>${label}`;
+      if (state.chart.showLabels) labels.push({ x: x + 18, y: y + 4, text: format(row.value), offsets: [[0, 0], [0, -13], [0, 13], [14, 0]] });
+      return `<circle cx="${x}" cy="${y}" r="6" fill="${colors[groupIndex % colors.length]}"><title>${esc(row.x)} / ${esc(row.group)}: ${format(row.value)}</title></circle>`;
     }).join("");
     const categoryLabels = categories.map((category, index) => `<text x="${plot.x - 10}" y="${plot.y + yStep * index + yStep / 2 + 4}" text-anchor="end" font-size="11" fill="${muted}">${esc(shorten(category, 18))}</text>`).join("");
     return `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${esc(state.meta.title)}">
       ${grid}<line x1="${plot.x}" y1="${plot.y + plot.h}" x2="${plot.x + plot.w}" y2="${plot.y + plot.h}" stroke="${fg}" opacity="0.25"/>
-      ${categoryLabels}${points}${legend(groups, colors, width, height, fg)}
+      ${categoryLabels}${points}${labelLayer(labels, plot, fg)}${legend(groups, colors, width, height, fg)}
     </svg>`;
   }
 
@@ -1953,6 +2097,7 @@
     const stepWidth = plot.w / Math.max(1, items.length);
     const barWidth = Math.max(4, stepWidth * 0.66);
     const grid = state.chart.showGrid ? gridLinesRange(plot, min, max, fg, "y") : "";
+    const labels = [];
     const bars = items.map((step, index) => {
       const x = plot.x + index * stepWidth + (stepWidth - barWidth) / 2;
       const startY = plot.y + plot.h - scaleRange(step.start, min, max, plot.h);
@@ -1961,13 +2106,13 @@
       const h = Math.max(1, Math.abs(endY - startY));
       const fill = step.total ? colors[0] : step.value >= 0 ? colors[3 % colors.length] : colors[1 % colors.length];
       const labelY = step.value >= 0 ? y - 5 : y + h + 13;
-      const valueLabel = state.chart.showLabels ? `<text x="${x + barWidth / 2}" y="${Math.max(plot.y + 11, Math.min(plot.y + plot.h - 3, labelY))}" text-anchor="middle" font-size="11" font-weight="650" fill="${fg}">${format(step.total ? step.end : step.value)}</text>` : "";
+      if (state.chart.showLabels) labels.push({ x: x + barWidth / 2, y: Math.max(plot.y + 11, Math.min(plot.y + plot.h - 3, labelY)), text: format(step.total ? step.end : step.value), offsets: [[0, 0], [0, -13], [0, 13]] });
       const connector = !step.total && index < steps.length - 1 ? `<line x1="${x + barWidth}" y1="${endY}" x2="${plot.x + (index + 1) * stepWidth + (stepWidth - barWidth) / 2}" y2="${endY}" stroke="${muted}" stroke-dasharray="3 3" opacity="0.65"/>` : "";
-      return `${connector}<rect x="${x}" y="${y}" width="${barWidth}" height="${h}" rx="${state.style.rounded}" fill="${fill}"><title>${esc(step.x)}: ${format(step.total ? step.end : step.value)}</title></rect>${valueLabel}<text x="${x + barWidth / 2}" y="${plot.y + plot.h + 20}" text-anchor="middle" font-size="11" fill="${muted}">${esc(shorten(step.x, 12))}</text>`;
+      return `${connector}<rect x="${x}" y="${y}" width="${barWidth}" height="${h}" rx="${state.style.rounded}" fill="${fill}"><title>${esc(step.x)}: ${format(step.total ? step.end : step.value)}</title></rect><text x="${x + barWidth / 2}" y="${plot.y + plot.h + 20}" text-anchor="middle" font-size="11" fill="${muted}">${esc(shorten(step.x, 12))}</text>`;
     }).join("");
     const zeroY = plot.y + plot.h - scaleRange(0, min, max, plot.h);
     return `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${esc(state.meta.title)}">
-      ${grid}<line x1="${plot.x}" y1="${zeroY}" x2="${plot.x + plot.w}" y2="${zeroY}" stroke="${fg}" opacity="0.32"/>${bars}
+      ${grid}<line x1="${plot.x}" y1="${zeroY}" x2="${plot.x + plot.w}" y2="${zeroY}" stroke="${fg}" opacity="0.32"/>${bars}${labelLayer(labels, plot, fg)}
     </svg>`;
   }
 
@@ -2004,22 +2149,19 @@
     const fg = state.style.dark ? "#f7f7f1" : state.style.textColor;
     const xAxisTitle = axisTitle("x");
     const yAxisTitle = axisTitle("y");
+    const labels = [];
     const points = rows.map((row, index) => {
       const x = pad + scale(num(row[state.chart.x]), minX, maxX, width - pad * 2);
       const y = height - pad - scale(num(row[state.chart.y]), minY, maxY, height - pad * 2);
-      const labelOffsets = [[8, -8, "start"], [-8, -8, "end"], [8, 16, "start"], [-8, 16, "end"]];
-      const labelOffset = labelOffsets[index % labelOffsets.length];
-      const valueLabel = state.chart.showLabels
-        ? `<text x="${x + labelOffset[0]}" y="${Math.max(pad + 11, Math.min(height - pad - 4, y + labelOffset[1]))}" text-anchor="${labelOffset[2]}" font-size="11" font-weight="650" fill="${fg}">${format(row[state.chart.y])}</text>`
-        : "";
-      return `<circle cx="${x}" cy="${y}" r="6" fill="${colors[index % colors.length]}" opacity="0.78"><title>${esc(row[state.chart.label] || row[state.chart.x])}: ${format(row[state.chart.y])}</title></circle>${valueLabel}`;
+      if (state.chart.showLabels) labels.push({ x: x + 12, y: y - 8, text: format(row[state.chart.y]), offsets: [[0, 0], [-24, 0], [0, 15], [0, -15], [20, 12]] });
+      return `<circle cx="${x}" cy="${y}" r="6" fill="${colors[index % colors.length]}" opacity="0.78"><title>${esc(row[state.chart.label] || row[state.chart.x])}: ${format(row[state.chart.y])}</title></circle>`;
     }).join("");
     return `<svg viewBox="0 0 ${width} ${height}" role="img">
       <line x1="${pad}" y1="${height - pad}" x2="${width - pad}" y2="${height - pad}" stroke="${fg}" opacity="0.25"/>
       <line x1="${pad}" y1="${pad}" x2="${pad}" y2="${height - pad}" stroke="${fg}" opacity="0.25"/>
       ${xAxisTitle ? `<text x="${width / 2}" y="${height - 16}" text-anchor="middle" font-size="12" font-weight="650" fill="${fg}">${esc(xAxisTitle)}</text>` : ""}
       ${yAxisTitle ? `<text x="18" y="${height / 2}" text-anchor="middle" font-size="12" font-weight="650" fill="${fg}" transform="rotate(-90 18 ${height / 2})">${esc(yAxisTitle)}</text>` : ""}
-      ${points}
+      ${points}${labelLayer(labels, { x: pad, y: pad, w: width - pad * 2, h: height - pad * 2 }, fg)}
     </svg>`;
   }
 
@@ -2035,16 +2177,15 @@
     const fg = state.style.dark ? "#f7f7f1" : state.style.textColor;
     const xAxisTitle = axisTitle("x");
     const yAxisTitle = axisTitle("y");
+    const labels = [];
     const cells = groups.map((group, gi) => matrix[gi].map((value, xi) => {
       const opacity = 0.12 + Math.abs(value) / max * 0.78;
-      const valueLabel = state.chart.showLabels
-        ? `<text x="${pad + xi * cellW + cellW / 2}" y="${20 + gi * cellH + cellH / 2 + 4}" text-anchor="middle" font-size="10" font-weight="650" fill="${opacity > 0.52 ? "#ffffff" : fg}">${esc(shorten(format(value), 8))}</text>`
-        : "";
-      return `<rect x="${pad + xi * cellW}" y="${20 + gi * cellH}" width="${Math.max(1, cellW - 2)}" height="${Math.max(1, cellH - 2)}" rx="3" fill="${color}" opacity="${opacity}"><title>${esc(group)} / ${esc(xValues[xi])}: ${format(value)}</title></rect>${valueLabel}`;
+      if (state.chart.showLabels && cellW >= 36 && cellH >= 18) labels.push({ x: pad + xi * cellW + cellW / 2, y: 20 + gi * cellH + cellH / 2 + 4, text: shorten(format(value), 8) });
+      return `<rect x="${pad + xi * cellW}" y="${20 + gi * cellH}" width="${Math.max(1, cellW - 2)}" height="${Math.max(1, cellH - 2)}" rx="3" fill="${color}" opacity="${opacity}"><title>${esc(group)} / ${esc(xValues[xi])}: ${format(value)}</title></rect>`;
     }).join("")).join("");
     const xLabels = xValues.map((x, i) => `<text x="${pad + i * cellW + cellW / 2}" y="${height - (xAxisTitle ? 28 : 10)}" text-anchor="middle" font-size="11" fill="${fg}" opacity="0.68">${esc(shorten(x, 10))}</text>`).join("");
     const yLabels = groups.map((g, i) => `<text x="${pad - 8}" y="${20 + i * cellH + cellH / 2 + 4}" text-anchor="end" font-size="11" fill="${fg}" opacity="0.68">${esc(shorten(g, 12))}</text>`).join("");
-    return `<svg viewBox="0 0 ${width} ${height}" role="img">${cells}${xLabels}${yLabels}${xAxisTitle ? `<text x="${width / 2}" y="${height - 8}" text-anchor="middle" font-size="12" font-weight="650" fill="${fg}">${esc(xAxisTitle)}</text>` : ""}${yAxisTitle ? `<text x="18" y="${height / 2}" text-anchor="middle" font-size="12" font-weight="650" fill="${fg}" transform="rotate(-90 18 ${height / 2})">${esc(yAxisTitle)}</text>` : ""}</svg>`;
+    return `<svg viewBox="0 0 ${width} ${height}" role="img">${cells}${labelLayer(labels, { x: pad, y: 20, w: width - pad - 20, h: height - pad - 20 }, fg)}${xLabels}${yLabels}${xAxisTitle ? `<text x="${width / 2}" y="${height - 8}" text-anchor="middle" font-size="12" font-weight="650" fill="${fg}">${esc(xAxisTitle)}</text>` : ""}${yAxisTitle ? `<text x="18" y="${height / 2}" text-anchor="middle" font-size="12" font-weight="650" fill="${fg}" transform="rotate(-90 18 ${height / 2})">${esc(yAxisTitle)}</text>` : ""}</svg>`;
   }
 
   function renderMap() {
@@ -2052,8 +2193,9 @@
     const height = Number(state.style.height) || 440;
     const colors = chartColors();
     const fg = state.style.dark ? "#f7f7f1" : state.style.textColor;
-    const land = state.style.dark ? "#384247" : "#d8e0d7";
-    const coast = state.style.dark ? "#59666d" : "#b9c4b7";
+    const theme = mapTheme();
+    const land = theme.land;
+    const coast = theme.coast;
     if (state.chart.mapMode === "choropleth") return renderChoroplethMap(width, height, colors, fg, land, coast);
     const rows = state.data.rows.filter((row) => {
       const lat = parseNumber(row[state.chart.lat]);
@@ -2062,6 +2204,8 @@
     });
     const lon2Column = columns().find((col) => /lon.*(2|max|end|bis)|lng.*(2|max|end|bis)|longitude.*(2|max|end|bis)/i.test(col));
     const lat2Column = columns().find((col) => /lat.*(2|max|end|bis)|latitude.*(2|max|end|bis)|breite.*(2|max|end|bis)/i.test(col));
+    const viewport = mapViewport(width, height, rows);
+    const markerRows = state.chart.mapCluster ? clusterMapRows(rows) : rows;
     const ranges = state.chart.mapMode === "symbol" && lat2Column && lon2Column ? rows.map((row, index) => {
       const lat1 = parseNumber(row[state.chart.lat]);
       const lon1 = parseNumber(row[state.chart.lon]);
@@ -2073,7 +2217,8 @@
       const y2 = (90 - Math.min(lat1, lat2)) / 180 * height;
       return `<rect x="${x1}" y="${y1}" width="${Math.max(2, x2 - x1)}" height="${Math.max(2, y2 - y1)}" fill="${colors[index % colors.length]}" opacity="0.18" stroke="${colors[index % colors.length]}" stroke-width="1.6"><title>${esc(row[state.chart.label] || row[state.chart.x])}</title></rect>`;
     }).join("") : "";
-    const points = rows.map((row, index) => {
+    const labels = [];
+    const points = markerRows.map((row, index) => {
       const lat = parseNumber(row[state.chart.lat]);
       const lon = parseNumber(row[state.chart.lon]);
       const x = (lon + 180) / 360 * width;
@@ -2081,40 +2226,96 @@
       const value = parseNumber(row[state.chart.y]);
       const r = state.chart.mapMode === "locator" ? 6 : 5 + (Number.isFinite(value) ? Math.sqrt(Math.abs(value)) * 0.8 : 2);
       const label = row[state.chart.label] || row[state.chart.x] || t("point");
-      return `<circle cx="${x}" cy="${y}" r="${Math.min(26, r)}" fill="${colors[index % colors.length]}" opacity="0.72" stroke="white" stroke-width="1.5"><title>${esc(label)}${Number.isFinite(value) ? `: ${format(value)}` : ""}</title></circle>`;
+      if (state.chart.mapShowLabels) labels.push({ x: x * viewport.zoom + viewport.tx, y: y * viewport.zoom + viewport.ty - Math.min(26, r) - 5, text: String(label), offsets: [[0, 0], [0, -13], [12, 0], [-12, 0]] });
+      return mapMarker(x, y, Math.min(26, r), colors[index % colors.length], label, Number.isFinite(value) ? value : null);
     }).join("");
     const mapDescription = state.chart.mapMode === "locator" ? t("mapLocatorDescription") : t("mapSymbolDescription");
+    const legendTitle = state.chart.mapLegendTitle || state.chart.y;
+    const legend = state.chart.mapShowLegend && state.chart.mapMode === "symbol" && state.chart.y ? `<g transform="translate(18 ${height - 20})"><circle cx="6" cy="-5" r="6" fill="${colors[0]}" opacity="0.72"/><text x="18" y="0" font-size="12" fill="${fg}">${esc(legendTitle)}</text></g>` : "";
+    const annotation = state.chart.mapAnnotation ? `<text x="16" y="25" font-size="13" font-weight="650" fill="${fg}">${esc(state.chart.mapAnnotation)}</text>` : "";
     return `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${esc(mapDescription)}">
       ${mapSvgMetadata(mapDescription)}
-      <rect x="0" y="0" width="${width}" height="${height}" fill="${state.style.dark ? "#202629" : "#eef3f5"}"/>
-      ${[-120, -60, 0, 60, 120].map((lon) => `<line x1="${(lon + 180) / 360 * width}" y1="0" x2="${(lon + 180) / 360 * width}" y2="${height}" stroke="${fg}" opacity="0.08"/>`).join("")}
-      ${[-60, -30, 0, 30, 60].map((lat) => `<line x1="0" y1="${(90 - lat) / 180 * height}" x2="${width}" y2="${(90 - lat) / 180 * height}" stroke="${fg}" opacity="0.08"/>`).join("")}
-      ${worldMapShapes(width, height, land, coast)}
-      ${ranges}
-      ${points}
+      <defs><clipPath id="map-clip"><rect width="${width}" height="${height}"/></clipPath></defs>
+      <rect x="0" y="0" width="${width}" height="${height}" fill="${theme.water}"/>
+      <g clip-path="url(#map-clip)" transform="translate(${viewport.tx} ${viewport.ty}) scale(${viewport.zoom})">
+        ${[-120, -60, 0, 60, 120].map((lon) => `<line x1="${(lon + 180) / 360 * width}" y1="0" x2="${(lon + 180) / 360 * width}" y2="${height}" stroke="${fg}" opacity="0.08"/>`).join("")}
+        ${[-60, -30, 0, 30, 60].map((lat) => `<line x1="0" y1="${(90 - lat) / 180 * height}" x2="${width}" y2="${(90 - lat) / 180 * height}" stroke="${fg}" opacity="0.08"/>`).join("")}
+        ${worldMapShapes(width, height, land, coast)}${ranges}${points}
+      </g>
+      ${labelLayer(labels, { x: 6, y: 6, w: width - 12, h: height - 12 }, fg)}${annotation}${legend}
     </svg>`;
+  }
+
+  function mapTheme() {
+    if (state.chart.mapStyle === "dark" || state.style.dark) return { water: "#202629", land: "#384247", coast: "#67757d" };
+    if (state.chart.mapStyle === "muted") return { water: "#ebe7dd", land: "#cbd4c4", coast: "#9ca89a" };
+    return { water: "#eef3f5", land: "#d8e0d7", coast: "#b9c4b7" };
+  }
+
+  function mapViewport(width, height, rows) {
+    let zoom = Math.max(1, Math.min(8, Number(state.chart.mapZoom) || 1));
+    let lat = Math.max(-85, Math.min(85, Number(state.chart.mapCenterLat) || 0));
+    let lon = Math.max(-180, Math.min(180, Number(state.chart.mapCenterLon) || 0));
+    if (state.chart.mapFitData && rows.length) {
+      const lats = rows.map((row) => parseNumber(row[state.chart.lat])).filter(Number.isFinite);
+      const lons = rows.map((row) => parseNumber(row[state.chart.lon])).filter(Number.isFinite);
+      lat = (Math.min(...lats) + Math.max(...lats)) / 2;
+      lon = (Math.min(...lons) + Math.max(...lons)) / 2;
+      const lonSpan = Math.max(12, Math.max(...lons) - Math.min(...lons));
+      const latSpan = Math.max(8, Math.max(...lats) - Math.min(...lats));
+      zoom = Math.max(1, Math.min(8, Math.min(300 / lonSpan, 145 / latSpan)));
+    }
+    return { zoom, tx: width / 2 - mapX(lon, width) * zoom, ty: height / 2 - mapY(lat, height) * zoom };
+  }
+
+  function clusterMapRows(rows) {
+    const buckets = new Map();
+    rows.forEach((row) => {
+      const key = `${Math.round(parseNumber(row[state.chart.lat]) * 2) / 2}|${Math.round(parseNumber(row[state.chart.lon]) * 2) / 2}`;
+      const entry = buckets.get(key) || { ...row, __count: 0, __lat: 0, __lon: 0, __value: 0 };
+      entry.__count += 1;
+      entry.__lat += parseNumber(row[state.chart.lat]);
+      entry.__lon += parseNumber(row[state.chart.lon]);
+      entry.__value += Number.isFinite(parseNumber(row[state.chart.y])) ? parseNumber(row[state.chart.y]) : 0;
+      buckets.set(key, entry);
+    });
+    return Array.from(buckets.values()).map((entry) => ({ ...entry, [state.chart.lat]: entry.__lat / entry.__count, [state.chart.lon]: entry.__lon / entry.__count, [state.chart.y]: entry.__value, [state.chart.label]: entry.__count > 1 ? `${entry.__count} ${t("point")}` : entry[state.chart.label] }));
+  }
+
+  function mapMarker(x, y, radius, color, label, value) {
+    const title = `<title>${esc(label)}${value === null ? "" : `: ${format(value)}`}</title>`;
+    if (state.chart.mapShape === "square") return `<rect x="${x - radius}" y="${y - radius}" width="${radius * 2}" height="${radius * 2}" rx="2" fill="${color}" opacity="0.72" stroke="white" stroke-width="1.5">${title}</rect>`;
+    if (state.chart.mapShape === "diamond") return `<path d="M${x},${y - radius} L${x + radius},${y} L${x},${y + radius} L${x - radius},${y} Z" fill="${color}" opacity="0.72" stroke="white" stroke-width="1.5">${title}</path>`;
+    return `<circle cx="${x}" cy="${y}" r="${radius}" fill="${color}" opacity="0.72" stroke="white" stroke-width="1.5">${title}</circle>`;
   }
 
   function renderChoroplethMap(width, height, colors, fg, land, coast) {
     if (!worldMapData) {
       loadWorldMap();
-      return `<svg viewBox="0 0 ${width} ${height}" role="img"><rect width="${width}" height="${height}" fill="${state.style.dark ? "#202629" : "#eef3f5"}"/><text x="18" y="28" font-size="13" fill="${fg}" opacity="0.58">${esc(t("loadingChoropleth"))}</text></svg>`;
+      return `<svg viewBox="0 0 ${width} ${height}" role="img"><rect width="${width}" height="${height}" fill="${mapTheme().water}"/><text x="18" y="28" font-size="13" fill="${fg}" opacity="0.58">${esc(t("loadingChoropleth"))}</text></svg>`;
     }
     const data = choroplethValues();
     const max = Math.max(1, ...Array.from(data.values()).map((entry) => Math.abs(entry.value)));
     const color = colors[0];
+    const negativeColor = colors[1 % colors.length];
+    const viewport = mapViewport(width, height, []);
     const shapes = worldGeoFeatures(worldMapData, width, height).map((feature) => {
       const entry = data.get(normalizeCountryKey(feature.id)) || data.get(normalizeCountryKey(feature.name));
       const opacity = entry ? 0.18 + Math.abs(entry.value) / max * 0.72 : 1;
-      const fill = entry ? color : land;
+      const fill = entry ? (state.chart.mapColorScale === "diverging" && entry.value < 0 ? negativeColor : color) : land;
       const title = entry ? `${feature.name}: ${format(entry.value)}` : feature.name;
       return `<path d="${feature.path}" fill="${fill}" opacity="${opacity}" stroke="${coast}" stroke-width="0.6"><title>${esc(title)}</title></path>`;
     }).join("");
     const mapDescription = t("mapChoroplethDescription");
+    const legendTitle = state.chart.mapLegendTitle || state.chart.y;
+    const legend = state.chart.mapShowLegend ? `<g transform="translate(18 ${height - 20})"><rect x="0" y="-11" width="72" height="11" fill="url(#choropleth-gradient)"/><text x="80" y="0" font-size="12" fill="${fg}">${esc(legendTitle)}</text></g>` : "";
+    const annotation = state.chart.mapAnnotation ? `<text x="16" y="25" font-size="13" font-weight="650" fill="${fg}">${esc(state.chart.mapAnnotation)}</text>` : "";
     return `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${esc(mapDescription)}">
       ${mapSvgMetadata(mapDescription)}
-      <rect x="0" y="0" width="${width}" height="${height}" fill="${state.style.dark ? "#202629" : "#eef3f5"}"/>
-      ${shapes}
+      <defs><clipPath id="map-clip"><rect width="${width}" height="${height}"/></clipPath><linearGradient id="choropleth-gradient">${state.chart.mapColorScale === "diverging" ? `<stop offset="0" stop-color="${negativeColor}"/><stop offset="1" stop-color="${color}"/>` : `<stop offset="0" stop-color="${color}" stop-opacity="0.18"/><stop offset="1" stop-color="${color}"/>`}</linearGradient></defs>
+      <rect x="0" y="0" width="${width}" height="${height}" fill="${mapTheme().water}"/>
+      <g clip-path="url(#map-clip)" transform="translate(${viewport.tx} ${viewport.ty}) scale(${viewport.zoom})">${shapes}</g>
+      ${annotation}${legend}
     </svg>`;
   }
 
@@ -2192,7 +2393,16 @@
 
   function renderTableViz() {
     const limit = Number(state.chart.tableLimit) || 100;
-    return renderDataTable(tableRows().slice(0, limit), state.chart.tableColumns);
+    const allRows = tableRows().slice(0, limit);
+    const query = String(state.chart.tableSearch || "").trim().toLocaleLowerCase(language());
+    const filtered = query ? allRows.filter((row) => Object.values(row).some((value) => String(value ?? "").toLocaleLowerCase(language()).includes(query))) : allRows;
+    const pageSize = Math.max(1, Number(state.chart.tablePageSize) || 10);
+    const pages = Math.max(1, Math.ceil(filtered.length / pageSize));
+    const page = Math.min(Math.max(1, Number(state.chart.tablePage) || 1), pages);
+    const visibleRows = state.chart.tablePagination ? filtered.slice((page - 1) * pageSize, page * pageSize) : filtered;
+    const search = state.chart.tableSearchable ? `<label class="table-search"><span class="visually-hidden">${esc(t("searchTable"))}</span><input data-table-search type="search" value="${esc(state.chart.tableSearch || "")}" placeholder="${esc(t("searchTable"))}"></label>` : "";
+    const pager = state.chart.tablePagination && filtered.length > pageSize ? `<nav class="table-pagination" aria-label="${esc(t("pagination"))}"><button data-table-page="${page - 1}"${page === 1 ? " disabled" : ""}>${esc(t("previous"))}</button><span>${esc(t("page", { page, pages }))}</span><button data-table-page="${page + 1}"${page === pages ? " disabled" : ""}>${esc(t("next"))}</button></nav>` : "";
+    return `<div class="table-visualization-shell">${search}${renderDataTable(visibleRows, state.chart.tableColumns)}${pager}</div>`;
   }
 
   function tableRows() {
