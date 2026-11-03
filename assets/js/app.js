@@ -1815,13 +1815,14 @@
       const text = String(candidate.text ?? "");
       const width = Math.max(12, text.length * 6.1);
       const height = 12;
-      const offsets = candidate.offsets || [[0, 0]];
+      const allOffsets = candidate.offsets || [[0, 0]];
+      const offsets = state.chart.labelDensity === "all" ? allOffsets : [allOffsets[0]];
       for (const offset of offsets) {
         const x = Math.max(bounds.x + width / 2, Math.min(bounds.x + bounds.w - width / 2, candidate.x + offset[0]));
         const y = Math.max(bounds.y + height, Math.min(bounds.y + bounds.h, candidate.y + offset[1]));
         const box = { left: x - width / 2 - margin, right: x + width / 2 + margin, top: y - height - margin, bottom: y + margin };
         const collides = placed.some((other) => box.left < other.right && box.right > other.left && box.top < other.bottom && box.bottom > other.top);
-        if (!collides || state.chart.labelDensity === "all") {
+        if (!collides) {
           placed.push(box);
           return `<text x="${x}" y="${y}" text-anchor="middle" font-size="11" font-weight="650" fill="${fg}">${esc(text)}</text>`;
         }
